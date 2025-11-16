@@ -1,0 +1,690 @@
+/* ================================== */
+/* DELIVERYHJ - CSS UNIFICADO */
+/* ================================== */
+
+/* 1. RESET E VARIÁVEIS GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Arial", sans-serif;
+}
+
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #6c63ff;
+    --accent-color: #a71d2a;
+    --dark-bg: #121212;
+    --darker-bg: #2c2c2c;
+    --card-bg: #ffffff;
+    --text-dark: #333333;
+    --text-light: #f1f1f1;
+    --transition-speed: 0.3s;
+}
+
+/* 2. CONFIGURAÇÕES GERAIS DO BODY */
+body {
+    padding-top: 76px;
+    background: var(--bs-body-bg);
+    font: 16px/1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    mix-blend-mode: normal;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Transição suave para todos os elementos */
+body,
+.navbar,
+footer,
+.card,
+.form-control {
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+/* 3. PRELOADER E BARRA DE PROGRESSO */
+.progress {
+    background-color: transparent !important;
+    height: 3px !important;
+}
+
+@keyframes hidePreloader {
+    0% { width: 100%; height: 100%; }
+    100% { width: 0; height: 0; }
+}
+
+.preloader {
+    position: fixed;
+    background: var(--bs-body-bg);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:not(.loaded) .preloader {
+    opacity: 1;
+}
+
+body:not(.loaded) {
+    overflow: hidden;
+}
+
+body.loaded .preloader {
+    animation: hidePreloader 0.5s linear 0.5s forwards;
+}
+
+/* 4. HERO SECTION */
+.hero-section {
+    background: linear-gradient(135deg, #a71d2a 60%, #dc3545 100%);
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    padding-top: 8rem !important;
+    padding-bottom: 4rem !important;
+    background-size: 200% 200%;
+    animation: gradient-animation 10s ease infinite;
+    margin-top: 76px;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Campos de busca arredondados */
+.hero-section .input-group-lg .form-control,
+.hero-section .input-group-lg .input-group-text,
+.hero-section .input-group-lg .btn {
+    border-radius: 0 !important;
+}
+
+.hero-section .rounded-pill-start .input-group-text,
+.hero-section .rounded-pill-start input {
+    border-top-left-radius: 50rem !important;
+    border-bottom-left-radius: 50rem !important;
+}
+
+.hero-section .rounded-pill-end input,
+.hero-section .rounded-pill-end .btn {
+    border-top-right-radius: 50rem !important;
+    border-bottom-right-radius: 50rem !important;
+}
+
+.hero-section .input-group-text {
+    background-color: var(--bs-body-bg) !important;
+}
+
+/* 5. CARDS DE RESTAURANTES */
+.restaurant-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+    background: var(--bs-card-bg);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 1rem 2rem rgba(220, 53, 69, 0.15);
+}
+
+.restaurant-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.restaurant-card:hover img {
+    transform: scale(1.05);
+}
+
+/* 6. FILTROS */
+.filter-btn {
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.25);
+}
+
+.btn-group .rounded-pill-start {
+    border-top-left-radius: 50rem !important;
+    border-bottom-left-radius: 50rem !important;
+}
+
+.btn-group .rounded-pill-end {
+    border-top-right-radius: 50rem !important;
+    border-bottom-right-radius: 50rem !important;
+}
+
+/* 7. FORMULÁRIOS */
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Select personalizado */
+select.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23dc3545' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+/* 8. BOTÕES */
+.btn-delivery {
+    background: linear-gradient(45deg, #a71d2a, #dc3545);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-delivery:hover {
+    background: linear-gradient(45deg, #a71d2a, #dc3545);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(172, 19, 19, 0.2);
+    color: white;
+}
+
+.btn-partner {
+    background: linear-gradient(135deg, var(--bs-success) 0%, #1e7e34 100%);
+    border: none;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+}
+
+.btn-partner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4);
+    color: white;
+}
+
+/* 9. NOVAS FUNCIONALIDADES */
+
+/* Sistema de Localização */
+.location-alert {
+    border-radius: 0.75rem;
+    border: 1px solid var(--bs-info-border-subtle);
+    background: var(--bs-info-bg-subtle);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.location-badge {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Status de Rede */
+.network-status {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1060;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease-out;
+    min-width: 300px;
+    text-align: center;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sistema de Estrelas */
+.star-rating {
+    display: inline-flex;
+    gap: 0.25rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: var(--bs-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star:hover,
+.star.text-warning {
+    color: #ffc107 !important;
+    transform: scale(1.2);
+}
+
+/* Animações de Contagem */
+.counter {
+    font-weight: 700;
+
+}
+
+.counter-animation {
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção Parceiro */
+.partner-section {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, var(--bs-body-bg) 100%);
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-benefits li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bs-border-color-translucent);
+}
+
+.partner-benefits li:last-child {
+    border-bottom: none;
+}
+
+.partner-benefits .bi-check-circle-fill {
+    font-size: 1.1rem;
+    color: var(--bs-success);
+}
+
+/* Modais Personalizados */
+.modal-restaurant .modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.modal-restaurant .restaurant-image {
+    border-radius: 0.75rem;
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* 10. FOOTER */
+footer {
+    border-radius: 1rem 1rem 0 0;
+    background: var(--bs-body-bg);
+}
+
+.footer-social a {
+    transition: color 0.2s;
+    color: var(--bs-secondary-color);
+}
+
+.footer-social a:hover {
+    color: #dc3545 !important;
+}
+
+/* 11. DARK MODE */
+[data-bs-theme="dark"] body {
+    background: #181a1b !important;
+    color: #f1f1f1 !important;
+}
+
+[data-bs-theme="dark"] .hero-section {
+    background: linear-gradient(120deg, #232526 60%, #414345 100%);
+    color: #f1f1f1;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .card-footer,
+[data-bs-theme="dark"] .navbar,
+[data-bs-theme="dark"] footer {
+    background: #232526 !important;
+    color: #f1f1f1 !important;
+    border-color: #333 !important;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .input-group-text,
+[data-bs-theme="dark"] .bg-body-tertiary {
+    background-color: #2b2e30 !important;
+    color: #f1f1f1 !important;
+    border-color: #333 !important;
+}
+
+[data-bs-theme="dark"] .restaurant-card:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+[data-bs-theme="dark"] .text-muted,
+[data-bs-theme="dark"] .link-secondary {
+    color: #aaa !important;
+}
+
+[data-bs-theme="dark"] .text-delivery {
+    color: #dc3545 !important;
+}
+
+/* Dark Mode para Novos Componentes */
+[data-bs-theme="dark"] .partner-section {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.15) 0%, var(--darker-bg) 100%);
+}
+
+[data-bs-theme="dark"] .star {
+    color: #666;
+}
+
+[data-bs-theme="dark"] .star:hover,
+[data-bs-theme="dark"] .star.text-warning {
+    color: #ffc107 !important;
+}
+
+/* 12. RESPONSIVIDADE */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .navbar-nav .btn {
+        width: 100%;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-section {
+        padding-top: 6rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-restaurant .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .modal-restaurant .restaurant-image {
+        height: 200px;
+    }
+    
+    .network-status {
+        min-width: calc(100% - 2rem);
+        right: 1rem;
+        left: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem !important;
+    }
+
+    .restaurant-card img {
+        height: 140px;
+    }
+    
+    .star-rating .star {
+        font-size: 1.25rem;
+    }
+}
+
+/* 13. UTILITÁRIOS */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================== */
+/* CAROUSEL DE COMIDAS */
+/* ================================== */
+
+.food-carousel-section {
+     position: relative;
+}
+
+.food-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.carousel-image {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem;
+}
+
+.carousel-caption {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.carousel-caption h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-size: 1.5rem 1.5rem;
+}
+
+/* Ícones das categorias */
+.food-category-icon {
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.food-category-icon:hover {
+    transform: translateY(-5px);
+    background: rgba(220, 53, 69, 0.2);
+}
+
+/* Efeito de brilho nos slides */
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(220, 53, 69, 0.1), transparent);
+    border-radius: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animações personalizadas */
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active img {
+    transform: scale(1.02);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 300px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 1rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-image {
+        height: 250px;
+    }
+    
+    .carousel-caption {
+        padding: 1rem;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .food-category-icon {
+        padding: 0.75rem;
+    }
+    
+    .food-category-icon i {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Dark Mode para o Carousel */
+[data-bs-theme="dark"] .food-carousel-section {
+ background: #232526 !important;
+}
+
+[data-bs-theme="dark"] .carousel-caption {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+[data-bs-theme="dark"] .food-category-icon:hover {
+    background: rgba(220, 53, 69, 0.3);
+}

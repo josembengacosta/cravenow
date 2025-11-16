@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="DeliveryHJ Team" />
+    <meta name="description"
+        content="DeliveryHJ - Plataforma de delivery que reúne os melhores restaurantes de Angola. Encomende pizza, sushi, comida tradicional e churrascaria com entrega rápida." />
+    <meta name="keywords"
+        content="delivery, restaurantes, comida, encomenda, pizza, sushi, churrascaria, comida tradicional, Angola, Luanda, Viana" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#dc3545" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="DeliveryHJ - Sabor em Angola | Entrega de Comida" />
+    <meta property="og:description"
+        content="Encomende comida online em Luanda e toda Angola. Centenas de restaurantes com avaliações reais. Entrega rápida e segura." />
+    <meta property="og:url" content="https://deliveryhj.rf.gd/" />
+    <meta property="og:site_name" content="DeliveryHJ" />
+    <meta property="og:image" content="https://deliveryhj.rf.gd/assets/img/og-deliveryhj.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_AO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DeliveryHJ - Sabor em Angola" />
+    <meta name="twitter:description" content="Entrega de comida dos melhores restaurantes angolanos" />
+
+    <title>DeliveryHJ - Entrega de Comida | Cadastrar-se</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/img/icones/deliveryhj.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../css/delivery.css" />
+    <link rel="preload" href="../css/delivery.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "DeliveryHJ",
+        "description": "Plataforma de delivery de comida em Angola",
+        "url": "https://deliveryhj.rf.gd",
+        "servesCuisine": ["Angolana", "Italiana", "Japonesa", "Brasileira"],
+        "areaServed": "Angola",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AO"
+        }
+      }
+    </script>
+
+    <!-- Loading Script -->
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                document.querySelector("body").classList.add("loaded");
+                document.getElementById("loadingBar").style.width = "100%";
+            }, 500);
+        });
+    </script>
+
+    <style>
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            margin: auto;
+        }
+
+        .btn-DeliveryHJ {
+            background: linear-gradient(45deg, #a71d2a, #a71d2a);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 7px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-DeliveryHJ:hover {
+            background: linear-gradient(45deg, #dc3545, #a71d2a);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(172, 19, 19, 0.2);
+            color: white;
+        }
+        #password_strength {
+            height: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+          select.form-control {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 16px;
+            padding-right: 2rem;
+        }
+    </style>
+</head>
+
+<!-- <div id="networkStatus"
+      class="alert alert-warning alert-dismissible fade show d-none position-fixed top-0 start-50 translate-middle-x mt-2"
+      style="z-index: 1060;">
+      <i class="bi bi-wifi-off"></i> <span id="networkMessage">Sem conexão á internet</span>
+    </div> -->
+
+<body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+    <!-- Loading Progress -->
+    <div class="progress fixed-top rounded-0" style="height: 3px; z-index: 1050">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+            aria-valuemax="100" id="loadingBar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+        <div class="loading-logo">
+            <div class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Delivery<span class="text-dark">HJ</span>
+            </div>
+            <div class="spinner-border text-danger mt-3" role="status">
+                <span class="visually-hidden">A carregar...</span>
+            </div>
+        </div>
+    </div>
+    <main class="content">
+        <div class="container-fluid p-0">
+          <section class="py-3 py-lg-4">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-6 col-md-8 col-12 text-center m-auto mt-5">
+                        <a class="fw-bold fs-4 text-danger" href="../index.html" itemprop="url">
+                            <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                            Delivery<span class="text-dark">HJ</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-6 col-md-8 col-11 m-auto">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <form method="POST" action="register_process.php" class="needs-validation"
+                                    id="validation-form" novalidate>
+                                    <input type="hidden" name="csrf_token"
+                                        value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                    <input type="text" name="hairypot" style="display: none;" value="">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-2">
+                                            <label for="fullname_user" class="form-label">Nome Completo <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="text" minlength="6" maxlength="100"
+                                                    placeholder="Insira o seu nome" class="form-control" autocomplete="off"
+                                                    id="fullname_user" autofocus name="fullname_user" required
+                                                    aria-describedby="NameHelp">
+                                                <span class="input-group-text"><i data-feather="user"></i></span>
+                                                <div class="invalid-feedback">Por favor, insira um nome válido (mínimo 6
+                                                    caracteres).</div>
+                                            </div>
+                                            <div id="NameHelp" class="form-text">Qual é o seu nome?.</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="email" class="form-label">E-mail <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="email" maxlength="60" placeholder="seu.email@exemplo.com"
+                                                    class="form-control" autocomplete="email" id="email" required
+                                                    name="email_user">
+                                                <span class="input-group-text"><i data-feather="mail"></i></span>
+                                                <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="tel" class="form-label">Telefone <span
+                                                    class="text-muted">(opcional)</span></label>
+                                            <div class="input-group">
+                                                <input type="tel" maxlength="18" placeholder="+244 9xx xxx xxx"
+                                                    class="form-control" autocomplete="tel" id="tel" name="tel_user"
+                                                    list="tel_codes">
+                                                <span class="input-group-text"><i data-feather="phone"></i></span>
+                                                <datalist id="tel_codes">
+                                                    <option value="+93">Afeganistão
+                                                    </option>
+                                                    <option value="+27">África do
+                                                        Sul</option>
+                                                    <option value="+247">Ascensão
+                                                    </option>
+                                                    <option value="+355">Albânia
+                                                    </option>
+                                                    <option value="+49">Alemanha
+                                                    </option>
+                                                    <option value="+376">Andorra
+                                                    </option>
+                                                    <option value="+244">Angola
+                                                    </option>
+                                                    <option value="+1">Anguilla
+                                                    </option>
+                                                    <option value="+1">Antígua e
+                                                        Barbuda</option>
+                                                    <option value="+966">Arábia
+                                                        Saudita</option>
+                                                    <option value="+213">Argélia
+                                                    </option>
+                                                    <option value="+54">Argentina
+                                                    </option>
+                                                    <option value="+374">Arménia
+                                                    </option>
+                                                    <option value="+994">Azerbaijão
+                                                    </option>
+                                                    <option value="+599"> Antilhas
+                                                        Holandesas</option>
+                                                    <option value="+994">Azerbaijão
+                                                    </option>
+                                                    <option value="+297">Aruba
+                                                    </option>
+                                                    <option value="+61">Austrália
+                                                    </option>
+                                                    <option value="+1">Bahamas
+                                                    </option>
+                                                    <option value="+880">Bangladesh
+                                                    </option>
+                                                    <option value="+1">Barbados
+                                                    </option>
+                                                    <option valeu=" ">Barém</option>
+                                                    <option value="+32">Bélgica
+                                                    </option>
+                                                    <option value="+501">Belize
+                                                    </option>
+                                                    <option valeu="+229">Benim
+                                                    </option>
+                                                    <option value="+1">Bermudas
+                                                    </option>
+                                                    <option value="+375">
+                                                        Bielorrússia</option>
+                                                    <option value="+973">Bahrein
+                                                    </option>
+                                                    <option value="+591">Bolívia e
+                                                        Herzegovina</option>
+                                                    <option value="+387">Bósnia
+                                                    </option>
+                                                    <option value="+267">Botsuana
+                                                    </option>
+                                                    <option value="+55">Brasil
+                                                    </option>
+                                                    <option value="+673">Brunei
+                                                    </option>
+                                                    <option value="+359">Bulgária
+                                                    </option>
+                                                    <option value="+226">Burquina
+                                                        Faso</option>
+                                                    <option value="+257">Burundi
+                                                    </option>
+                                                    <option value="+975">Butão
+                                                    </option>
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="country" class="form-label">País <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control" id="country" required name="country_user"
+                                                autocomplete="country-name">
+                                                <option value="" disabled selected>Selecione seu país</option>
+                                                <option>Afeganistão</option>
+                                                <option>Alanda</option>
+                                                <option>Albânia</option>
+                                                <option>África do Sul</option>
+                                                <option>Alemanha</option>
+                                                <option>Andorra</option>
+                                                <option>Angola</option>
+                                                <option>Anguilla</option>
+                                                <option>Antígua</option>
+                                                <option>Arábia Saudita</option>
+                                                <option>Argélia</option>
+                                                <option>Argentina</option>
+                                                <option>Arménia</option>
+                                                <option>Azerbaijão</option>
+                                                <option>Aruba</option>
+                                                <option>Austrália</option>
+                                                <option>Bahamas</option>
+                                                <option>Barbuda</option>
+                                                <option>Bangladesh</option>
+                                                <option>Barbados</option>
+                                                <option>Barém</option>
+                                                <option>Bélgica</option>
+                                                <option>Belize</option>
+                                                <option>Benim</option>
+                                                <option>Bermudas</option>
+                                                <option>Bielorrússia</option>
+                                                <option>Bolívia</option>
+                                                <option>Bósnia</option>
+                                                <option>Botsuana</option>
+                                                <option>Brasil</option>
+                                                <option>Brunei</option>
+                                                <option>Bulgária</option>
+                                                <option>Burquina Faso</option>
+                                                <option>Burundi</option>
+                                                <option>Butão</option>
+                                                <option>Cabo Verde</option>
+                                                <option>Camerões</option>
+                                                <option>Camboia</option>
+                                                <option>Camboja</option>
+                                                <option>Canadá</option>
+                                                <option>Catar</option>
+                                                <option>Caicos</option>
+                                                <option>Cazaquistão</option>
+                                                <option>Chade</option>
+                                                <option>Chile</option>
+                                                <option>Cidade do Vaticano</option>
+                                                <option>Colômbia</option>
+                                                <option>Comores</option>
+                                                <option>Congo-Brazzaville</option>
+                                                <option>Congo-Kinshasa</option>
+                                                <option>Coreia do Norte</option>
+                                                <option>Coreia do Sul</option>
+                                                <option>Costa do Marfim</option>
+                                                <option>Costa Rica</option>
+                                                <option>Croácia</option>
+                                                <option>Cuba</option>
+                                                <option>Curaçau</option>
+                                                <option>Dinamarca</option>
+                                                <option>Domínica</option>
+                                                <option>Egito</option>
+                                                <option>Emirados Árabes Unidos</option>
+                                                <option>Equador</option>
+                                                <option>Eritreia</option>
+                                                <option>Eslováquia</option>
+                                                <option>Eslovénia</option>
+                                                <option>Espanha</option>
+                                                <option>Estados Unidos</option>
+                                                <option>Estónia</option>
+                                                <option>Etiópia</option>
+                                                <option>Fiji</option>
+                                                <option>Filipinas</option>
+                                                <option>Finlândia</option>
+                                                <option>França</option>
+                                                <option>Gabão</option>
+                                                <option>Gâmbia</option>
+                                                <option>Gana</option>
+                                                <option>Geórgia</option>
+                                                <option>Gibraltar</option>
+                                                <option>Granada</option>
+                                                <option>Grécia</option>
+                                                <option>Gronelândia</option>
+                                                <option>Guadalupe</option>
+                                                <option>Guame</option>
+                                                <option>Guatemala</option>
+                                                <option>Guernsey</option>
+                                                <option>Guiana</option>
+                                                <option>Guiana Francesa</option>
+                                                <option>Guiné</option>
+                                                <option>Guiné Equatorial</option>
+                                                <option>Guiné-Bissau</option>
+                                                <option>Haiti</option>
+                                                <option>Honduras</option>
+                                                <option>Hong Kong</option>
+                                                <option>Hungria</option>
+                                                <option>Lémen</option>
+                                                <option>Ilhas de Ascensão</option>
+                                                <option>Ilha de Man</option>
+                                                <option>Ilha Natal</option>
+                                                <option>Ilha Norfolk</option>
+                                                <option>Ilhas Caimão</option>
+                                                <option>Ilhas Cook</option>
+                                                <option>Ilhas dos Cocos(Keeling)</option>
+                                                <option>Ilhas Faroé</option>
+                                                <option>Ilhas Malvinas</option>
+                                                <option>Ilhas Marshall</option>
+                                                <option>Ilhas Salomão</option>
+                                                <option>Ilhas Turcas</option>
+                                                <option>Ilhas Virgens Britânicas</option>
+                                                <option>Ilhas Virgens dos EUA</option>
+                                                <option>Índia</option>
+                                                <option>Indonésia</option>
+                                                <option>Irão</option>
+                                                <option>Iraque</option>
+                                                <option>Irlanda</option>
+                                                <option>Islândia</option>
+                                                <option>Israel</option>
+                                                <option>Itália</option>
+                                                <option>Jamaica</option>
+                                                <option>Japão</option>
+                                                <option>Jersey</option>
+                                                <option>Jibute</option>
+                                                <option>Jordânia</option>
+                                                <option>Kosovo</option>
+                                                <option>Kuwait</option>
+                                                <option>Laos</option>
+                                                <option>Lesoto</option>
+                                                <option>Letónia</option>
+                                                <option>Líbano</option>
+                                                <option>Libéria</option>
+                                                <option>Líbia</option>
+                                                <option>Listenstaine</option>
+                                                <option>Lituânia</option>
+                                                <option>Luxemburgo</option>
+                                                <option>Macau</option>
+                                                <option>Macedónia(ARJM)</option>
+                                                <option>Madagáscar</option>
+                                                <option>Maiote</option>
+                                                <option>Malásia</option>
+                                                <option>Maláui</option>
+                                                <option>Maldivas</option>
+                                                <option>Mali</option>
+                                                <option>Malta</option>
+                                                <option>Marrocos</option>
+                                                <option>Martinica</option>
+                                                <option>Maurício</option>
+                                                <option>Mauritânia</option>
+                                                <option>México</option>
+                                                <option>Mianmar (Birmânia)</option>
+                                                <option>Micronésia</option>
+                                                <option>Moçambique</option>
+                                                <option>Moldávia</option>
+                                                <option>Mónaco</option>
+                                                <option>Mongólia</option>
+                                                <option>Monserrate</option>
+                                                <option>Montenegro</option>
+                                                <option>Namíbia</option>
+                                                <option>Nauru</option>
+                                                <option>Nepal</option>
+                                                <option>Nicarágua</option>
+                                                <option>Níger</option>
+                                                <option>Nigéria</option>
+                                                <option>Niue</option>
+                                                <option>Noruega</option>
+                                                <option>Nova Caledónia</option>
+                                                <option>Nova Zelândia</option>
+                                                <option>Omã</option>
+                                                <option>Países Baixos</option>
+                                                <option>Países Baixos Caribenhos</option>
+                                                <option>Palau</option>
+                                                <option>Panamá</option>
+                                                <option>Papua-Nova Guiné</option>
+                                                <option>Paquistão</option>
+                                                <option>Paraguai</option>
+                                                <option>Peru</option>
+                                                <option>Polinésia Francesa</option>
+                                                <option>Polónia</option>
+                                                <option>Porto Rico</option>
+                                                <option>Portugal</option>
+                                                <option>Quénia</option>
+                                                <option>Quirguistão</option>
+                                                <option>Quiribati</option>
+                                                <option>Reino Unido</option>
+                                                <option>República Centro-Africa</option>
+                                                <option>República Checa</option>
+                                                <option>República Dominicana</option>
+                                                <option>Reunião</option>
+                                                <option>Romênia</option>
+                                                <option>Ruanda</option>
+                                                <option>Saara Ocidental</option>
+                                                <option>Salvador</option>
+                                                <option>Samoa</option>
+                                                <option>Samoa Americana</option>
+                                                <option>Santa Helena</option>
+                                                <option>Santa Lúcia</option>
+                                                <option>São Bartolomeu</option>
+                                                <option>São Cristóvão e Neves</option>
+                                                <option>São Marinho</option>
+                                                <option>São Martinho</option>
+                                                <option>São Tomé e Príncipe</option>
+                                                <option>São Vicente</option>
+                                                <option>Seicheles</option>
+                                                <option>Senegal</option>
+                                                <option>Serra Leoa</option>
+                                                <option>Sérvia</option>
+                                                <option>Singapura</option>
+                                                <option>Síria</option>
+                                                <option>Somália</option>
+                                                <option>Sri Lanka</option>
+                                                <option>Suazilândia</option>
+                                                <option>Sudão</option>
+                                                <option>Sudão do Sul</option>
+                                                <option>Suécia</option>
+                                                <option>Suriname</option>
+                                                <option>Svalbard</option>
+                                                <option>Tailândia</option>
+                                                <option>Taiwan</option>
+                                                <option>Tajiquistão</option>
+                                                <option>Tanzânia</option>
+                                                <option>Território Britânico do Oceano Índico</option>
+                                                <option>Território Palestinianos</option>
+                                                <option>Timor-Leste</option>
+                                                <option>Togo</option>
+                                                <option>Tonga</option>
+                                                <option>Toquelau</option>
+                                                <option>Trindade</option>
+                                                <option>Tobago</option>
+                                                <option>Tristão da Cunha</option>
+                                                <option>Tunísia</option>
+                                                <option>Turquia</option>
+                                                <option>Turquemenistão</option>
+                                                <option>Tuvalu</option>
+                                                <option>Ucrânia</option>
+                                                <option>Uruguai</option>
+                                                <option>Usbequistão</option>
+                                                <option>Vanuatu</option>
+                                                <option>Venezuela</option>
+                                                <option>Vietname</option>
+                                                <option>Wallis</option>
+                                                <option>Zâmbia</option>
+                                                <option>Zimbábue</option>
+                                                <div class="invalid-feedback">Por favor, selecione um país.</div>
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="city" class="form-label">Cidade <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="text" maxlength="60" placeholder="Sua cidade"
+                                                    class="form-control" autocomplete="address-level2" id="city"
+                                                    required name="city">
+                                                <span class="input-group-text"><i data-feather="map-pin"></i></span>
+                                                <div class="invalid-feedback">Por favor, insira sua cidade.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="password" class="form-label">Senha <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" autocomplete="new-password"
+                                                    placeholder="Crie uma senha" name="password_user" required minlength="8"
+                                                    maxlength="60" id="password" onkeyup="checkPasswordStrength()">
+                                                <button type="button" class="btn btn-sm btn-outline-danger"
+                                                    id="show_password" aria-label="Mostrar senha"
+                                                    onclick="togglePassword()"><i data-feather="eye"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger"
+                                                    id="hide_password" aria-label="Esconder senha"
+                                                    style="display: none;" onclick="togglePassword()"><i
+                                                        data-feather="eye-off"></i></button>
+                                                <div class="invalid-feedback">A senha deve ter no mínimo 8 caracteres.
+                                                </div>
+                                            </div>
+                                            <div id="password_strength"></div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="confirm_password" class="form-label">Confirmar senha <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" autocomplete="new-password"
+                                                    placeholder="Confirme a senha" name="confirm_password" required
+                                                    minlength="8" maxlength="60" id="confirm_password">
+                                                <div class="invalid-feedback">As senhas não coincidem.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="terms_agree" required id="terms_agree">
+                                            <label class="form-check-label" for="terms_agree">Li e concordo com os<small>
+                                                 <a
+                                                        href="#terms" data-bs-toggle="modal" data-bs-target="#terms"
+                                                        style="color: #a71d2a;">termos de uso</a>
+                                            </small>.</label>
+                                            <div class="invalid-feedback">Você deve concordar com os termos.</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid mb-3">
+                                        <button class="btn btn-sm btn-delivery" type="submit">Criar conta</button>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="text-sm text-muted">Já tem uma conta? <a href="login.html"
+                                                style="color: #a71d2a;">Faça login</a>.</span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                    <small>
+                                        <a href="#terms" class="text-decoration-none me-2"
+                                            style="color: #a71d2a">Termos</a>|
+                                    </small>
+                                    <small>
+                                        <a href="#privacy" class="text-decoration-none me-2"
+                                            style="color: #a71d2a">Privacidade</a>|
+                                    </small>
+                                    <small>
+                                        <a href="../index.html" class="text-muted text-decoration-none">Voltar
+                                            para início</a>
+                                    </small>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/validacao.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/delivery.js"></script>
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => document.body.classList.add("loaded"), 300);
+        });
+        function togglePassword() {
+            const password = document.getElementById("password");
+            const show = document.getElementById("show_password");
+            const hide = document.getElementById("hide_password");
+            if (password.type === "password") {
+                password.type = "text";
+                show.style.display = "none";
+                hide.style.display = "block";
+            } else {
+                password.type = "password";
+                hide.style.display = "none";
+                show.style.display = "block";
+            }
+        }
+        function checkPasswordStrength() {
+            const password = document.getElementById("password").value;
+            const progress = document.getElementById("password_strength");
+            let strength = 0;
+            if (password.length >= 8) strength += 30;
+            if (/[A-Z]/.test(password)) strength += 20;
+            if (/[0-9]/.test(password)) strength += 20;
+            if (/[^0-9A-Za-z]/.test(password)) strength += 30;
+            strength = Math.min(strength, 100);
+            progress.style.display = "block";
+            progress.style.width = strength + "%";
+            progress.style.backgroundColor = strength >= 80 ? "#28a745" : strength >= 50 ? "#ffc107" : "#dc3545";
+        }
+        $(document).ready(() => {
+            $("#validation-form").validate({
+                rules: {
+                    full_name: { required: true, minlength: 6, maxlength: 100 },
+                    email: { required: true, email: true, maxlength: 60 },
+                    country: { required: true },
+                    city: { required: true, maxlength: 60 },
+                    password: { required: true, minlength: 8, maxlength: 60 },
+                    confirm_password: { required: true, equalTo: "#password" },
+                    terms_agree: { required: true }
+                },
+                messages: {
+                    full_name: {
+                        required: "Por favor, insira seu nome completo.",
+                        minlength: "O nome deve ter pelo menos 6 caracteres.",
+                        maxlength: "O nome não pode exceder 100 caracteres."
+                    },
+                    email: {
+                        required: "Por favor, insira seu e-mail.",
+                        email: "Por favor, insira um e-mail válido."
+                    },
+                    country: "Por favor, selecione seu país.",
+                    city: {
+                        required: "Por favor, insira sua cidade.",
+                        maxlength: "A cidade não pode exceder 60 caracteres."
+                    },
+                    password: {
+                        required: "Por favor, crie uma senha.",
+                        minlength: "A senha deve ter pelo menos 8 caracteres."
+                    },
+                    confirm_password: {
+                        required: "Por favor, confirme sua senha.",
+                        equalTo: "As senhas não coincidem."
+                    },
+                    terms_agree: "Você deve concordar com os termos de uso."
+                },
+                errorPlacement: (error, element) => {
+                    if (element.attr("type") === "checkbox") {
+                        error.insertAfter(element.parent());
+                    } else {
+                        error.insertAfter(element.parent());
+                    }
+                },
+                highlight: (element) => {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: (element) => {
+                    $(element).removeClass("is-invalid").addClass("is-valid");
+                }
+            });
+            $("#email").on("input", function () {
+                if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value)) {
+                    $(this).addClass("is-valid").removeClass("is-invalid");
+                } else {
+                    $(this).addClass("is-invalid").removeClass("is-valid");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

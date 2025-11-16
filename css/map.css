@@ -1,0 +1,201 @@
+   /* ================================== */
+/* MAPA DE RESTAURANTES */
+/* ================================== */
+
+.restaurant-map-section {
+    background: linear-gradient(135deg, #FEFEFE 0%, #e9ecef 100%);
+}
+
+/* Container do Mapa */
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#restaurantMap {
+    height: 600px;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Overlay de Loading */
+.map-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Painel de Controlo */
+.map-controls-card {
+    border-radius: 1rem;
+}
+
+.current-location-widget {
+    border-left: 4px solid #dc3545;
+}
+
+.map-stats {
+    border-left: 4px solid #28a745;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Marcadores Personalizados do Mapa */
+.restaurant-marker {
+    background: #dc3545;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.restaurant-marker:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
+/* Popup do Mapa Personalizado */
+.leaflet-popup-content-wrapper {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    min-width: 250px;
+}
+
+.restaurant-popup {
+    text-align: center;
+}
+
+.restaurant-popup img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+}
+
+.restaurant-popup h5 {
+    color: #dc3545;
+    margin-bottom: 5px;
+}
+
+.restaurant-popup .rating {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.restaurant-popup .delivery-info {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+}
+
+/* Lista Mobile */
+.restaurants-mobile-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.restaurant-mobile-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+    transition: background-color 0.2s ease;
+}
+
+.restaurant-mobile-item:last-child {
+    border-bottom: none;
+}
+
+.restaurant-mobile-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Ações do Mapa */
+.map-actions .btn {
+    margin-left: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 991.98px) {
+    #restaurantMap {
+        height: 400px;
+    }
+    
+    .map-controls-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #restaurantMap {
+        height: 350px;
+    }
+    
+    .map-actions {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .map-actions .btn {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #restaurantMap {
+        height: 300px;
+    }
+    
+    .restaurant-popup {
+        min-width: 200px;
+    }
+}
+
+/* Dark Mode para o Mapa */
+[data-bs-theme="dark"] .restaurant-map-section {
+     background: #232526 !important;
+}
+
+[data-bs-theme="dark"] .map-controls-card {
+    background: #2d3748;
+}
+
+[data-bs-theme="dark"] .current-location-widget,
+[data-bs-theme="dark"] .map-stats {
+    background: #4a5568;
+    color: #232526;
+}
+
+[data-bs-theme="dark"] .leaflet-popup-content-wrapper {
+    background: #2d3748;
+    color: #232526;
+}
+
+[data-bs-theme="dark"] .restaurant-popup .delivery-info {
+    background: #4a5568;
+    color: #232526;
+}
+
+/* Ajustes para tiles do mapa no dark mode */
+[data-bs-theme="dark"] .leaflet-layer,
+[data-bs-theme="dark"] .leaflet-control-zoom-in,
+[data-bs-theme="dark"] .leaflet-control-zoom-out,
+[data-bs-theme="dark"] .leaflet-control-attribution {
+    filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+}
