@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="DeliveryHJ - Promoções exclusivas e ofertas especiais em comida delivery em Angola. Descontos, cupons e combos promocionais." />
+        <meta name="keywords"
+            content="promoções, descontos, ofertas, cupons, combos, delivery Angola, comida barata" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="DeliveryHJ - Promoções Exclusivas" />
+        <meta property="og:description"
+            content="Aproveite nossas promoções especiais e descontos em comida delivery em Angola." />
+        <meta property="og:url" content="https://deliveryhj.rf.gd/promocoes" />
+        <meta property="og:site_name" content="DeliveryHJ" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_AO" />
+
+        <title>DeliveryHJ - Promoções | Ofertas Especiais e Descontos</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../assets/img/icones/deliveryhj.png"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../css/delivery.css" />
+        <link rel="preload" href="../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <style>
+        .promo-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+            box-shadow: 0 10px 25px rgba(220, 53, 69, 0.15);
+        }
+        
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 2;
+        }
+        
+        .promo-ribbon {
+            position: absolute;
+            top: 15px;
+            left: -35px;
+            background: #dc3545;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .discount-badge {
+            background: linear-gradient(135deg, #dc3545, #e35d6a);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+        
+        .category-filter {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .category-filter.active {
+            border-color: #dc3545;
+            background-color: rgba(220, 53, 69, 0.05);
+        }
+        
+        .promo-category-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .promo-category-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+        }
+        
+        .category-badge {
+            font-size: 0.7rem;
+        }
+        
+        .coupon-code {
+            background: repeating-linear-gradient(
+                45deg,
+                #fffbf0,
+                #fffbf0 10px,
+                #fff8e1 10px,
+                #fff8e1 20px
+            );
+            border: 2px dashed #ffc107;
+            padding: 1rem;
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .coupon-code:hover {
+            transform: scale(1.05);
+            background: repeating-linear-gradient(
+                45deg,
+                #fff8e1,
+                #fff8e1 10px,
+                #fffbf0 10px,
+                #fffbf0 20px
+            );
+        }
+        
+        .exclusive-banner {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8b6914;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .promo-stats {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        
+        .featured-promo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-animate {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .view-toggle .btn.active {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+
+        <!-- Loading Script -->
+        <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+    </head>
+
+    <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+        <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Navigation -->
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <!-- Logo -->
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../index.html"
+                    itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Cart Mobile -->
+                    <a
+                        class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                        href="cart.html"
+                        aria-label="Carrinho de compras">
+                        <i class="bi bi-cart4" aria-hidden="true"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartCountMobile">0</span>
+                            <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Location Badge -->
+                <div class="navbar-text mx-3 d-none d-lg-block">
+                    <span class="badge bg-light text-danger cursor-pointer"
+                        data-bs-toggle="modal" data-bs-target="#locationModal">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span id="currentLocation"
+                            class="text-secondary">Luanda</span>
+                    </span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- Cart Desktop -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link position-relative fw-bold"
+                                href="../pages/cart.html">
+                                <i class="bi bi-cart4" aria-hidden="true"></i>
+                                Carrinho
+                                <span
+                                    class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                                    <span id="cartCountDesktop">0</span>
+                                    <span class="visually-hidden">itens no
+                                        carrinho</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Main Navigation -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="bi bi-house" aria-hidden="true"></i>
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/restaurant.html">
+                                <i class="bi bi-shop" aria-hidden="true"></i>
+                                Restaurantes
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
+                                Descobrir
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/discover/category.html">
+                                        <i class="bi bi-grid-3x3-gap"></i>
+                                        Categorias
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/discover/culinaria-tradicional.html">
+                                        <i class="bi bi-egg-fried"></i>
+                                        Culinária Tradicional
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/discover/most-restaurant.html">
+                                        <i class="bi bi-star"></i> Mais
+                                        Populares
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/discover/new-restaurant.html">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                        Novos na Plataforma
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Support Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-question-circle"
+                                    aria-hidden="true"></i> Ajuda
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/support/help.html">
+                                        <i class="bi bi-life-preserver"></i>
+                                        Centro de Ajuda
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/support/guide.html">
+                                        <i class="bi bi-play-circle"></i> Como
+                                        Pedir
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/support/faq.html">
+                                        <i class="bi bi-patch-question"></i> FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/support/contact.html">
+                                        <i class="bi bi-chat-dots"></i>
+                                        Contactar Suporte
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"
+                                    aria-hidden="true"></i> Empresa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/enterprise/about.html">
+                                        <i class="bi bi-building"></i> Sobre Nós
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/enterprise/career.html">
+                                        <i class="bi bi-briefcase"></i>
+                                        Carreiras
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/enterprise/enterprise.html">
+                                        <i class="bi bi-newspaper"></i> Imprensa
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/enterprise/blog.html">
+                                        <i class="bi bi-journal-text"></i> Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Legal Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-shield-check"
+                                    aria-hidden="true"></i> Legal
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/legal/terms.html">
+                                        <i class="bi bi-file-text"></i> Termos
+                                        de Uso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/legal/privacy.html">
+                                        <i class="bi bi-lock"></i> Política de
+                                        Privacidade
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/legal/cookies.html">
+                                        <i class="bi bi-bricks"></i> Política de
+                                        Cookies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/legal/security.html">
+                                        <i class="bi bi-shield-check"></i>
+                                        Segurança
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons -->
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person" aria-hidden="true"></i>
+                                Minha Conta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/login.html">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Entrar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/register.html">
+                                        <i class="bi bi-person-plus"></i>
+                                        Registar
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/profile.html">
+                                        <i class="bi bi-person-circle"></i> Meu
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../pages/restaurant/request.html">
+                                        <i class="bi bi-bag-check"></i> Meus
+                                        Pedidos
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons Desktop -->
+                        <li
+                            class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../authentic/login.html" role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+                            <a class="btn btn-danger m-1"
+                                href="../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Location Modal -->
+        <div class="modal fade" id="locationModal" tabindex="-1"
+            aria-labelledby="locationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="locationModalLabel">
+                            <i class="bi bi-geo-alt-fill text-danger"></i>
+                            Alterar Localização
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="provinceSelect"
+                                class="form-label">Província</label>
+                            <select class="form-select" id="provinceSelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="benguela">Benguela</option>
+                                <option value="huila">Huíla</option>
+                                <option value="cabinda">Cabinda</option>
+                                <option value="huambo">Huambo</option>
+                                <option value="malanje">Malanje</option>
+                                <!-- Add all 18 provinces -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipalitySelect"
+                                class="form-label">Município</label>
+                            <select class="form-select" id="municipalitySelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="viana">Viana</option>
+                                <option value="cacuaco">Cacuaco</option>
+                                <option value="cazenga">Cazenga</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                id="detectLocation" />
+                            <label class="form-check-label"
+                                for="detectLocation">
+                                Detetar minha localização automaticamente
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                            id="saveLocation">
+                            Guardar Localização
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container py-5 mt-5">
+            <!-- Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div
+                        class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="display-5 fw-bold text-danger mb-2">
+                                <i class="bi bi-percent"></i>
+                                Promoções
+                            </h1>
+                            <p class="lead text-muted mb-0">
+                                Aproveite descontos exclusivos e ofertas
+                                especiais
+                            </p>
+                        </div>
+                        <div class="view-toggle">
+                            <div class="btn-group" role="group">
+                                <button type="button"
+                                    class="btn btn-outline-danger active"
+                                    id="gridView">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-danger"
+                                    id="listView">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Promotion -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="featured-promo p-4 position-relative">
+                        <div class="promo-ribbon">MAIS POPULAR</div>
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h2 class="fw-bold mb-3">Primeiro Pedido?</h2>
+                                <h3 class="display-6 fw-bold mb-3">30% DE
+                                    DESCONTO</h3>
+                                <p class="mb-4">Use o código abaixo no seu
+                                    primeiro pedido e aproveite 30% de desconto
+                                    em qualquer restaurante parceiro</p>
+
+                                <div class="coupon-code mb-4 text-black"
+                                    onclick="copyCouponCode('PRIMEIRO30')">
+                                    <span id="couponText">PRIMEIRO30</span>
+                                    <small
+                                        class="d-block text-muted mt-1">Clique
+                                        para copiar</small>
+                                </div>
+
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-light text-black">
+                                        <i
+                                            class="bi bi-check-circle text-success"></i>
+                                        Válido para novos usuários
+                                    </span>
+                                    <span class="badge bg-light text-black">
+                                        <i
+                                            class="bi bi-check-circle text-success"></i>
+                                        Mínimo de pedido: 5.000 Kz
+                                    </span>
+                                    <span class="badge bg-light text-black">
+                                        <i
+                                            class="bi bi-check-circle text-success"></i>
+                                        Válido até 31/12/2024
+                                    </span>
+                                </div>
+
+                                <a href="restaurant.html"
+                                    class="btn btn-light btn-lg">
+                                    <i class="bi bi-bag-check"></i> Fazer Pedido
+                                    Agora
+                                </a>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <div class="promo-stats">
+                                    <div class="row text-center">
+                                        <div
+                                            class="col-6 border-end border-light">
+                                            <h4 class="fw-bold mb-1">1.2K</h4>
+                                            <small>Usos Hoje</small>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4 class="fw-bold mb-1">98%</h4>
+                                            <small>Avaliação</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <i
+                                        class="bi bi-gift display-1 opacity-75"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search and Filters Bar -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row g-3 align-items-end">
+                                <!-- Search -->
+                                <div class="col-md-4">
+                                    <label
+                                        class="form-label fw-semibold">Pesquisar
+                                        Promoções</label>
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text bg-white border-end-0 text-danger">
+                                            <i class="bi bi-search"></i>
+                                        </span>
+                                        <input type="text"
+                                            class="form-control border-start-0"
+                                            id="promoSearch"
+                                            placeholder="Nome da promoção ou restaurante...">
+                                    </div>
+                                </div>
+
+                                <!-- Category Filter -->
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Tipo
+                                        de Promoção</label>
+                                    <select class="form-select"
+                                        id="categoryFilter">
+                                        <option value>Todas as
+                                            categorias</option>
+                                        <option
+                                            value="desconto">Descontos</option>
+                                        <option value="combo">Combos</option>
+                                        <option value="brinde">Brindes</option>
+                                        <option value="frete">Entrega
+                                            Grátis</option>
+                                        <option value="restaurante">Promoções de
+                                            Restaurantes</option>
+                                    </select>
+                                </div>
+
+                                <!-- Sort By -->
+                                <div class="col-md-3">
+                                    <label
+                                        class="form-label fw-semibold">Ordenar
+                                        por</label>
+                                    <select class="form-select" id="sortBy">
+                                        <option value="relevance">Mais
+                                            Relevantes</option>
+                                        <option value="popular">Mais
+                                            Populares</option>
+                                        <option value="ending">Terminando
+                                            Breve</option>
+                                        <option value="discount">Maior
+                                            Desconto</option>
+                                    </select>
+                                </div>
+
+                                <!-- Filter Button -->
+                                <div class="col-md-2">
+                                    <button class="btn btn-danger w-100"
+                                        id="applyFilters">
+                                        <i class="bi bi-funnel"></i> Filtrar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Quick Category Filters -->
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button
+                                            class="btn btn-sm category-filter active"
+                                            data-category>
+                                            Todos
+                                        </button>
+                                        <button
+                                            class="btn btn-sm btn-outline-danger category-filter"
+                                            data-category="desconto">
+                                            <i class="bi bi-percent"></i>
+                                            Descontos
+                                        </button>
+                                        <button
+                                            class="btn btn-sm btn-outline-danger category-filter"
+                                            data-category="combo">
+                                            <i class="bi bi-box-seam"></i>
+                                            Combos
+                                        </button>
+                                        <button
+                                            class="btn btn-sm btn-outline-danger category-filter"
+                                            data-category="brinde">
+                                            <i class="bi bi-gift"></i> Brindes
+                                        </button>
+                                        <button
+                                            class="btn btn-sm btn-outline-danger category-filter"
+                                            data-category="frete">
+                                            <i class="bi bi-truck"></i> Entrega
+                                            Grátis
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promotion Categories -->
+            <div class="row mb-5">
+                <div class="col-12 mb-4">
+                    <h3 class="fw-bold">
+                        <i class="bi bi-grid-3x3-gap text-warning"></i>
+                        Tipos de Promoções
+                    </h3>
+                    <p class="text-muted">Escolha o tipo de oferta que mais lhe
+                        interessa</p>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div
+                        class="card promo-category-card border-0 shadow-sm h-100 text-center"
+                        data-category="desconto">
+                        <div class="card-body">
+                            <div class="text-danger mb-3">
+                                <i class="bi bi-percent display-6"></i>
+                            </div>
+                            <h5 class="fw-bold">Descontos</h5>
+                            <p class="text-muted small">Promoções com
+                                percentagem de desconto</p>
+                            <span class="badge bg-danger category-badge">8
+                                ofertas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div
+                        class="card promo-category-card border-0 shadow-sm h-100 text-center"
+                        data-category="combo">
+                        <div class="card-body">
+                            <div class="text-success mb-3">
+                                <i class="bi bi-box-seam display-6"></i>
+                            </div>
+                            <h5 class="fw-bold">Combos</h5>
+                            <p class="text-muted small">Pacotes com preços
+                                especiais</p>
+                            <span class="badge bg-success category-badge">6
+                                ofertas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div
+                        class="card promo-category-card border-0 shadow-sm h-100 text-center"
+                        data-category="brinde">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-gift display-6"></i>
+                            </div>
+                            <h5 class="fw-bold">Brindes</h5>
+                            <p class="text-muted small">Itens grátis e ofertas
+                                especiais</p>
+                            <span class="badge bg-warning category-badge">5
+                                ofertas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <div
+                        class="card promo-category-card border-0 shadow-sm h-100 text-center"
+                        data-category="frete">
+                        <div class="card-body">
+                            <div class="text-primary mb-3">
+                                <i class="bi bi-truck display-6"></i>
+                            </div>
+                            <h5 class="fw-bold">Entrega Grátis</h5>
+                            <p class="text-muted small">Frete gratuito em
+                                pedidos</p>
+                            <span class="badge bg-primary category-badge">3
+                                ofertas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 mb-4">
+                    <div class="filter-sidebar">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-danger text-white">
+                                <h6 class="mb-0"><i class="bi bi-funnel"></i>
+                                    Filtros Avançados</h6>
+                            </div>
+                            <div class="card-body">
+                                <!-- Discount Range -->
+                                <div class="mb-4">
+                                    <label
+                                        class="form-label fw-semibold">Desconto
+                                        Mínimo</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="discountRange"
+                                            id="discountAll" checked>
+                                        <label class="form-check-label"
+                                            for="discountAll">
+                                            Qualquer desconto
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="discountRange"
+                                            id="discount10">
+                                        <label class="form-check-label"
+                                            for="discount10">
+                                            10% ou mais
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="discountRange"
+                                            id="discount20">
+                                        <label class="form-check-label"
+                                            for="discount20">
+                                            20% ou mais
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="discountRange"
+                                            id="discount30">
+                                        <label class="form-check-label"
+                                            for="discount30">
+                                            30% ou mais
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Validity -->
+                                <div class="mb-4">
+                                    <label
+                                        class="form-label fw-semibold">Validade</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="validity"
+                                            id="validityAll" checked>
+                                        <label class="form-check-label"
+                                            for="validityAll">
+                                            Todas
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="validity"
+                                            id="validityToday">
+                                        <label class="form-check-label"
+                                            for="validityToday">
+                                            Termina hoje
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="radio" name="validity"
+                                            id="validityWeek">
+                                        <label class="form-check-label"
+                                            for="validityWeek">
+                                            Esta semana
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Restaurant Type -->
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Tipo
+                                        de Restaurante</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="checkbox" id="typeAll"
+                                            checked>
+                                        <label class="form-check-label"
+                                            for="typeAll">
+                                            Todos os restaurantes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="checkbox" id="typePremium">
+                                        <label class="form-check-label"
+                                            for="typePremium">
+                                            Restaurantes Premium
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input"
+                                            type="checkbox" id="typeLocal">
+                                        <label class="form-check-label"
+                                            for="typeLocal">
+                                            Restaurantes Locais
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Clear Filters -->
+                                <button class="btn btn-outline-danger w-100"
+                                    id="clearFilters">
+                                    <i class="bi bi-x-circle"></i> Limpar
+                                    Filtros
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Stats Card -->
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <h4 class="text-danger fw-bold"
+                                    id="promoCount">22</h4>
+                                <p class="text-muted mb-0">Promoções Ativas</p>
+                                <hr>
+                                <small class="text-muted">
+                                    <i class="bi bi-clock"></i>
+                                    <span id="countdown">07:23:45</span> até
+                                    novas ofertas
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promotions Grid -->
+                <div class="col-lg-9">
+                    <div class="row g-4" id="promotionsGrid">
+                        <!-- Promotion Card 1 -->
+                        <div class="col-md-6 col-xl-4" data-category="desconto"
+                            data-discount="25" data-validity="2024-12-30"
+                            data-popular="high">
+                            <div
+                                class="card promo-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                        class="card-img-top promo-image"
+                                        alt="Promoção Pizza"
+                                        style="height: 200px; object-fit: cover;">
+                                    <div class="discount-badge">-25%</div>
+                                    <span
+                                        class="promo-badge badge bg-success">Mais
+                                        Usado</span>
+                                </div>
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title fw-bold">Fim de
+                                            Semana da Pizza</h5>
+                                        <span class="badge bg-light text-black">
+                                            <i
+                                                class="bi bi-fire text-danger"></i>
+                                            Quente
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2">
+                                        25% de desconto em todas as pizzas aos
+                                        sábados e domingos
+                                    </p>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mb-3">
+                                        <span
+                                            class="badge bg-danger">PizzaExpress</span>
+                                        <small class="text-muted">Até:
+                                            30/12/2024</small>
+                                    </div>
+
+                                    <div class="coupon-code small mb-3"
+                                        onclick="copyCouponCode('PIZZA25')">
+                                        PIZZA25
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <div class="progress mb-2"
+                                            style="height: 8px;">
+                                            <div class="progress-bar bg-warning"
+                                                style="width: 85%"></div>
+                                        </div>
+                                        <small class="text-muted">85% dos cupons
+                                            usados</small>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0 pt-0">
+                                    <a href="restaurant.html"
+                                        class="btn btn-danger w-100">
+                                        <i class="bi bi-bag-check"></i> Usar
+                                        Oferta
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Promotion Card 2 -->
+                        <div class="col-md-6 col-xl-4"
+                            data-category="combo brinde" data-discount="0"
+                            data-validity="2025-01-15" data-popular="medium">
+                            <div
+                                class="card promo-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                        class="card-img-top promo-image"
+                                        alt="Combo Hamburguer"
+                                        style="height: 200px; object-fit: cover;">
+                                    <span
+                                        class="promo-badge badge bg-info">Novo</span>
+                                </div>
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title fw-bold">Combo
+                                            Família + Brinde</h5>
+                                        <span class="badge bg-light text-black">
+                                            <i
+                                                class="bi bi-star text-warning"></i>
+                                            Popular
+                                        </span>
+                                    </div>
+                                    <p class="card-text text-muted small mb-2">
+                                        Combo para 4 pessoas + sobremesa grátis
+                                    </p>
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mb-3">
+                                        <span
+                                            class="badge bg-primary">BurgerHouse</span>
+                                        <small class="text-muted">Até:
+                                            15/01/2025</small>
+                                    </div>
+
+                                    <div class="coupon-code small mb-3"
+                                        onclick="copyCouponCode('FAMILIAG')">
+                                        FAMILIAG
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <span class="text-success fw-bold">
+                                            <i class="bi bi-coin"></i> Economize
+                                            3.500 Kz
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0 pt-0">
+                                    <a href="restaurant.html"
+                                        class="btn btn-danger w-100">
+                                        <i class="bi bi-bag-check"></i> Usar
+                                        Oferta
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add more promotion cards following the same structure -->
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-5">
+                        <button class="btn btn-outline-danger btn-lg"
+                            id="loadMore">
+                            <i class="bi bi-plus-circle"></i> Carregar Mais
+                            Promoções
+                        </button>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="text-center py-5 d-none" id="noResults">
+                        <i class="bi bi-search display-1 text-muted mb-3"></i>
+                        <h4 class="text-muted">Nenhuma promoção encontrada</h4>
+                        <p class="text-muted">Tente ajustar seus filtros ou
+                            termos de pesquisa</p>
+                        <button class="btn btn-danger mt-3" id="resetSearch">
+                            <i class="bi bi-arrow-clockwise"></i> Limpar
+                            Pesquisa
+                        </button>
+                    </div>
+
+                    <!-- FAQ Section - Following your pattern -->
+                    <div class="faq-category mb-5 faq-animate mt-5"
+                        id="promocoes-faq">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-bold text-danger">
+                                <i class="bi bi-patch-question me-2"></i>
+                                Dúvidas sobre Promoções
+                            </h3>
+                            <span class="badge bg-danger">6 PERGUNTAS</span>
+                        </div>
+
+                        <div class="accordion" id="promocoesAccordion">
+                            <div class="accordion-item faq-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#promoFaq1">
+                                        Como usar os códigos de promoção?
+                                    </button>
+                                </h2>
+                                <div id="promoFaq1"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#promocoesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Usar códigos de promoção é muito
+                                            simples:</p>
+                                        <ol>
+                                            <li>Adicione itens ao seu
+                                                carrinho</li>
+                                            <li>Vá para a página do
+                                                carrinho</li>
+                                            <li>Clique em "Adicionar Cupom"</li>
+                                            <li>Cole o código copiado</li>
+                                            <li>O desconto será aplicado
+                                                automaticamente</li>
+                                        </ol>
+                                        <p class="text-success mb-0">
+                                            <i class="bi bi-lightning"></i>
+                                            <strong>Dica:</strong> Os cupons
+                                            podem ser copiados com um clique nas
+                                            páginas de promoção.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item faq-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#promoFaq2">
+                                        Posso acumular múltiplas promoções?
+                                    </button>
+                                </h2>
+                                <div id="promoFaq2"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#promocoesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Geralmente <strong>não é possível
+                                                acumular</strong> múltiplos
+                                            cupons no mesmo pedido. Apenas uma
+                                            promoção por pedido será
+                                            aplicada.</p>
+                                        <p><strong>Exceções:</strong></p>
+                                        <ul>
+                                            <li>Promoções de entrega grátis
+                                                podem ser combinadas com cupons
+                                                de desconto</li>
+                                            <li>Ofertas de brindes podem ser
+                                                adicionadas a pedidos com
+                                                desconto</li>
+                                            <li>Promoções específicas de
+                                                restaurantes</li>
+                                        </ul>
+                                        <div class="alert alert-info mt-3">
+                                            <i class="bi bi-info-circle"></i>
+                                            <strong>Informação:</strong> O
+                                            sistema sempre aplicará a promoção
+                                            mais vantajosa para você.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-brand mb-3">
+                            <h5 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-bag-heart-fill"
+                                    aria-hidden="true"></i>
+                                Delivery<span class="text-dark">HJ</span>
+                            </h5>
+                            <p class="text-muted small">
+                                Conectando sabores, construindo comunidades. A
+                                plataforma de
+                                delivery feita por angolanos para Angola.
+                            </p>
+                        </div>
+
+                        <div class="footer-social mb-4">
+                            <h6 class="fw-semibold mb-3">Siga-nos</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Facebook"
+                                    title="Facebook">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Instagram"
+                                    title="Instagram">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Conecte-se no LinkedIn"
+                                    title="LinkedIn">
+                                    <i class="bi bi-linkedin fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Twitter"
+                                    title="Twitter">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Fale connosco no WhatsApp"
+                                    title="WhatsApp">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App Download -->
+                        <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+                    </div>
+
+                    <!-- For Customers -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-people" aria-hidden="true"></i> Para
+                            Clientes
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../index.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-house"></i> Início
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-shop"></i> Restaurantes
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/promotion.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-percent"></i> Promoções
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/discover/category.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                    Categorias
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../pages/discover/culinaria-tradicional.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-egg-fried"></i> Tradicional
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/discover/most-restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-star"></i> Mais Populares
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- For Partners -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                            Para
+                            Parceiros
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../pages/partner/partner-register.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building-add"></i> Junte-se
+                                    a Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/partner/partner-login.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    Área do Parceiro
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/partner/partnership.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-hand-index"></i> Nossos
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/partner/resource.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    Recursos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/partner/success-stories.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-trophy"></i> Histórias de
+                                    Sucesso
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../pages/support/help.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-life-preserver"></i> Centro
+                                    de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/support/guide.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-play-circle"></i> Como Pedir
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/support/faq.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-patch-question"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/support/contact.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-chat-dots"></i> Contactar
+                                    Suporte
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/support/complaints.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reclamações
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            Empresa
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="../pages/enterprise/about.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-circle"></i> Sobre Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/enterprise/career.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-briefcase"></i> Carreiras
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/enterprise/enterprise.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-newspaper"></i> Imprensa
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../pages/enterprise/blog.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-pencil"></i> Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            Contacto
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-envelope"></i>
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:parceiros@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building"></i>
+                                    parceiros@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:info@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-square"></i>
+                                    info@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+244945678901"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-whatsapp"></i> +244 945 678
+                                    901
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Bottom Footer -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <small class="text-muted">
+                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="../pages/legal/terms.html"
+                                class="text-muted text-decoration-none small">
+                                Termos de Uso
+                            </a>
+                            <a href="../pages/legal/privacy.html"
+                                class="text-muted text-decoration-none small">
+                                Privacidade
+                            </a>
+                            <a href="../pages/legal/cookies.html"
+                                class="text-muted text-decoration-none small">
+                                Cookies
+                            </a>
+                            <a href="../pages/legal/security.html"
+                                class="text-muted text-decoration-none small">
+                                Segurança
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-4">
+                                <small class="text-muted">
+                                    <i
+                                        class="bi bi-shield-check text-success"></i>
+                                    Pagamentos
+                                    Seguros
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-truck text-primary"></i>
+                                    Entregas Rápidas
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Avaliado 4.8/5
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart-fill text-danger"></i>
+                                    Feito em Angola
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="locationModal">
+            <!-- Conteúdo de seleção de província/município -->
+        </div>
+
+        <div class="modal fade" id="partnerModal">
+            <!-- Formulário de cadastro de restaurante -->
+        </div>
+
+        <!-- Adicionar com outros modais -->
+        <div class="modal fade" id="restaurantModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Conteúdo dinâmico do restaurante -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5" />
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4" />
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3" />
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2" />
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1" />
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked />
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment" />
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue" />
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email
+                                    <small class="text-muted">(opcional - para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com" />
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required />
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a
+                                    <a href="../pages/legal/privacy.html"
+                                        target="_blank">Política de
+                                        Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/delivery.js"></script>
+        <script src="../js/promotion.js"></script>
+    </body>
+
+</html>

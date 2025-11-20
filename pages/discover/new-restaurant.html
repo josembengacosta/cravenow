@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="DeliveryHJ Team" />
+    <meta name="description" content="Novos Restaurantes - DeliveryHJ. Descubra os estabelecimentos mais recentes na plataforma." />
+    <meta name="keywords" content="novos restaurantes, restaurantes recentes, novidades delivery, novos parceiros deliveryhj" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#dc3545" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Novos Restaurantes - DeliveryHJ | Descubra as Novidades" />
+    <meta property="og:description" content="Conheça os restaurantes mais recentes que acabaram de chegar na plataforma DeliveryHJ. Novos sabores esperando por você!" />
+    <meta property="og:url" content="https://deliveryhj.rf.gd/pages/discover/new-restaurant.html" />
+    <meta property="og:site_name" content="DeliveryHJ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_AO" />
+
+    <title>Novos Restaurantes - DeliveryHJ | Descubra as Novidades</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+<!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+    <style>
+        .new-restaurants-hero {
+            background: linear-gradient(135deg, rgba(32, 201, 151, 0.9) 0%, rgba(23, 162, 184, 0.8) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .new-restaurants-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+        
+        .new-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #ff6b35, #ff8e53);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .restaurant-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .restaurant-image {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurant-card:hover .restaurant-image {
+            transform: scale(1.05);
+        }
+        
+        .category-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .rating-badge {
+            background: #28a745;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .delivery-info {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .opening-badge {
+            background: #17a2b8;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .promo-badge {
+            background: #dc3545;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .featured-restaurant {
+            border: 3px solid #20c997;
+            border-radius: 20px;
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #6f42c1, #e83e8c);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .view-counter {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .trending-badge {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .exclusive-badge {
+            background: linear-gradient(135deg, #6610f2, #6f42c1);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .arrival-date {
+            color: #6c757d;
+            font-size: 0.8rem;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .loading-skeleton {
+            animation: skeleton-loading 1.5s infinite;
+        }
+        
+        @keyframes skeleton-loading {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        @media (max-width: 768px) {
+            .new-restaurants-hero {
+                padding: 4rem 0 2rem;
+            }
+            
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation for new arrivals */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-in-up {
+            animation: slideInUp 0.6s ease-out;
+        }
+        
+        /* Highlight animation */
+        @keyframes highlight {
+            0% { background-color: transparent; }
+            50% { background-color: #fff3cd; }
+            100% { background-color: transparent; }
+        }
+        
+        .highlight-new {
+            animation: highlight 2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-body" style="overflow-y:auto ;" itemscope itemtype="https://schema.org/WebSite">
+   
+     <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+        
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+      itemprop="breadcrumb">
+      <div class="container">
+        <!-- Logo -->
+        <a
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+          href="../../index.html"
+          itemprop="url">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+          <!-- Cart Mobile -->
+          <a
+            class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+            href="../cart.html"
+            aria-label="Carrinho de compras">
+            <i class="bi bi-cart4" aria-hidden="true"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cartCountMobile">0</span>
+              <span class="visually-hidden">itens no carrinho</span>
+            </span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
+            title="Alternar tema"
+            aria-label="Alternar entre tema escuro e claro">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="navbar-text mx-3 d-none d-lg-block">
+          <span class="badge bg-light text-danger cursor-pointer"
+            data-bs-toggle="modal" data-bs-target="#locationModal">
+            <i class="bi bi-geo-alt-fill text-danger"></i>
+            <span id="currentLocation" class="text-secondary">Luanda</span>
+          </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <!-- Cart Desktop -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link position-relative fw-bold"
+                href="../cart.html">
+                <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
+                <span
+                  class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                  <span id="cartCountDesktop">0</span>
+                  <span class="visually-hidden">itens no carrinho</span>
+                </span>
+              </a>
+            </li>
+
+            <!-- Main Navigation -->
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <i class="bi bi-house" aria-hidden="true"></i> Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/restaurant.html">
+                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/discover/category.html">
+                    <i class="bi bi-grid-3x3-gap"></i> Categorias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/culinaria-tradicional.html">
+                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/most-restaurant.html">
+                    <i class="bi bi-star"></i> Mais Populares
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/new-restaurant.html">
+                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/support/help.html">
+                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/guide.html">
+                    <i class="bi bi-play-circle"></i> Como Pedir
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/faq.html">
+                    <i class="bi bi-patch-question"></i> FAQ
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/contact.html">
+                    <i class="bi bi-chat-dots"></i> Contactar Suporte
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/enterprise/about.html">
+                    <i class="bi bi-building"></i> Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/enterprise/career.html">
+                    <i class="bi bi-briefcase"></i> Carreiras
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/enterprise/enterprise.html">
+                    <i class="bi bi-newspaper"></i> Imprensa
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/enterprise/blog.html">
+                    <i class="bi bi-journal-text"></i> Blog
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Legal Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/terms.html">
+                    <i class="bi bi-file-text"></i> Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/privacy.html">
+                    <i class="bi bi-lock"></i> Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/cookies.html">
+                    <i class="bi bi-bricks"></i> Política de Cookies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/security.html">
+                    <i class="bi bi-shield-check"></i> Segurança
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons -->
+            <li class="nav-item dropdown d-lg-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../authentic/login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/register.html">
+                    <i class="bi bi-person-plus"></i> Registar
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/profile.html">
+                    <i class="bi bi-person-circle"></i> Meu Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/restaurant/request.html">
+                    <i class="bi bi-bag-check"></i> Meus Pedidos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons Desktop -->
+            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+              <a class="btn btn-outline-danger m-1"
+                href="../authentic/login.html" role="button">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                Entrar
+              </a>
+            </li>
+            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+              <a class="btn btn-danger m-1" href="../authentic/register.html"
+                role="button">
+                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+                Registar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1"
+      aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">
+              <i class="bi bi-geo-alt-fill text-danger"></i>
+              Alterar Localização
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="provinceSelect" class="form-label">Província</label>
+              <select class="form-select" id="provinceSelect">
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huila">Huíla</option>
+                <option value="cabinda">Cabinda</option>
+                <option value="huambo">Huambo</option>
+                <option value="malanje">Malanje</option>
+                <!-- Add all 18 provinces -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="municipalitySelect"
+                class="form-label">Município</label>
+              <select class="form-select" id="municipalitySelect">
+                <option value="luanda">Luanda</option>
+                <option value="viana">Viana</option>
+                <option value="cacuaco">Cacuaco</option>
+                <option value="cazenga">Cazenga</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                id="detectLocation" />
+              <label class="form-check-label" for="detectLocation">
+                Detetar minha localização automaticamente
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="saveLocation">
+              Guardar Localização
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="new-restaurants-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="bi bi-rocket-takeoff"></i>
+                        Novos Restaurantes
+                    </h1>
+                    <p class="lead mb-4">
+                        Descubra os estabelecimentos mais recentes que acabaram de chegar na plataforma. 
+                        Novos sabores e experiências esperando por você!
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <span class="badge bg-light text-dark fs-6">
+                            <i class="bi bi-lightning text-warning"></i> +50 Novos Este Mês
+                        </span>
+                        <span class="badge bg-light text-dark fs-6">
+                            <i class="bi bi-star text-primary"></i> Promoções Exclusivas
+                        </span>
+                        <span class="badge bg-light text-dark fs-6">
+                            <i class="bi bi-clock text-success"></i> Atualizado Diariamente
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container py-4">
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="stats-card">
+                    <div class="stats-number" id="newThisWeek">24</div>
+                    <div>Novos Esta Semana</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stats-card">
+                    <div class="stats-number" id="totalNew">156</div>
+                    <div>Total Este Mês</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stats-card">
+                    <div class="stats-number" id="avgRating">4.7</div>
+                    <div>Avaliação Média</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stats-card">
+                    <div class="stats-number" id="promoCount">38</div>
+                    <div>Com Promoções</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <!-- View Counter -->
+        <div class="view-counter">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-eye text-primary"></i>
+                        Estes restaurantes são novidade!
+                    </h5>
+                    <p class="mb-0 text-muted">
+                        Mais de <strong>1,234 pessoas</strong> já descobriram novos restaurantes esta semana
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button class="btn btn-outline-primary" onclick="newRestaurantsSystem.showRandomRestaurant()">
+                        <i class="bi bi-shuffle"></i> Surpreenda-me
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4 class="fw-bold mb-3">
+                    <i class="bi bi-funnel"></i>
+                    Filtrar por
+                </h4>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="featured">Em Destaque</button>
+                    <button class="filter-btn" data-filter="promo">Com Promoção</button>
+                    <button class="filter-btn" data-filter="trending">Em Alta</button>
+                    <button class="filter-btn" data-filter="exclusive">Exclusivos</button>
+                    <button class="filter-btn" data-filter="opening">Abertos Agora</button>
+                </div>
+                
+                <!-- Category Filters -->
+                <div class="filter-buttons mt-2">
+                    <button class="filter-btn" data-category="pizza">Pizza</button>
+                    <button class="filter-btn" data-category="hamburguer">Hambúrguer</button>
+                    <button class="filter-btn" data-category="sushi">Sushi</button>
+                    <button class="filter-btn" data-category="tradicional">Tradicional</button>
+                    <button class="filter-btn" data-category="saudavel">Saudável</button>
+                    <button class="filter-btn" data-category="brasileira">Brasileira</button>
+                    <button class="filter-btn" data-category="churrasco">Churrasco</button>
+                    <button class="filter-btn" data-category="sobremesa">Sobremesas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Restaurants Grid -->
+        <div class="row">
+            <div class="col-12">
+                <h4 class="fw-bold mb-4">
+                    <i class="bi bi-stars text-warning"></i>
+                    Restaurantes Recém-Chegados
+                    <small class="text-muted fs-6">(Ordenados por mais recentes)</small>
+                </h4>
+                
+                <div id="restaurantsLoading" class="text-center py-5">
+                    <div class="spinner-border text-danger" role="status">
+                        <span class="visually-hidden">A carregar...</span>
+                    </div>
+                    <p class="mt-3 text-muted">A carregar novos restaurantes...</p>
+                </div>
+
+                <div id="newRestaurantsGrid" class="restaurant-grid" style="display: none;">
+                    <!-- Restaurants will be loaded here by JavaScript -->
+                </div>
+
+                <div id="noRestaurants" class="text-center py-5" style="display: none;">
+                    <i class="bi bi-search display-1 text-muted mb-3"></i>
+                    <h4 class="fw-bold text-muted">Nenhum restaurante encontrado</h4>
+                    <p class="text-muted mb-4">Tente ajustar os filtros ou volte mais tarde para novas chegadas.</p>
+                    <button class="btn btn-danger" onclick="newRestaurantsSystem.clearFilters()">
+                        <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Section -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <button id="loadMoreBtn" class="btn btn-outline-danger btn-lg" onclick="newRestaurantsSystem.loadMore()">
+                    <i class="bi bi-plus-circle"></i> Carregar Mais Restaurantes
+                </button>
+                <div id="allLoaded" class="mt-3" style="display: none;">
+                    <p class="text-muted">
+                        <i class="bi bi-check-circle text-success"></i>
+                        Você viu todos os novos restaurantes!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center p-5">
+                        <i class="bi bi-bell-fill display-4 text-danger mb-3"></i>
+                        <h3 class="fw-bold mb-3">Não Perca as Novidades!</h3>
+                        <p class="text-muted mb-4">
+                            Receba alertas quando novos restaurantes chegarem na sua área
+                        </p>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="seu@email.com" id="newsletterEmail">
+                                    <button class="btn btn-danger" onclick="newRestaurantsSystem.subscribeNewsletter()">
+                                        <i class="bi bi-bell"></i> Ativar Alertas
+                                    </button>
+                                </div>
+                                <small class="text-muted mt-2 d-block">
+                                    📧 Enviamos apenas emails sobre novos restaurantes na sua área
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-brand mb-3">
+                            <h5 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-bag-heart-fill"
+                                    aria-hidden="true"></i>
+                                Delivery<span class="text-dark">HJ</span>
+                            </h5>
+                            <p class="text-muted small">
+                                Conectando sabores, construindo comunidades. A
+                                plataforma de
+                                delivery feita por angolanos para Angola.
+                            </p>
+                        </div>
+
+                        <div class="footer-social mb-4">
+                            <h6 class="fw-semibold mb-3">Siga-nos</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Facebook"
+                                    title="Facebook">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Instagram"
+                                    title="Instagram">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Conecte-se no LinkedIn"
+                                    title="LinkedIn">
+                                    <i class="bi bi-linkedin fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Twitter"
+                                    title="Twitter">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Fale connosco no WhatsApp"
+                                    title="WhatsApp">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App Download -->
+                        <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+                    </div>
+
+                    <!-- For Customers -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-people" aria-hidden="true"></i> Para
+                            Clientes
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../../index.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-house"></i> Início
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-shop"></i> Restaurantes
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/promotion.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-percent"></i> Promoções
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/discover/category.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                    Categorias
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/discover/culinaria-tradicional.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-egg-fried"></i> Tradicional
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/discover/most-restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-star"></i> Mais Populares
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- For Partners -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                            Para
+                            Parceiros
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/partner/partner-register.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building-add"></i> Junte-se
+                                    a Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/partner-login.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    Área do Parceiro
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/partnership.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-hand-index"></i> Nossos
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/resource.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    Recursos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/partner/success-stories.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-trophy"></i> Histórias de
+                                    Sucesso
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../../pages/support/help.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-life-preserver"></i> Centro
+                                    de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/guide.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-play-circle"></i> Como Pedir
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/faq.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-patch-question"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/contact.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-chat-dots"></i> Contactar
+                                    Suporte
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/complaints.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reclamações
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            Empresa
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/about.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-circle"></i> Sobre Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/career.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-briefcase"></i> Carreiras
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/enterprise.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-newspaper"></i> Imprensa
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/blog.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-pencil"></i> Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            Contacto
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-envelope"></i>
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:parceiros@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building"></i>
+                                    parceiros@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:info@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-square"></i>
+                                    info@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+244945678901"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-whatsapp"></i> +244 945 678
+                                    901
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Bottom Footer -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <small class="text-muted">
+                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="../../pages/legal/terms.html"
+                                class="text-muted text-decoration-none small">
+                                Termos de Uso
+                            </a>
+                            <a href="../../pages/legal/privacy.html"
+                                class="text-muted text-decoration-none small">
+                                Privacidade
+                            </a>
+                            <a href="../../pages/legal/cookies.html"
+                                class="text-muted text-decoration-none small">
+                                Cookies
+                            </a>
+                            <a href="../../pages/legal/security.html"
+                                class="text-muted text-decoration-none small">
+                                Segurança
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-4">
+                                <small class="text-muted">
+                                    <i
+                                        class="bi bi-shield-check text-success"></i>
+                                    Pagamentos
+                                    Seguros
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-truck text-primary"></i>
+                                    Entregas Rápidas
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Avaliado 4.8/5
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart-fill text-danger"></i>
+                                    Feito em Angola
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="locationModal">
+            <!-- Conteúdo de seleção de província/município -->
+        </div>
+
+        <div class="modal fade" id="partnerModal">
+            <!-- Formulário de cadastro de restaurante -->
+        </div>
+
+        <!-- Adicionar com outros modais -->
+        <div class="modal fade" id="restaurantModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Conteúdo dinâmico do restaurante -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5" />
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4" />
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3" />
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2" />
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1" />
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked />
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment" />
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue" />
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email
+                                    <small class="text-muted">(opcional - para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com" />
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required />
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a
+                                    <a href="../../pages/legal/privacy.html"
+                                        target="_blank">Política de
+                                        Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Restaurant Detail Modal -->
+    <div class="modal fade" id="restaurantModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <!-- Content will be loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/delivery.js"></script>
+    <script src="../../js/new-restaurant.js"></script>
+</body>
+</html>

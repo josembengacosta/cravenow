@@ -136,7 +136,9 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-4 col-lg-6 col-md-8 col-11 m-auto">
                         <div class="card shadow-sm">
-                            <div class="card-body">
+                            <div class="card-body p-4">
+                                 <h4 class="card-title text-center mb-4" style="color: #dc3545;">Faça Login</h4>
+                                <p class="text-center text-muted mb-3">Insira os teus dados para entrar na tua conta.</p>
                                 <form class="needs-validation" method="post" action="login_process.php" novalidate>
                                     <input type="hidden" name="csrf_token"
                                         value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>" />
@@ -214,7 +216,7 @@
                                             style="color: #a71d2a">Privacidade</a>|
                                     </small>
                                     <small>
-                                        <a href="../index.html" class="text-muted text-decoration-none">Voltar
+                                        <a href="../index.html"  class="text-muted text-decoration-none">Voltar
                                             para início</a>
                                     </small>
                                 </div>

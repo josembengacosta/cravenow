@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="DeliveryHJ Team" />
+    <meta name="description"
+      content="DeliveryHJ - Nossos Parceiros. Conheça os restaurantes e estabelecimentos que fazem parte da nossa rede de delivery em Angola." />
+    <meta name="keywords"
+      content="parceiros deliveryhj, restaurantes Angola, estabelecimentos parceiros, delivery parcerias, parceiros delivery" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#dc3545" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+      content="DeliveryHJ - Nossos Parceiros | Rede de Restaurantes" />
+    <meta property="og:description"
+      content="Conheça nossa rede de parceiros - os melhores restaurantes e estabelecimentos de Angola entregues na sua casa." />
+    <meta property="og:url"
+      content="https://deliveryhj.rf.gd/pages/company/parceiros.html" />
+    <meta property="og:site_name" content="DeliveryHJ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_AO" />
+
+    <title>DeliveryHJ - Nossos Parceiros | Rede de Restaurantes</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+      type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../css/delivery.css" />
+    <link rel="preload" href="../../css/delivery.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'" />
+
+    <style>
+        .partners-hero {
+           background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(227, 93, 106, 0.8) 100%),
+                        url('../../assets/img/theme/partnership.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .partners-section {
+            margin-bottom: 4rem;
+        }
+        
+        .partner-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #dc3545;
+        }
+        
+        .partner-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .partner-logo img {
+            max-height: 60px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .partner-badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #dc3545;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #dc3545;
+            display: block;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .partner-featured {
+            border: 3px solid #ffc107;
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #ffc107;
+            color: #212529;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .city-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-filter,
+            .city-filter {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+    <!-- Loading Script -->
+    <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+  </head>
+
+  <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+    <!-- Loading Progress -->
+    <div class="progress fixed-top rounded-0"
+      style="height: 3px; z-index: 1050">
+      <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"
+        aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" id="loadingBar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+      itemprop="breadcrumb">
+      <div class="container">
+        <!-- Logo -->
+        <a
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+          href="../index.html"
+          itemprop="url">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+          <!-- Cart Mobile -->
+          <a
+            class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+            href="cart.html"
+            aria-label="Carrinho de compras">
+            <i class="bi bi-cart4" aria-hidden="true"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cartCountMobile">5</span>
+              <span class="visually-hidden">itens no carrinho</span>
+            </span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
+            title="Alternar tema"
+            aria-label="Alternar entre tema escuro e claro">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="navbar-text mx-3 d-none d-lg-block">
+          <span class="badge bg-light text-danger cursor-pointer"
+            data-bs-toggle="modal" data-bs-target="#locationModal">
+            <i class="bi bi-geo-alt-fill text-danger"></i>
+            <span id="currentLocation" class="text-secondary">Luanda</span>
+          </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <!-- Cart Desktop -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link position-relative fw-bold"
+                href="../../pages/cart.html">
+                <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
+                <span
+                  class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                  <span id="cartCountDesktop">5</span>
+                  <span class="visually-hidden">itens no carrinho</span>
+                </span>
+              </a>
+            </li>
+
+            <!-- Main Navigation -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-house" aria-hidden="true"></i> Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/restaurant.html">
+                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/category.html">
+                    <i class="bi bi-grid-3x3-gap"></i> Categorias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/culinaria-tradicional.html">
+                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/most-restaurant.html">
+                    <i class="bi bi-star"></i> Mais Populares
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/new-restaurant.html">
+                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../../pages/support/help.html">
+                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/support/guide.html">
+                    <i class="bi bi-play-circle"></i> Como Pedir
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../../pages/support/faq.html">
+                    <i class="bi bi-patch-question"></i> FAQ
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/support/contact.html">
+                    <i class="bi bi-chat-dots"></i> Contactar Suporte
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/about.html">
+                    <i class="bi bi-building"></i> Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/career.html">
+                    <i class="bi bi-briefcase"></i> Carreiras
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/enterprise.html">
+                    <i class="bi bi-newspaper"></i> Imprensa
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/b.html">
+                    <i class="bi bi-journal-text"></i> Blog
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Legal Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../../pages/legal/terms.html">
+                    <i class="bi bi-file-text"></i> Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/privacy.html">
+                    <i class="bi bi-lock"></i> Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/cookies.html">
+                    <i class="bi bi-bricks"></i> Política de Cookies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/security.html">
+                    <i class="bi bi-shield-check"></i> Segurança
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons -->
+            <li class="nav-item dropdown d-lg-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../authentic/login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/register.html">
+                    <i class="bi bi-person-plus"></i> Registar
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/profile.html">
+                    <i class="bi bi-person-circle"></i> Meu Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/restaurant/request.html">
+                    <i class="bi bi-bag-check"></i> Meus Pedidos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons Desktop -->
+            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+              <a class="btn btn-outline-danger m-1"
+                href="../authentic/login.html" role="button">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                Entrar
+              </a>
+            </li>
+            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+              <a class="btn btn-danger m-1" href="../authentic/register.html"
+                role="button">
+                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+                Registar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1"
+      aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">
+              <i class="bi bi-geo-alt-fill text-danger"></i>
+              Alterar Localização
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="provinceSelect" class="form-label">Província</label>
+              <select class="form-select" id="provinceSelect">
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huila">Huíla</option>
+                <option value="cabinda">Cabinda</option>
+                <option value="huambo">Huambo</option>
+                <option value="malanje">Malanje</option>
+                <!-- Add all 18 provinces -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="municipalitySelect"
+                class="form-label">Município</label>
+              <select class="form-select" id="municipalitySelect">
+                <option value="luanda">Luanda</option>
+                <option value="viana">Viana</option>
+                <option value="cacuaco">Cacuaco</option>
+                <option value="cazenga">Cazenga</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                id="detectLocation" />
+              <label class="form-check-label" for="detectLocation">
+                Detetar minha localização automaticamente
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="saveLocation">
+              Guardar Localização
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="partners-hero text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">
+              <i class="bi bi-handshake"></i>
+              Nossos Parceiros
+            </h1>
+            <p class="lead mb-4">
+              Conheça a rede de restaurantes e estabelecimentos que fazem parte
+              da família DeliveryHJ.
+              Juntos, levamos o melhor da gastronomia angolana até si.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <span class="badge bg-light text-dark fs-6">
+                <i class="bi bi-shop text-primary"></i> 200+ Estabelecimentos
+              </span>
+              <span class="badge bg-light text-dark fs-6">
+                <i class="bi bi-geo-alt text-success"></i> 15+ Cidades
+              </span>
+              <span class="badge bg-light text-dark fs-6">
+                <i class="bi bi-star text-warning"></i> Parcerias de Qualidade
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+      <!-- Partnership Stats -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">200+</span>
+              <div>Restaurantes Parceiros</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">15+</span>
+              <div>Cidades em Angola</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">50+</span>
+              <div>Categorias de Comida</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">98%</span>
+              <div>Taxa de Satisfação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partnership Benefits -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="benefits-section text-center">
+            <h2 class="fw-bold mb-4">
+              <i class="bi bi-award"></i>
+              Vantagens de Ser Nosso Parceiro
+            </h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="benefit-item">
+                  <i class="bi bi-people display-4 mb-3"></i>
+                  <h5>Mais Clientes</h5>
+                  <p class="mb-0">Acesso a milhares de clientes na nossa
+                    plataforma</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="benefit-item">
+                  <i class="bi bi-graph-up display-4 mb-3"></i>
+                  <h5>Aumento de Vendas</h5>
+                  <p class="mb-0">Incremente suas vendas com o serviço de
+                    delivery</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="benefit-item">
+                  <i class="bi bi-megaphone display-4 mb-3"></i>
+                  <h5>Visibilidade</h5>
+                  <p class="mb-0">Promoção do seu estabelecimento na nossa
+                    plataforma</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href="#tornar-parceiro" class="btn btn-light btn-lg">
+                <i class="bi bi-person-plus"></i> Tornar-se Parceiro
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h4 class="fw-bold mb-3 text-center">
+            <i class="bi bi-funnel"></i>
+            Encontre Parceiros por Categoria
+          </h4>
+          <div class="category-filter">
+            <button class="btn btn-outline-danger active"
+              data-category="all">Todos</button>
+            <button class="btn btn-outline-secondary"
+              data-category="tradicional">Tradicional</button>
+            <button class="btn btn-outline-secondary"
+              data-category="fastfood">Fast Food</button>
+            <button class="btn btn-outline-secondary"
+              data-category="vegetariano">Vegetariano</button>
+            <button class="btn btn-outline-secondary"
+              data-category="pizzaria">Pizzaria</button>
+            <button class="btn btn-outline-secondary"
+              data-category="asiatica">Asiática</button>
+            <button class="btn btn-outline-secondary"
+              data-category="sobremesas">Sobremesas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-12">
+          <h4 class="fw-bold mb-3 text-center">
+            <i class="bi bi-geo-alt"></i>
+            Filtrar por Cidade
+          </h4>
+          <div class="city-filter">
+            <button class="btn btn-outline-primary active"
+              data-city="all">Todas</button>
+            <button class="btn btn-outline-secondary"
+              data-city="luanda">Luanda</button>
+            <button class="btn btn-outline-secondary"
+              data-city="huambo">Huambo</button>
+            <button class="btn btn-outline-secondary"
+              data-city="lobito">Lobito</button>
+            <button class="btn btn-outline-secondary"
+              data-city="benguela">Benguela</button>
+            <button class="btn btn-outline-secondary"
+              data-city="lubango">Lubango</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners Grid -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="partners-section">
+            <h2 class="fw-bold mb-4 text-center">
+              <i class="bi bi-shop-window text-danger"></i>
+              Nossa Rede de Parceiros
+            </h2>
+
+            <div class="row" id="partnersGrid">
+              <!-- Partner 1 - Featured -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="tradicional"
+                data-city="luanda">
+                <div class="partner-card partner-featured">
+                  <div class="featured-badge">
+                    <i class="bi bi-star-fill"></i> Em Destaque
+                  </div>
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/sabores-angola.png"
+                      alt="Sabores de Angola"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Sabores de Angola</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </span>
+                    <small class="text-muted">(4.5)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span
+                      class="badge partner-badge bg-primary">Tradicional</span>
+                    <span class="badge partner-badge bg-success">Luanda</span>
+                    <span class="badge partner-badge bg-warning text-dark">⭐
+                      Popular</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Autêntica comida tradicional angolana. Especialistas em
+                    muamba de galinha e calulu.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 30-45 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner 2 -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="pizzaria"
+                data-city="luanda">
+                <div class="partner-card">
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/pizza-nova.png"
+                      alt="Pizza Nova"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Pizza Nova</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </span>
+                    <small class="text-muted">(4.0)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span class="badge partner-badge bg-info">Pizzaria</span>
+                    <span class="badge partner-badge bg-success">Luanda</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Pizzas artesanais com ingredientes frescos. Massa fina e
+                    crocante.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 25-40 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner 3 -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="asiatica"
+                data-city="huambo">
+                <div class="partner-card">
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/bamboo-garden.png"
+                      alt="Bamboo Garden"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Bamboo Garden</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </span>
+                    <small class="text-muted">(5.0)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span
+                      class="badge partner-badge bg-warning text-dark">Asiática</span>
+                    <span class="badge partner-badge bg-secondary">Huambo</span>
+                    <span class="badge partner-badge bg-success">⭐ Top
+                      Rated</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Comida asiática autêntica. Especialidades chinesas e
+                    tailandesas.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 35-50 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner 4 -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="fastfood"
+                data-city="benguela">
+                <div class="partner-card">
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/burger-kingdom.png"
+                      alt="Burger Kingdom"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Burger Kingdom</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                      <i class="bi bi-star"></i>
+                    </span>
+                    <small class="text-muted">(3.5)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span class="badge partner-badge bg-dark">Fast Food</span>
+                    <span class="badge partner-badge bg-primary">Benguela</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Hamburgers gourmet com carne 100% angolana. Batatas fritas
+                    crocantes.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 20-35 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner 5 -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="vegetariano"
+                data-city="luanda">
+                <div class="partner-card">
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/green-life.png"
+                      alt="Green Life"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Green Life</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </span>
+                    <small class="text-muted">(4.0)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span
+                      class="badge partner-badge bg-success">Vegetariano</span>
+                    <span class="badge partner-badge bg-success">Luanda</span>
+                    <span class="badge partner-badge bg-info">🌱 Saudável</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Comida vegetariana e vegana. Pratos criativos e nutritivos.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 25-40 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner 6 -->
+              <div class="col-lg-4 col-md-6 mb-4" data-category="sobremesas"
+                data-city="lubango">
+                <div class="partner-card">
+                  <div class="partner-logo">
+                    <img src="../../assets/img/partners/doce-tentacao.png"
+                      alt="Doce Tentação"
+                      class="img-fluid">
+                  </div>
+                  <h5 class="fw-bold text-center mb-2">Doce Tentação</h5>
+                  <div class="text-center mb-3">
+                    <span class="rating-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </span>
+                    <small class="text-muted">(4.5)</small>
+                  </div>
+                  <div
+                    class="d-flex flex-wrap gap-1 justify-content-center mb-3">
+                    <span
+                      class="badge partner-badge bg-warning text-dark">Sobremesas</span>
+                    <span class="badge partner-badge bg-info">Lubango</span>
+                  </div>
+                  <p class="text-muted text-center small mb-3">
+                    Sobremesas artesanais e bolos personalizados. Doces
+                    tradicionais e inovadores.
+                  </p>
+                  <div class="text-center">
+                    <span class="badge bg-light text-dark">
+                      <i class="bi bi-clock"></i> 15-30 min
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <div class="alert alert-info">
+                <h6 class="alert-heading">Não encontrou o que procura?</h6>
+                <p class="mb-0">
+                  Explore todos os nossos restaurantes na <a
+                    href="../restaurant.html" class="alert-link">página
+                    principal de restaurantes</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Become Partner Section -->
+      <div class="row" id="tornar-parceiro">
+        <div class="col-12">
+          <div class="partners-section">
+            <h2 class="fw-bold mb-4 text-center">
+              <i class="bi bi-person-plus text-danger"></i>
+              Torne-se Nosso Parceiro
+            </h2>
+
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <h4 class="fw-bold text-danger mb-3">Junte-se à Nossa
+                      Rede</h4>
+                    <p class="mb-4">
+                      Se tem um restaurante ou estabelecimento alimentar e quer
+                      expandir seu
+                      negócio através do delivery, junte-se à família
+                      DeliveryHJ.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <strong>Aumente suas vendas</strong> - Acesso a milhares
+                        de clientes
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <strong>Suporte dedicado</strong> - Equipa especializada
+                        para ajudar
+                      </li>
+                      <li class="mb-2">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <strong>Tecnologia avançada</strong> - Plataforma fácil
+                        de usar
+                      </li>
+                      <li class="mb-0">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <strong>Pagamentos seguros</strong> - Sistema confiável
+                        de pagamentos
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card bg-light">
+                      <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Solicitar
+                          Parceria</h5>
+                        <form id="partnershipForm">
+                          <div class="mb-3">
+                            <label for="restaurantName" class="form-label">Nome
+                              do Estabelecimento *</label>
+                            <input type="text" class="form-control"
+                              id="restaurantName" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="partnerEmail" class="form-label">Email
+                              *</label>
+                            <input type="email" class="form-control"
+                              id="partnerEmail" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="partnerPhone"
+                              class="form-label">Telefone *</label>
+                            <input type="tel" class="form-control"
+                              id="partnerPhone" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="partnerCity" class="form-label">Cidade
+                              *</label>
+                            <select class="form-select" id="partnerCity"
+                              required>
+                              <option value>Selecione a cidade</option>
+                              <option value="luanda">Luanda</option>
+                              <option value="huambo">Huambo</option>
+                              <option value="lobito">Lobito</option>
+                              <option value="benguela">Benguela</option>
+                              <option value="lubango">Lubango</option>
+                              <option value="outra">Outra</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="partnerMessage"
+                              class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="partnerMessage"
+                              rows="3"
+                              placeholder="Conte-nos sobre o seu estabelecimento..."></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-danger w-100">
+                            <i class="bi bi-send"></i> Enviar Solicitação
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-fade"></div>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Company Info -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-brand mb-3">
+              <h5 class="fw-bold text-danger mb-3">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Delivery<span class="text-dark">HJ</span>
+              </h5>
+              <p class="text-muted small">
+                Conectando sabores, construindo comunidades. A plataforma de
+                delivery feita por angolanos para Angola.
+              </p>
+            </div>
+
+            <div class="footer-social mb-4">
+              <h6 class="fw-semibold mb-3">Siga-nos</h6>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Facebook"
+                  title="Facebook">
+                  <i class="bi bi-facebook fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Instagram"
+                  title="Instagram">
+                  <i class="bi bi-instagram fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Conecte-se no LinkedIn"
+                  title="LinkedIn">
+                  <i class="bi bi-linkedin fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Twitter" title="Twitter">
+                  <i class="bi bi-twitter fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Fale connosco no WhatsApp"
+                  title="WhatsApp">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- App Download -->
+            <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+          </div>
+
+          <!-- For Customers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-people" aria-hidden="true"></i> Para Clientes
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../../index.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-house"></i> Início
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-shop"></i> Restaurantes
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../promotion.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-percent"></i> Promoções
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/category.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-grid-3x3-gap"></i> Categorias
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/culinaria-tradicional.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-egg-fried"></i> Tradicional
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/most-restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-star"></i> Mais Populares
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- For Partners -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-person-gear" aria-hidden="true"></i> Para
+              Parceiros
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../partner/partner-register.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building-add"></i> Junte-se a Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../partner/partner-login.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-box-arrow-in-right"></i> Área do Parceiro
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../partner/partnership.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-hand-index"></i> Nossos Parceiros
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="resource.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-file-earmark-text"></i> Recursos
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="success-stories.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-trophy"></i> Histórias de Sucesso
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-question-circle" aria-hidden="true"></i> Suporte
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../support/help.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/guide.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-play-circle"></i> Como Pedir
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/faq.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-patch-question"></i> FAQ
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/contact.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-chat-dots"></i> Contactar Suporte
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/complaints.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-exclamation-triangle"></i> Reclamações
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-building" aria-hidden="true"></i> Empresa
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">
+                <a href="../enterprise/about.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-circle"></i> Sobre Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/career.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-briefcase"></i> Carreiras
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/enterprise.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-newspaper"></i> Imprensa
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/blog.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-pencil"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Contacto
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="mailto:suporte@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-envelope"></i> suporte@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:parceiros@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building"></i> parceiros@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:info@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-square"></i> info@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="tel:+244945678901"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-whatsapp"></i> +244 945 678 901
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Bottom Footer -->
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <small class="text-muted">
+              &copy;2025 DeliveryHJ. Todos os direitos reservados.
+            </small>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-flex flex-wrap justify-content-md-end gap-3">
+              <a href="../legal/terms.html"
+                class="text-muted text-decoration-none small">
+                Termos de Uso
+              </a>
+              <a href="../legal/privacy.html"
+                class="text-muted text-decoration-none small">
+                Privacidade
+              </a>
+              <a href="../legal/cookies.html"
+                class="text-muted text-decoration-none small">
+                Cookies
+              </a>
+              <a href="../legal/seguranca.html"
+                class="text-muted text-decoration-none small">
+                Segurança
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="text-center">
+              <div class="d-flex flex-wrap justify-content-center gap-4">
+                <small class="text-muted">
+                  <i class="bi bi-shield-check text-success"></i> Pagamentos
+                  Seguros
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-truck text-primary"></i> Entregas Rápidas
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-star-fill text-warning"></i> Avaliado 4.8/5
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-heart-fill text-danger"></i> Feito em Angola
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================== -->
+    <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+    <!-- ================================== -->
+    <div class="feedback-widget">
+      <!-- Botão Flutuante -->
+      <button class="feedback-btn" data-bs-toggle="modal"
+        data-bs-target="#feedbackModal">
+        <i class="bi bi-star-fill"></i>
+        <span class="feedback-label">Avaliar</span>
+      </button>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE AVALIAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1"
+      data-bs-backdrop="static"
+      aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-danger" id="feedbackModalLabel">
+              <i class="bi bi-chat-heart-fill me-2"></i>
+              Avalie a DeliveryHJ
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="platformFeedbackForm">
+              <!-- Avaliação com Estrelas -->
+              <div class="text-center mb-4">
+                <h6 class="mb-3">Como foi sua experiência?</h6>
+                <div class="star-rating-large mb-2">
+                  <input type="radio" id="star5" name="rating" value="5" />
+                  <label for="star5" class="star-label">★</label>
+                  <input type="radio" id="star4" name="rating" value="4" />
+                  <label for="star4" class="star-label">★</label>
+                  <input type="radio" id="star3" name="rating" value="3" />
+                  <label for="star3" class="star-label">★</label>
+                  <input type="radio" id="star2" name="rating" value="2" />
+                  <label for="star2" class="star-label">★</label>
+                  <input type="radio" id="star1" name="rating" value="1" />
+                  <label for="star1" class="star-label">★</label>
+                </div>
+                <small class="text-muted" id="ratingText">Clique para
+                  avaliar</small>
+              </div>
+
+              <!-- Campo de Comentário -->
+              <div class="mb-3">
+                <label for="feedbackComment"
+                  class="form-label fw-semibold">Deixe seu comentário
+                  (opcional)</label>
+                <textarea class="form-control" id="feedbackComment" rows="4"
+                  placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                  maxlength="500"></textarea>
+                <div class="form-text text-end">
+                  <span id="charCount">0</span>/500 caracteres
+                </div>
+              </div>
+
+              <!-- Tipo de Feedback -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Tipo de feedback</label>
+                <div class="btn-group w-100" role="group">
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="suggestion" value="suggestion" checked />
+                  <label class="btn btn-outline-primary" for="suggestion">
+                    <i class="bi bi-lightbulb"></i> Sugestão
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="compliment" value="compliment" />
+                  <label class="btn btn-outline-success" for="compliment">
+                    <i class="bi bi-heart"></i> Elogio
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="issue" value="issue" />
+                  <label class="btn btn-outline-warning" for="issue">
+                    <i class="bi bi-exclamation-triangle"></i> Problema
+                  </label>
+                </div>
+              </div>
+
+              <!-- Email (opcional) -->
+              <div class="mb-4">
+                <label for="feedbackEmail" class="form-label fw-semibold">
+                  Email
+                  <small class="text-muted">(opcional - para
+                    respondermos)</small>
+                </label>
+                <input type="email" class="form-control" id="feedbackEmail"
+                  placeholder="seu@email.com" />
+              </div>
+
+              <!-- Termos -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox"
+                  id="feedbackTerms" required />
+                <label class="form-check-label small" for="feedbackTerms">
+                  Concordo com a
+                  <a href="pages/legal/privacy.html" target="_blank">Política
+                    de Privacidade</a>
+                  e permito o uso deste feedback para melhorias na plataforma
+                </label>
+              </div>
+
+              <!-- Botões -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger btn-md">
+                  <i class="bi bi-send-fill me-2"></i>
+                  Enviar Avaliação
+                </button>
+                <button type="button" class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content text-center">
+          <div class="modal-body py-5">
+            <div class="text-success mb-3">
+              <i class="bi bi-check-circle-fill" style="font-size: 3rem"></i>
+            </div>
+            <h5 class="fw-bold">Obrigado!</h5>
+            <p class="text-muted">Sua avaliação foi enviada com sucesso.</p>
+            <button type="button" class="btn btn-danger w-100"
+              data-bs-dismiss="modal">
+              Continuar Navegando
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/delivery.js"></script>
+
+    <script>
+        // Partners Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-filter .btn');
+            const cityButtons = document.querySelectorAll('.city-filter .btn');
+            const partnerCards = document.querySelectorAll('#partnersGrid .col-lg-4');
+            
+            // Category Filter
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all category buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active', 'btn-danger'));
+                    categoryButtons.forEach(btn => btn.classList.add('btn-outline-secondary'));
+                    
+                    // Add active class to clicked button
+                    this.classList.remove('btn-outline-secondary');
+                    this.classList.add('active', 'btn-danger');
+                    
+                    filterPartners();
+                });
+            });
+            
+            // City Filter
+            cityButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all city buttons
+                    cityButtons.forEach(btn => btn.classList.remove('active', 'btn-danger'));
+                    cityButtons.forEach(btn => btn.classList.add('btn-outline-secondary'));
+                    
+                    // Add active class to clicked button
+                    this.classList.remove('btn-outline-secondary');
+                    this.classList.add('active', 'btn-primary');
+                    
+                    filterPartners();
+                });
+            });
+            
+            function filterPartners() {
+                const activeCategory = document.querySelector('.category-filter .btn.active').getAttribute('data-category');
+                const activeCity = document.querySelector('.city-filter .btn.active').getAttribute('data-city');
+                
+                partnerCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const cardCity = card.getAttribute('data-city');
+                    
+                    const categoryMatch = activeCategory === 'all' || cardCategory === activeCategory;
+                    const cityMatch = activeCity === 'all' || cardCity === activeCity;
+                    
+                    if (categoryMatch && cityMatch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Partnership Form
+            document.getElementById('partnershipForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Solicitação de parceria enviada com sucesso! Entraremos em contacto em breve.');
+                this.reset();
+            });
+        });
+    </script>
+  </body>
+
+</html>

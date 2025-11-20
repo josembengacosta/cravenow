@@ -12,6 +12,8 @@
       content="delivery, restaurantes, comida, encomenda, pizza, sushi, churrascaria, comida tradicional, Angola, Luanda, Viana" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#dc3545" />
+    <meta name="google-site-verification" content="your-verification-code" />
+    <meta name="facebook-domain-verification" content="your-verification" />
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -34,13 +36,22 @@
     <title>DeliveryHJ - Entrega de Comida | Restaurantes em Angola</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico"
+    <link rel="shortcut icon" href="assets/img/icones/deliveryhj.png"
       type="image/x-icon" />
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
+    <link rel="canonical" href="https://deliveryhj.rf.gd/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assets/img/theme/partnership.jpg" />
+
+    <img src="assets/img/optimized/partnership.webp" class="img-thumbnail"
+      alt="Parceiro" loading="lazy" width="600"
+      height="400" />
+
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/map.css" />
     <link rel="stylesheet" href="css/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/delivery.css" />
     <link rel="preload" href="css/delivery.min.css" as="style"
@@ -48,23 +59,26 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="css/leaflet.css" />
 
-    <!-- Structured Data -->
+    <!-- Schema adicional para LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "FoodEstablishment",
+        "@type": "LocalBusiness",
         "name": "DeliveryHJ",
         "description": "Plataforma de delivery de comida em Angola",
         "url": "https://deliveryhj.rf.gd",
-        "servesCuisine": ["Angolana", "Italiana", "Japonesa", "Brasileira"],
-        "areaServed": "Angola",
+        "telephone": "+244-923-456-789",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "AO"
+        },
+        "areaServed": "Angola",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Delivery Services"
         }
       }
     </script>
-
     <!-- Loading Script -->
     <script>
     window.addEventListener("load", function () {
@@ -74,14 +88,14 @@
       }, 500);
     });
   </script>
-
   </head>
 
   <div id="networkStatus"
-      class="alert alert-warning alert-dismissible fade show d-none position-fixed top-0 start-50 translate-middle-x mt-2"
-      style="z-index: 1060;">
-      <i class="bi bi-wifi-off"></i> <span id="networkMessage">Sem conexão á internet</span>
-    </div>
+    class="alert alert-warning alert-dismissible fade show d-none position-fixed top-0 start-50 translate-middle-x mt-2"
+    style="z-index: 1060;">
+    <i class="bi bi-wifi-off"></i> <span id="networkMessage">Sem conexão á
+      internet</span>
+  </div>
 
   <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
     <!-- Loading Progress -->
@@ -93,7 +107,7 @@
     </div>
 
     <!-- Preloader -->
-    <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+    <!--  <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
       <div class="loading-logo">
         <div
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
@@ -104,15 +118,17 @@
           <span class="visually-hidden">A carregar...</span>
         </div>
       </div>
-    </div>
+    </div> --> 
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
       itemprop="breadcrumb">
       <div class="container">
+        <!-- Logo -->
         <a
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
-          href="index.html" itemprop="url">
+          href="../index.html"
+          itemprop="url">
           <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
           Delivery<span class="text-dark">HJ</span>
         </a>
@@ -121,12 +137,13 @@
           <!-- Cart Mobile -->
           <a
             class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
-            href="pages/carrinho.html"
+            href="pages/cart.html"
             aria-label="Carrinho de compras">
             <i class="bi bi-cart4" aria-hidden="true"></i>
             <span
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              20 <span class="visually-hidden">itens no carrinho</span>
+              <span id="cartCountMobile">5</span>
+              <span class="visually-hidden">itens no carrinho</span>
             </span>
           </a>
 
@@ -147,7 +164,8 @@
 
         <!-- Location Badge -->
         <div class="navbar-text mx-3 d-none d-lg-block">
-          <span class="badge bg-light text-danger">
+          <span class="badge bg-light text-danger cursor-pointer"
+            data-bs-toggle="modal" data-bs-target="#locationModal">
             <i class="bi bi-geo-alt-fill text-danger"></i>
             <span id="currentLocation" class="text-secondary">Luanda</span>
           </span>
@@ -158,38 +176,202 @@
             <!-- Cart Desktop -->
             <li class="nav-item d-none d-lg-block">
               <a class="nav-link position-relative fw-bold"
-                href="pages/carrinho.html">
+                href="pages/cart.html">
                 <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
                 <span
                   class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
-                  20 <span class="visually-hidden">itens no carrinho</span>
+                  <span id="cartCountDesktop">5</span>
+                  <span class="visually-hidden">itens no carrinho</span>
                 </span>
               </a>
             </li>
+
+            <!-- Main Navigation -->
             <li class="nav-item">
-              <a class="nav-link" href="pages/restaurantes.html"><i class="bi bi-shop"
-                  aria-hidden="true"></i> Restaurantes</a>
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-house" aria-hidden="true"></i> Início
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="pages/support/help.html"><i
-                  class="bi bi-question-circle" aria-hidden="true"></i>
-                Ajuda</a>
+              <a class="nav-link" href="pages/restaurant.html">
+                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/support/contact.html"><i class="bi bi-chat"
-                  aria-hidden="true"></i> Contacto</a>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="pages/discover/category.html">
+                    <i class="bi bi-grid-3x3-gap"></i> Categorias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="pages/discover/culinaria-tradicional.html">
+                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="pages/discover/most-restaurant.html">
+                    <i class="bi bi-star"></i> Mais Populares
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="pages/discover/new-restaurant.html">
+                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="pages/support/help.html">
+                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/support/guide.html">
+                    <i class="bi bi-play-circle"></i> Como Pedir
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/support/faq.html">
+                    <i class="bi bi-patch-question"></i> FAQ
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/support/contact.html">
+                    <i class="bi bi-chat-dots"></i> Contactar Suporte
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="pages/enterprise/about.html">
+                    <i class="bi bi-building"></i> Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/enterprise/career.html">
+                    <i class="bi bi-briefcase"></i> Carreiras
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="pages/enterprise/enterprise.html">
+                    <i class="bi bi-newspaper"></i> Imprensa
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/enterprise/blog.html">
+                    <i class="bi bi-journal-text"></i> Blog
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Legal Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="pages/legal/terms.html">
+                    <i class="bi bi-file-text"></i> Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/legal/privacy.html">
+                    <i class="bi bi-lock"></i> Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/legal/cookies.html">
+                    <i class="bi bi-bricks"></i> Política de Cookies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/legal/security.html">
+                    <i class="bi bi-shield-check"></i> Segurança
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <!-- Auth Buttons -->
-            <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-              <a class="btn btn-outline-danger m-1" href="authentic/login.html"
-                role="button">
+            <li class="nav-item dropdown d-lg-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../authentic/login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/register.html">
+                    <i class="bi bi-person-plus"></i> Registar
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/profile.html">
+                    <i class="bi bi-person-circle"></i> Meu Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pages/restaurant/request.html">
+                    <i class="bi bi-bag-check"></i> Meus Pedidos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons Desktop -->
+            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+              <a class="btn btn-outline-danger m-1"
+                href="../authentic/login.html" role="button">
                 <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
                 Entrar
               </a>
             </li>
-            <li class="nav-item mb-2 mb-lg-0">
-              <a class="btn btn-danger m-1" href="authentic/register.html" role="button">
+            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+              <a class="btn btn-danger m-1" href="../authentic/register.html"
+                role="button">
                 <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
                 Registar
               </a>
@@ -198,6 +380,63 @@
         </div>
       </div>
     </nav>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1"
+      aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">
+              <i class="bi bi-geo-alt-fill text-danger"></i>
+              Alterar Localização
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="provinceSelect" class="form-label">Província</label>
+              <select class="form-select" id="provinceSelect">
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huila">Huíla</option>
+                <option value="cabinda">Cabinda</option>
+                <option value="huambo">Huambo</option>
+                <option value="malanje">Malanje</option>
+                <!-- Add all 18 provinces -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="municipalitySelect"
+                class="form-label">Município</label>
+              <select class="form-select" id="municipalitySelect">
+                <option value="luanda">Luanda</option>
+                <option value="viana">Viana</option>
+                <option value="cacuaco">Cacuaco</option>
+                <option value="cazenga">Cazenga</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                id="detectLocation" />
+              <label class="form-check-label" for="detectLocation">
+                Detetar minha localização automaticamente
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="saveLocation">
+              Guardar Localização
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section text-center" itemprop="mainEntity" itemscope
@@ -287,6 +526,50 @@
       </div>
     </section>
 
+    <!-- Adicionar antes dos restaurantes populares -->
+    <section class="features-section py-5">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <h2 class="fw-bold">
+              <i class="bi bi-lightning-charge text-danger"></i>
+              Por que Escolher a DeliveryHJ?
+            </h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3 text-center">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-shield-check text-success fs-1"></i>
+            </div>
+            <h5>Pagamento Seguro</h5>
+            <p class="text-muted">Multicaixa Express e cartões protegidos</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-clock text-primary fs-1"></i>
+            </div>
+            <h5>Entrega Rápida</h5>
+            <p class="text-muted">30-45 minutos em média</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-star text-warning fs-1"></i>
+            </div>
+            <h5>Restaurantes Avaliados</h5>
+            <p class="text-muted">Todos verificados e classificados</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-headset text-info fs-1"></i>
+            </div>
+            <h5>Suporte 24/7</h5>
+            <p class="text-muted">Ajuda quando você precisar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================================== -->
     <!-- CAROUSEL DE IMAGENS DE COMIDA -->
     <!-- ================================== -->
@@ -298,8 +581,9 @@
               <i class="bi bi-egg-fried text-danger"></i>
               Descubra os Sabores de Angola
             </h2>
-            <p class="lead text-muted">Uma jornada gastronómica através dos
-              pratos mais populares</p>
+            <p class="lead text-muted">
+              Uma jornada gastronómica através dos pratos mais populares
+            </p>
           </div>
         </div>
 
@@ -325,11 +609,12 @@
               <img
                 src="https://media.istockphoto.com/id/1303468121/pt/foto/muamba-chicken.webp?a=1&b=1&s=612x612&w=0&k=20&c=FTGH25FojcqsT9WIFqDC1qU8Zmm0bNVHtyZc6ADGIh0="
                 class="d-block w-100 carousel-image"
-                alt="Muamba de Galinha - Prato tradicional angolano">
+                alt="Muamba de Galinha - Prato tradicional angolano" />
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="fw-bold text-white-50">Muamba de Galinha</h3>
-                <p class="fs-5 text-white">O sabor autêntico da culinária
-                  angolana</p>
+                <p class="fs-5 text-white">
+                  O sabor autêntico da culinária angolana
+                </p>
                 <span class="badge bg-danger fs-6">Mais Pedido</span>
               </div>
             </div>
@@ -339,11 +624,12 @@
               <img
                 src="https://media.istockphoto.com/id/1210364161/pt/foto/calulu-1.webp?a=1&b=1&s=612x612&w=0&k=20&c=tZ9ictbfR5aBpRJfOhiR0UJ4AiOLONu1oKMlLLYqjCY="
                 class="d-block w-100 carousel-image"
-                alt="Calulu - Prato com peixe e verduras">
+                alt="Calulu - Prato com peixe e verduras" />
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="fw-bold text-white-50">Calulu</h3>
-                <p class="fs-5 text-white">Peixe fresco com verduras
-                  selecionadas</p>
+                <p class="fs-5 text-white">
+                  Peixe fresco com verduras selecionadas
+                </p>
                 <span class="badge bg-success fs-6">Saudável</span>
               </div>
             </div>
@@ -353,11 +639,12 @@
               <img
                 src="https://media.istockphoto.com/id/1393845959/pt/foto/salmon-with-salad.webp?a=1&b=1&s=612x612&w=0&k=20&c=A1XcDSlllVAB2vF36mx1Yk31xmPx5u8MxD8yEeBUNdk="
                 class="d-block w-100 carousel-image"
-                alt="Mufete - Prato com peixe grelhado">
+                alt="Mufete - Prato com peixe grelhado" />
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="fw-bold text-white-50">Mufete</h3>
-                <p class="fs-5 text-white">Peixe grelhado com feijão de óleo de
-                  palma</p>
+                <p class="fs-5 text-white">
+                  Peixe grelhado com feijão de óleo de palma
+                </p>
                 <span class="badge bg-warning fs-6">Tradicional</span>
               </div>
             </div>
@@ -366,11 +653,12 @@
             <div class="carousel-item">
               <img src="assets/img/local/foto-4.jpg"
                 class="d-block w-100 carousel-image"
-                alt="Pirão - Acompanhamento tradicional">
+                alt="Pirão - Acompanhamento tradicional" />
               <div class="carousel-caption d-none d-md-block">
                 <h3 class="fw-bold text-white-50">Pirão</h3>
-                <p class="fs-5 text-white">O acompanhamento perfeito para seus
-                  pratos</p>
+                <p class="fs-5 text-white">
+                  O acompanhamento perfeito para seus pratos
+                </p>
                 <span class="badge bg-info fs-6">Clássico</span>
               </div>
             </div>
@@ -444,8 +732,9 @@
               <i class="bi bi-geo-alt text-danger"></i>
               Restaurantes Perto de Si
             </h2>
-            <p class="lead text-muted">Encontre os melhores restaurantes na sua
-              área</p>
+            <p class="lead text-muted">
+              Encontre os melhores restaurantes na sua área
+            </p>
           </div>
         </div>
 
@@ -521,7 +810,7 @@
 
                   <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox"
-                      id="openNowFilter" checked>
+                      id="openNowFilter" checked />
                     <label class="form-check-label fw-semibold"
                       for="openNowFilter">
                       <i class="bi bi-clock text-success"></i>
@@ -531,7 +820,7 @@
 
                   <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox"
-                      id="deliveryFilter" checked>
+                      id="deliveryFilter" checked />
                     <label class="form-check-label fw-semibold"
                       for="deliveryFilter">
                       <i class="bi bi-bicycle text-primary"></i>
@@ -549,12 +838,16 @@
                   <div class="row text-center">
                     <div class="col-6 mb-2">
                       <div class="stat-number text-danger fw-bold"
-                        id="restaurantsCount">0</div>
+                        id="restaurantsCount">
+                        0
+                      </div>
                       <small class="text-muted">Restaurantes</small>
                     </div>
                     <div class="col-6 mb-2">
                       <div class="stat-number text-success fw-bold"
-                        id="deliveryCount">0</div>
+                        id="deliveryCount">
+                        0
+                      </div>
                       <small class="text-muted">Com Entrega</small>
                     </div>
                   </div>
@@ -630,8 +923,7 @@
       <section aria-labelledby="featured-restaurants">
         <h2 id="featured-restaurants" class="mt-5 fw-bold text-center">
           <i class="bi bi-stars text-danger" aria-hidden="true"></i>
-          Restaurantes Populares
-          em Destaque
+          Restaurantes Populares em Destaque
         </h2>
 
         <!-- Categories Filter -->
@@ -662,7 +954,6 @@
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 pb-5"
           id="restaurantList" role="list">
-
           <!-- Tradicional -->
           <div class="col" data-category="tradicional" role="listitem">
             <div class="card h-100 shadow-sm restaurant-card cursor-pointer"
@@ -723,7 +1014,8 @@
               <div
                 class="card-footer bg-transparent border-0 d-flex justify-content-between">
                 <small class="text-muted"><i class="bi bi-clock"
-                    aria-hidden="true"></i>20-30 min</small>
+                    aria-hidden="true"></i>20-30
+                  min</small>
                 <small class="text-muted"><i class="bi bi-cash"
                     aria-hidden="true"></i> Multicaixa,
                   Dinheiro</small>
@@ -789,9 +1081,11 @@
               <div
                 class="card-footer bg-transparent border-0 d-flex justify-content-between">
                 <small class="text-muted"><i class="bi bi-clock"
-                    aria-hidden="true"></i> 35-50 min</small>
+                    aria-hidden="true"></i> 35-50
+                  min</small>
                 <small class="text-muted"><i class="bi bi-cash"
-                    aria-hidden="true"></i> Multicaixa, Dinheiro</small>
+                    aria-hidden="true"></i> Multicaixa,
+                  Dinheiro</small>
               </div>
             </div>
           </div>
@@ -806,8 +1100,7 @@
             <div class="col-md-6">
               <h2 id="testimonials-title" class="mb-4 fw-bold">
                 <i class="bi bi-shop text-danger" aria-hidden="true"></i> Seja
-                um
-                Restaurante Parceiro
+                um Restaurante Parceiro
               </h2>
               <p>Aumenta suas vendas e alcance mais clientes</p>
               <ul class="list-unstyled">
@@ -822,12 +1115,14 @@
                   <i class="bi bi-check text-success"></i>Pagamentos seguros
                 </li>
               </ul>
-              <div class="mb-1"><a href class="btn btn-success">Cadastrar meu
-                  restaurante</a></div>
+              <div class="mb-1">
+                <a href="pages/partner/partner-register.html"
+                  class="btn btn-success">Cadastrar meu restaurante</a>
+              </div>
             </div>
             <div class="col-md-6">
               <img src="assets/img/theme/partnership.jpg" class="img-thumbnail"
-                alt="Parceiro">
+                alt="Parceiro" />
             </div>
           </div>
         </div>
@@ -843,8 +1138,7 @@
               <div class="text-center mb-5">
                 <h2 id="testimonials-title" class="mb-4 fw-bold">
                   <i class="bi bi-wechat text-danger" aria-hidden="true"></i> O
-                  Que Dizem
-                  Nossos Clientes
+                  Que Dizem Nossos Clientes
                 </h2>
                 <p class="mb-0">
                   Experiências reais de quem já pediu com a DeliveryHJ
@@ -909,7 +1203,7 @@
                 </div>
               </div>
             </div>
-              <!-- More testimonials... -->
+            <!-- More testimonials... -->
           </div>
         </div>
       </section>
@@ -923,10 +1217,11 @@
               <div class="mb-5 mb-lg-0">
                 <h2 id="about-title" class="mb-4 fw-bold">
                   <i class="bi bi-info-circle text-danger"
-                    aria-hidden="true"></i> Sobre Nós
+                    aria-hidden="true"></i>
+                  Sobre Nós
                 </h2>
-                <a href="pages/sobre.html" class="btn btn-delivery me-3"
-                  role="button">Saiba mais</a>
+                <a href="pages/enterprise/about.html"
+                  class="btn btn-delivery me-3" role="button">Saiba mais</a>
               </div>
             </div>
             <div class="col-lg-8 offset-lg-1 col-md-12">
@@ -1034,9 +1329,10 @@
                 <!-- Estatísticas -->
                 <div class="stats d-flex gap-4 text-center">
                   <div>
-                    <h4 class="fw-bold text-danger mb-1"> <span class="counter"
-                        data-valor="5000"
-                        data-tipo="contagem">0</span></h4>
+                    <h4 class="fw-bold text-danger mb-1">
+                      <span class="counter" data-valor="5000"
+                        data-tipo="contagem">0</span>
+                    </h4>
                     <small class="text-muted">Assinantes</small>
                   </div>
                   <div>
@@ -1066,7 +1362,7 @@
                       class="form-label fw-semibold">Nome</label>
                     <input type="text" class="form-control form-control-lg"
                       autocomplete="name" id="newsletterName"
-                      placeholder="Como gostaria de ser chamado?" required>
+                      placeholder="Como gostaria de ser chamado?" required />
                     <div class="invalid-feedback">
                       Por favor, insira seu nome.
                     </div>
@@ -1077,7 +1373,7 @@
                       class="form-label fw-semibold">Email</label>
                     <input type="email" class="form-control form-control-lg"
                       autocomplete="email" id="newsletterEmail"
-                      placeholder="seu@melhor.email" required>
+                      placeholder="seu@melhor.email" required />
                     <div class="invalid-feedback">
                       Por favor, insira um email válido.
                     </div>
@@ -1090,7 +1386,7 @@
 
                     <div class="form-check mb-2">
                       <input class="form-check-input" type="checkbox"
-                        id="prefPromotions" checked>
+                        id="prefPromotions" checked />
                       <label class="form-check-label" for="prefPromotions">
                         <strong>Promoções e Descontos</strong>
                         <small class="d-block text-muted">Ofertas exclusivas
@@ -1100,7 +1396,7 @@
 
                     <div class="form-check mb-2">
                       <input class="form-check-input" type="checkbox"
-                        id="prefNewRestaurants" checked>
+                        id="prefNewRestaurants" checked />
                       <label class="form-check-label" for="prefNewRestaurants">
                         <strong>Novos Restaurantes</strong>
                         <small class="d-block text-muted">Lançamentos na sua
@@ -1110,7 +1406,7 @@
 
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox"
-                        id="prefTips">
+                        id="prefTips" />
                       <label class="form-check-label" for="prefTips">
                         <strong>Dicas e Novidades</strong>
                         <small class="d-block text-muted">Como aproveitar melhor
@@ -1122,11 +1418,11 @@
                   <!-- Termos -->
                   <div class="form-check mb-4">
                     <input class="form-check-input" type="checkbox"
-                      id="newsletterTerms" required>
+                      id="newsletterTerms" required />
                     <label class="form-check-label small" for="newsletterTerms">
                       Concordo em receber comunicações da DeliveryHJ e confirmo
                       que li a
-                      <a href="politica-privacidade.html"
+                      <a href="pages/legal/privacy.html"
                         target="_blank">Política de Privacidade</a>
                     </label>
                     <div class="invalid-feedback">
@@ -1158,122 +1454,310 @@
     <div class="divider-fade"></div>
 
     <!-- Footer -->
-    <footer class="bg-body-tertiary py-3 border-top" role="contentinfo">
+    <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
       <div class="container">
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <h5 class="fw-bold text-danger">
-              <i class="bi bi-bag-heart-fill" aria-hidden="true"></i> DeliveryHJ
-            </h5>
-            <p class="text-muted small">
-              Sua plataforma de delivery preferida em Angola.
-            </p>
-            <div class="mt-3 footer-social">
-              <a href="#" class="text-decoration-none text-secondary me-3 fs-5"
-                aria-label="Siga-nos no Facebook"><i
-                  class="bi bi-facebook"></i></a>
-              <a href="#" class="text-decoration-none text-secondary me-3 fs-5"
-                aria-label="Siga-nos no Instagram"><i
-                  class="bi bi-instagram"></i></a>
-              <a href="#" class="text-decoration-none text-secondary me-3 fs-5"
-                aria-label="Conecte-se no LinkedIn"><i
-                  class="bi bi-linkedin"></i></a>
-              <a href="#" class="text-decoration-none text-secondary fs-5"
-                aria-label="Fale connosco no WhatsApp"><i
-                  class="bi bi-whatsapp"></i></a>
+        <div class="row g-4">
+          <!-- Company Info -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-brand mb-3">
+              <h5 class="fw-bold text-danger mb-3">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Delivery<span class="text-dark">HJ</span>
+              </h5>
+              <p class="text-muted small">
+                Conectando sabores, construindo comunidades. A plataforma de
+                delivery feita por angolanos para Angola.
+              </p>
             </div>
+
+            <div class="footer-social mb-4">
+              <h6 class="fw-semibold mb-3">Siga-nos</h6>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Facebook"
+                  title="Facebook">
+                  <i class="bi bi-facebook fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Instagram"
+                  title="Instagram">
+                  <i class="bi bi-instagram fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Conecte-se no LinkedIn"
+                  title="LinkedIn">
+                  <i class="bi bi-linkedin fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Twitter" title="Twitter">
+                  <i class="bi bi-twitter fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Fale connosco no WhatsApp"
+                  title="WhatsApp">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- App Download -->
+            <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
           </div>
 
-          <div class="col-md-2 mb-3">
-            <h5 class="fw-bold text-dark"><i class="bi bi-people" aria-hidden="true"></i> Para Clientes</h5>
+          <!-- For Customers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-people" aria-hidden="true"></i> Para Clientes
+            </h6>
             <ul class="list-unstyled">
-              <li>
-                <a href="pages/support/como-pedir.html"
-                  class="text-decoration-none link-secondary">Como Pedir</a>
+              <li class="mb-2">
+                <a href="index.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-house"></i> Início
+                </a>
               </li>
-              <li>
-                <a href="pages/restaurantes.html"
-                  class="text-decoration-none link-secondary">Restaurantes</a>
+              <li class="mb-2">
+                <a href="pages/restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-shop"></i> Restaurantes
+                </a>
               </li>
-              <li>
-                <a href="pages/promocoes.html"
-                  class="text-decoration-none link-secondary">Promoções</a>
+              <li class="mb-2">
+                <a href="pages/promotion.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-percent"></i> Promoções
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/discover/category.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-grid-3x3-gap"></i> Categorias
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/discover/culinaria-tradicional.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-egg-fried"></i> Tradicional
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/discover/most-restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-star"></i> Mais Populares
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="col-md-2 mb-3">
-            <h5 class="fw-bold text-dark"><i class="bi bi-person-gear" aria-hidden="true"></i> Para Parceiros</h5>
+          <!-- For Partners -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-person-gear" aria-hidden="true"></i> Para
+              Parceiros
+            </h6>
             <ul class="list-unstyled">
-              <li>
-                <i class></i><a href="pages/partner-register.html"
-                  class="text-decoration-none link-secondary">Junte-se a
-                  Nós</a>
+              <li class="mb-2">
+                <a href="pages/partner/partner-register.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building-add"></i> Junte-se a Nós
+                </a>
               </li>
-              <li>
-                <a href="pages/partner-login.html"
-                  class="text-decoration-none link-secondary">Área do
-                  Parceiro</a>
+              <li class="mb-2">
+                <a href="pages/partner/partner-login.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-box-arrow-in-right"></i> Área do Parceiro
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/partner/partnership.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-hand-index"></i> Nossos Parceiros
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/partner/resource.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-file-earmark-text"></i> Recursos
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/partner/success-stories.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-trophy"></i> Histórias de Sucesso
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="col-md-2 mb-3">
-            <h5 class="fw-bold text-dark"><i class="bi bi-question-circle" aria-hidden="true"></i> Suporte</h5>
+          <!-- Support -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-question-circle" aria-hidden="true"></i> Suporte
+            </h6>
             <ul class="list-unstyled">
-              <li>
+              <li class="mb-2">
                 <a href="pages/support/help.html"
-                  class="text-decoration-none link-secondary">Ajuda</a>
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                </a>
               </li>
-              <li>
-                <a href="pages/support/contact.html"
-                  class="text-decoration-none link-secondary">Contacto</a>
+              <li class="mb-2">
+                <a href="pages/support/guide.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-play-circle"></i> Como Pedir
+                </a>
               </li>
-              <li>
+              <li class="mb-2">
                 <a href="pages/support/faq.html"
-                  class="text-decoration-none link-secondary">FAQ</a>
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-patch-question"></i> FAQ
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/support/contact.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-chat-dots"></i> Contactar Suporte
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/support/complaints.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-exclamation-triangle"></i> Reclamações
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="col-md-3">
-            <h5 class="fw-bold text-dark"><i class="bi bi-envelope" aria-hidden="true"></i> Contacto</h5>
+          <!-- Company -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-building" aria-hidden="true"></i> Empresa
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">
+                <a href="pages/enterprise/about.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-circle"></i> Sobre Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/enterprise/career.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-briefcase"></i> Carreiras
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/enterprise/enterprise.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-newspaper"></i> Imprensa
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="pages/enterprise/blog.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-pencil"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Contacto
+            </h6>
             <ul class="list-unstyled">
-              <li>
+              <li class="mb-2">
                 <a href="mailto:suporte@deliveryhj.com"
-                  class="text-decoration-none link-secondary">
-                  suporte@deliveryhj.com
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-envelope"></i> suporte@deliveryhj.com
                 </a>
               </li>
-                <li>
-                <a href="mailto:suporte@deliveryhj.com"
-                  class="text-decoration-none link-secondary">
-                  denunciar@deliveryhj.com
+              <li class="mb-2">
+                <a href="mailto:parceiros@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building"></i> parceiros@deliveryhj.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+244923456789"
-                  class="text-decoration-none link-secondary"> +244 923 456 789
+              <li class="mb-2">
+                <a href="mailto:info@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-square"></i> info@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="tel:+244945678901"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-whatsapp"></i> +244 945 678 901
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="text-center pt-3 border-top mt-3">
-          <small class="text-muted">&copy; 2025 DeliveryHJ. Todos os direitos
-            reservados.</small>
-          <br />
-          <small class="text-muted">
-            <a href="pages/privacy.html"
-              class="text-muted text-decoration-none">Privacidade</a>
-            |
-            <a href="pages/terms.html"
-              class="text-muted text-decoration-none">Termos de Uso</a>
-            |
-            <a href="pages/cookies.html"
-              class="text-muted text-decoration-none">Cookies</a>
-          </small>
+        <hr class="my-4" />
+
+        <!-- Bottom Footer -->
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <small class="text-muted">
+              &copy;2025 DeliveryHJ. Todos os direitos reservados.
+            </small>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-flex flex-wrap justify-content-md-end gap-3">
+              <a href="pages/legal/terms.html"
+                class="text-muted text-decoration-none small">
+                Termos de Uso
+              </a>
+              <a href="pages/legal/privacy.html"
+                class="text-muted text-decoration-none small">
+                Privacidade
+              </a>
+              <a href="pages/legal/cookies.html"
+                class="text-muted text-decoration-none small">
+                Cookies
+              </a>
+              <a href="pages/legal/security.html"
+                class="text-muted text-decoration-none small">
+                Segurança
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="text-center">
+              <div class="d-flex flex-wrap justify-content-center gap-4">
+                <small class="text-muted">
+                  <i class="bi bi-shield-check text-success"></i> Pagamentos
+                  Seguros
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-truck text-primary"></i> Entregas Rápidas
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-star-fill text-warning"></i> Avaliado 4.8/5
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-heart-fill text-danger"></i> Feito em Angola
+                </small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -1330,15 +1814,15 @@
               <div class="text-center mb-4">
                 <h6 class="mb-3">Como foi sua experiência?</h6>
                 <div class="star-rating-large mb-2">
-                  <input type="radio" id="star5" name="rating" value="5">
+                  <input type="radio" id="star5" name="rating" value="5" />
                   <label for="star5" class="star-label">★</label>
-                  <input type="radio" id="star4" name="rating" value="4">
+                  <input type="radio" id="star4" name="rating" value="4" />
                   <label for="star4" class="star-label">★</label>
-                  <input type="radio" id="star3" name="rating" value="3">
+                  <input type="radio" id="star3" name="rating" value="3" />
                   <label for="star3" class="star-label">★</label>
-                  <input type="radio" id="star2" name="rating" value="2">
+                  <input type="radio" id="star2" name="rating" value="2" />
                   <label for="star2" class="star-label">★</label>
-                  <input type="radio" id="star1" name="rating" value="1">
+                  <input type="radio" id="star1" name="rating" value="1" />
                   <label for="star1" class="star-label">★</label>
                 </div>
                 <small class="text-muted" id="ratingText">Clique para
@@ -1363,19 +1847,19 @@
                 <label class="form-label fw-semibold">Tipo de feedback</label>
                 <div class="btn-group w-100" role="group">
                   <input type="radio" class="btn-check" name="feedbackType"
-                    id="suggestion" value="suggestion" checked>
+                    id="suggestion" value="suggestion" checked />
                   <label class="btn btn-outline-primary" for="suggestion">
                     <i class="bi bi-lightbulb"></i> Sugestão
                   </label>
 
                   <input type="radio" class="btn-check" name="feedbackType"
-                    id="compliment" value="compliment">
+                    id="compliment" value="compliment" />
                   <label class="btn btn-outline-success" for="compliment">
                     <i class="bi bi-heart"></i> Elogio
                   </label>
 
                   <input type="radio" class="btn-check" name="feedbackType"
-                    id="issue" value="issue">
+                    id="issue" value="issue" />
                   <label class="btn btn-outline-warning" for="issue">
                     <i class="bi bi-exclamation-triangle"></i> Problema
                   </label>
@@ -1385,20 +1869,22 @@
               <!-- Email (opcional) -->
               <div class="mb-4">
                 <label for="feedbackEmail" class="form-label fw-semibold">
-                  Email <small class="text-muted">(opcional - para
+                  Email
+                  <small class="text-muted">(opcional - para
                     respondermos)</small>
                 </label>
                 <input type="email" class="form-control" id="feedbackEmail"
-                  placeholder="seu@email.com">
+                  placeholder="seu@email.com" />
               </div>
 
               <!-- Termos -->
               <div class="form-check mb-4">
                 <input class="form-check-input" type="checkbox"
-                  id="feedbackTerms" required>
+                  id="feedbackTerms" required />
                 <label class="form-check-label small" for="feedbackTerms">
-                  Concordo com a <a href="politica-privacidade.html"
-                    target="_blank">Política de Privacidade</a>
+                  Concordo com a
+                  <a href="pages/legal/privacy.html" target="_blank">Política de
+                    Privacidade</a>
                   e permito o uso deste feedback para melhorias na plataforma
                 </label>
               </div>
@@ -1428,7 +1914,7 @@
         <div class="modal-content text-center">
           <div class="modal-body py-5">
             <div class="text-success mb-3">
-              <i class="bi bi-check-circle-fill" style="font-size: 3rem;"></i>
+              <i class="bi bi-check-circle-fill" style="font-size: 3rem"></i>
             </div>
             <h5 class="fw-bold">Obrigado!</h5>
             <p class="text-muted">Sua avaliação foi enviada com sucesso.</p>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="Erro interno do servidor - DeliveryHJ" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <title>Erro Interno do Servidor - DeliveryHJ</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/favicon.ico"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/cart.css">
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <style>
+        .error-hero {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(152, 27, 40, 0.8) 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(255,255,255,0.05)" cx="500" cy="500" r="400"/></svg>');
+            background-size: cover;
+        }
+        
+        .error-code {
+            font-size: 12rem;
+            font-weight: bold;
+            line-height: 1;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .error-animation {
+            animation: shake 0.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+        
+        .error-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .status-updates {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .status-operational { background: #28a745; }
+        .status-degraded { background: #ffc107; }
+        .status-outage { background: #dc3545; }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 8rem;
+            }
+        }
+    </style>
+    </head>
+
+    <body class="bg-body" style="overflow-y: auto;">
+
+         <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+            <div class="container">
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../../index.html">
+                    <i class="bi bi-bag-heart-fill"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center">
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Error Content -->
+        <section class="error-hero py-4">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <div class="error-animation mb-4">
+                            <i
+                                class="bi bi-tools display-1 text-warning mb-3"></i>
+                            <div class="error-code mb-3">500</div>
+                        </div>
+
+                        <div class="error-card p-5 shadow-lg mb-5">
+                            <h1 class="display-5 fw-bold text-black mb-3">
+                                Erro Interno do Servidor
+                            </h1>
+                            <p class="lead text-muted mb-4">
+                                Estamos enfrentando problemas técnicos
+                                momentâneos.
+                                <br>Nossa equipa já foi notificada e está
+                                trabalhando na solução.
+                            </p>
+
+                            <div class="alert alert-danger mb-4">
+                                <i
+                                    class="bi bi-exclamation-octagon-fill me-2"></i>
+                                <strong>Atenção:</strong> Este erro é
+                                temporário. Por favor, tente novamente em alguns
+                                minutos.
+                            </div>
+
+                            <div class="status-updates mb-4">
+                                <h5 class="fw-semibold mb-3 text-black">
+                                    <i
+                                        class="bi bi-speedometer2 me-2"></i>Status
+                                    do Sistema
+                                </h5>
+                                <div class="status-item">
+                                    <div
+                                        class="status-dot status-operational"></div>
+                                    <span class="text-black-50">Plataforma
+                                        Principal - <strong
+                                            class="text-success">Operacional</strong></span>
+                                </div>
+                                <div class="status-item">
+                                    <div
+                                        class="status-dot status-degraded"></div>
+                                    <span class="text-black-50">Serviços de
+                                        Pagamento - <strong
+                                            class="text-warning">Degradado</strong></span>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-dot status-outage"></div>
+                                    <span class="text-black-50">API de Pedidos -
+                                        <strong
+                                            class="text-danger">Indisponível</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="quick-actions mb-4">
+                                <h5 class="fw-semibold mb-3 text-black">
+                                    <i class="bi bi-lightning me-2"></i>Ações
+                                    Rápidas
+                                </h5>
+                                <div
+                                    class="d-flex flex-wrap justify-content-center gap-3">
+                                    <button class="btn btn-warning"
+                                        onclick="window.location.reload()">
+                                        <i
+                                            class="bi bi-arrow-clockwise me-2"></i>Recarregar
+                                        Página
+                                    </button>
+                                    <a href="../../index.html"
+                                        class="btn btn-danger">
+                                        <i class="bi bi-house me-2"></i>Página
+                                        Inicial
+                                    </a>
+                                    <a href="../support/status.html"
+                                        class="btn btn-outline-danger">
+                                        <i
+                                            class="bi bi-graph-up me-2"></i>Status
+                                        do Sistema
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="technical-info text-light">
+                            <details class="mb-4">
+                                <summary class="fw-semibold cursor-pointer">
+                                    <i
+                                        class="bi bi-info-circle me-2"></i>Informações
+                                    Técnicas (Para Desenvolvedores)
+                                </summary>
+                                <div
+                                    class="mt-3 p-3 bg-dark rounded text-start">
+                                    <small class="text-muted">
+                                        <strong>Error Code:</strong> 500
+                                        Internal Server Error<br>
+                                        <strong>Timestamp:</strong> <span
+                                            id="timestamp"></span><br>
+                                        <strong>Request ID:</strong> DHJ-<span
+                                            id="requestId"></span><br>
+                                        <strong>Support Reference:</strong>
+                                        <span id="supportRef"></span>
+                                    </small>
+                                </div>
+                            </details>
+
+                            <div class="support-contact">
+                                <p class="mb-2">Problema persistente? Contacte
+                                    nosso suporte técnico</p>
+                                <div
+                                    class="d-flex flex-wrap justify-content-center gap-3">
+                                    <a href="mailto:tecnicos@deliveryhj.com"
+                                        class="btn btn-light btn-sm">
+                                        <i class="bi bi-envelope me-2"></i>Email
+                                        Técnico
+                                    </a>
+                                    <a href="../support/contact.html"
+                                        class="btn btn-outline-light btn-sm">
+                                        <i
+                                            class="bi bi-headset me-2"></i>Suporte
+                                        Urgente
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-brand mb-3">
+                            <h5 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-bag-heart-fill"
+                                    aria-hidden="true"></i>
+                                Delivery<span class="text-dark">HJ</span>
+                            </h5>
+                            <p class="text-muted small">
+                                Conectando sabores, construindo comunidades. A
+                                plataforma de
+                                delivery feita por angolanos para Angola.
+                            </p>
+                        </div>
+
+                        <div class="footer-social mb-4">
+                            <h6 class="fw-semibold mb-3">Siga-nos</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Facebook"
+                                    title="Facebook">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Instagram"
+                                    title="Instagram">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Conecte-se no LinkedIn"
+                                    title="LinkedIn">
+                                    <i class="bi bi-linkedin fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Twitter"
+                                    title="Twitter">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Fale connosco no WhatsApp"
+                                    title="WhatsApp">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App Download -->
+                        <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+                    </div>
+
+                    <!-- For Customers -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-people" aria-hidden="true"></i> Para
+                            Clientes
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../../index.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-house"></i> Início
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-shop"></i> Restaurantes
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/promotion.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-percent"></i> Promoções
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/discover/category.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                    Categorias
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/discover/culinaria-tradicional.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-egg-fried"></i> Tradicional
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/discover/most-restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-star"></i> Mais Populares
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- For Partners -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                            Para
+                            Parceiros
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/partner/partner-register.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building-add"></i> Junte-se
+                                    a Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/partner-login.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    Área do Parceiro
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/partnership.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-hand-index"></i> Nossos
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/partner/resource.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    Recursos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="../../pages/partner/sucess-history.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-trophy"></i> Histórias de
+                                    Sucesso
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../../pages/support/help.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-life-preserver"></i> Centro
+                                    de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/como-pedir.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-play-circle"></i> Como Pedir
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/faq.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-patch-question"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/contact.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-chat-dots"></i> Contactar
+                                    Suporte
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/support/complaints.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reclamações
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            Empresa
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/about.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-circle"></i> Sobre Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/career.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-briefcase"></i> Carreiras
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/enterprise.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-newspaper"></i> Imprensa
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../../pages/enterprise/blog.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-pencil"></i> Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            Contacto
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-envelope"></i>
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:parceiros@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building"></i>
+                                    parceiros@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:info@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-square"></i>
+                                    info@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+244945678901"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-whatsapp"></i> +244 945 678
+                                    901
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Bottom Footer -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <small class="text-muted">
+                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="../../pages/legal/terms.html"
+                                class="text-muted text-decoration-none small">
+                                Termos de Uso
+                            </a>
+                            <a href="../../pages/legal/privacy.html"
+                                class="text-muted text-decoration-none small">
+                                Privacidade
+                            </a>
+                            <a href="../../pages/legal/cookies.html"
+                                class="text-muted text-decoration-none small">
+                                Cookies
+                            </a>
+                            <a href="../../pages/legal/seguranca.html"
+                                class="text-muted text-decoration-none small">
+                                Segurança
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-4">
+                                <small class="text-muted">
+                                    <i
+                                        class="bi bi-shield-check text-success"></i>
+                                    Pagamentos
+                                    Seguros
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-truck text-primary"></i>
+                                    Entregas Rápidas
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Avaliado 4.8/5
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart-fill text-danger"></i>
+                                    Feito em Angola
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5" />
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4" />
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3" />
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2" />
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1" />
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked />
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment" />
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue" />
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email
+                                    <small class="text-muted">(opcional - para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com" />
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required />
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a
+                                    <a href="../../pages/legal/privacy.html"
+                                        target="_blank">Política
+                                        de Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/delivery.js"></script>
+        <script>
+        // Generate technical info
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+        document.getElementById('requestId').textContent = Math.random().toString(36).substr(2, 9).toUpperCase();
+        document.getElementById('supportRef').textContent = 'SR-' + Date.now();
+        document.getElementById('lastUpdate').textContent = new Date().toLocaleString('pt-AO');
+        
+        // Theme Toggle
+        document.getElementById('toggleDark').addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            const icon = this.querySelector('i');
+            icon.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        });
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        const icon = document.querySelector('#toggleDark i');
+        if (savedTheme === 'dark') {
+            icon.className = 'bi bi-sun-fill';
+        }
+        
+        // Auto retry after 30 seconds
+        setTimeout(() => {
+            console.log('Tentativa automática de reconexão...');
+        }, 30000);
+        
+        console.log('🚀 Página 500 carregada - DeliveryHJ Technical Team');
+    </script>
+    </body>
+</html>

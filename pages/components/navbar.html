@@ -1,0 +1,292 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+    itemprop="breadcrumb">
+    <div class="container">
+        <!-- Logo -->
+        <a
+            class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+            href="../index.html" itemprop="url">
+            <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+            Delivery<span class="text-dark">HJ</span>
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+            <!-- Cart Mobile -->
+            <a
+                class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                href="cart.html"
+                aria-label="Carrinho de compras">
+                <i class="bi bi-cart4" aria-hidden="true"></i>
+                <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span id="cartCountMobile">5</span>
+                    <span class="visually-hidden">itens no carrinho</span>
+                </span>
+            </a>
+
+            <!-- Theme Toggle -->
+            <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
+                title="Alternar tema"
+                aria-label="Alternar entre tema escuro e claro">
+                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+            </button>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="navbar-text mx-3 d-none d-lg-block">
+            <span class="badge bg-light text-danger cursor-pointer"
+                data-bs-toggle="modal" data-bs-target="#locationModal">
+                <i class="bi bi-geo-alt-fill text-danger"></i>
+                <span id="currentLocation" class="text-secondary">Luanda</span>
+            </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <!-- Cart Desktop -->
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link position-relative fw-bold"
+                        href="cart.html">
+                        <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
+                        <span
+                            class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartCountDesktop">5</span>
+                            <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
+                </li>
+
+                <!-- Main Navigation -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">
+                        <i class="bi bi-house" aria-hidden="true"></i> Início
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="restaurant.html">
+                        <i class="bi bi-shop" aria-hidden="true"></i>
+                        Restaurantes
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="promocoes.html">
+                        <i class="bi bi-percent" aria-hidden="true"></i>
+                        Promoções
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="categorias.html">
+                                <i class="bi bi-grid-3x3-gap"></i> Categorias
+                            </a></li>
+                        <li><a class="dropdown-item"
+                                href="culinaria-tradicional.html">
+                                <i class="bi bi-egg-fried"></i> Culinária
+                                Tradicional
+                            </a></li>
+                        <li><a class="dropdown-item"
+                                href="restaurantes-populares.html">
+                                <i class="bi bi-star"></i> Mais Populares
+                            </a></li>
+                        <li><a class="dropdown-item"
+                                href="novos-restaurantes.html">
+                                <i class="bi bi-rocket-takeoff"></i> Novos na
+                                Plataforma
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- Support Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-question-circle" aria-hidden="true"></i>
+                        Ajuda
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="support/help.html">
+                                <i class="bi bi-life-preserver"></i> Centro de
+                                Ajuda
+                            </a></li>
+                        <li><a class="dropdown-item" href="support/guide.html">
+                                <i class="bi bi-play-circle"></i> Como Pedir
+                            </a></li>
+                        <li><a class="dropdown-item" href="support/faq.html">
+                                <i class="bi bi-patch-question"></i> FAQ
+                            </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item"
+                                href="support/contact.html">
+                                <i class="bi bi-chat-dots"></i> Contactar
+                                Suporte
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- About Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-info-circle" aria-hidden="true"></i>
+                        Empresa
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="sobre.html">
+                                <i class="bi bi-building"></i> Sobre Nós
+                            </a></li>
+                        <li><a class="dropdown-item" href="carreiras.html">
+                                <i class="bi bi-briefcase"></i> Carreiras
+                            </a></li>
+                        <li><a class="dropdown-item" href="imprensa.html">
+                                <i class="bi bi-newspaper"></i> Imprensa
+                            </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="parceiros.html">
+                                <i class="bi bi-shake-hands"></i> Parceiros
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- Legal Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        Legal
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="legal/terms.html">
+                                <i class="bi bi-file-text"></i> Termos de Uso
+                            </a></li>
+                        <li><a class="dropdown-item" href="legal/privacy.html">
+                                <i class="bi bi-lock"></i> Política de
+                                Privacidade
+                            </a></li>
+                        <li><a class="dropdown-item" href="legal/cookies.html">
+                                <i class="bi bi-cookie"></i> Política de Cookies
+                            </a></li>
+                        <li><a class="dropdown-item"
+                                href="legal/seguranca.html">
+                                <i class="bi bi-shield-check"></i> Segurança
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- Auth Buttons -->
+                <li class="nav-item dropdown d-lg-none">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person" aria-hidden="true"></i> Minha
+                        Conta
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item"
+                                href="../authentic/login.html">
+                                <i class="bi bi-box-arrow-in-right"></i> Entrar
+                            </a></li>
+                        <li><a class="dropdown-item"
+                                href="../authentic/register.html">
+                                <i class="bi bi-person-plus"></i> Registar
+                            </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item"
+                                href="../authentic/profile.html">
+                                <i class="bi bi-person-circle"></i> Meu Perfil
+                            </a></li>
+                        <li><a class="dropdown-item" href="pedidos.html">
+                                <i class="bi bi-bag-check"></i> Meus Pedidos
+                            </a></li>
+                    </ul>
+                </li>
+
+                <!-- Auth Buttons Desktop -->
+                <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+                    <a class="btn btn-outline-danger m-1"
+                        href="../authentic/login.html" role="button">
+                        <i class="bi bi-box-arrow-in-right"
+                            aria-hidden="true"></i>
+                        Entrar
+                    </a>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+                    <a class="btn btn-danger m-1"
+                        href="../authentic/register.html" role="button">
+                        <i class="bi bi-person-plus-fill"
+                            aria-hidden="true"></i>
+                        Registar
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Location Modal -->
+<div class="modal fade" id="locationModal" tabindex="-1"
+    aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locationModalLabel">
+                    <i class="bi bi-geo-alt-fill text-danger"></i>
+                    Alterar Localização
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="provinceSelect"
+                        class="form-label">Província</label>
+                    <select class="form-select" id="provinceSelect">
+                        <option value="luanda">Luanda</option>
+                        <option value="benguela">Benguela</option>
+                        <option value="huila">Huíla</option>
+                        <option value="cabinda">Cabinda</option>
+                        <option value="huambo">Huambo</option>
+                        <option value="malanje">Malanje</option>
+                        <!-- Add all 18 provinces -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="municipalitySelect"
+                        class="form-label">Município</label>
+                    <select class="form-select" id="municipalitySelect">
+                        <option value="luanda">Luanda</option>
+                        <option value="viana">Viana</option>
+                        <option value="cacuaco">Cacuaco</option>
+                        <option value="cazenga">Cazenga</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                        id="detectLocation">
+                    <label class="form-check-label" for="detectLocation">
+                        Detetar minha localização automaticamente
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger"
+                    id="saveLocation">Guardar Localização</button>
+            </div>
+        </div>
+    </div>
+</div>

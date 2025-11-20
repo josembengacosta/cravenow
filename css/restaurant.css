@@ -1,0 +1,94 @@
+.restaurant-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .restaurant-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+        
+        .restaurant-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter.active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            border-color: var(--primary-color) !important;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+        }
+        
+        .delivery-time {
+            background-color: #e7f5ff;
+            color: #0066cc;
+        }
+        
+        .price-range {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .filter-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .restaurant-status {
+            font-size: 0.75rem;
+        }
+        
+        .status-open {
+            color: #28a745;
+        }
+        
+        .status-closed {
+            color: #dc3545;
+        }
+        
+        .status-busy {
+            color: #ffc107;
+        }
+        
+        .promo-badge {
+            background: linear-gradient(45deg, #dc3545, #e35d6a);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .view-toggle .btn {
+            border-radius: 50% !important;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }

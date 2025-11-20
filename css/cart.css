@@ -1,0 +1,179 @@
+.order-tracker {
+           background: linear-gradient(135deg, #393939 0%, #dc3546c5 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .driver-info-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .driver-info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .status-confirmed {
+            background-color: #17a2b8;
+        }
+        
+        .status-preparing {
+            background-color: #007bff;
+        }
+        
+        .status-ready {
+            background-color: #6f42c1;
+        }
+        
+        .status-on-way {
+            background-color: #fd7e14;
+        }
+        
+        .status-arriving {
+            background-color: #28a745;
+        }
+        
+        .status-delivered {
+            background-color: #20c997;
+        }
+        
+        .order-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .order-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e9ecef;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #dee2e6;
+            border: 3px solid white;
+        }
+        
+        .timeline-item.completed::before {
+            background-color: #28a745;
+        }
+        
+        .timeline-item.current::before {
+            background-color: #dc3545;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .map-container {
+            height: 400px;
+            background: linear-gradient(135deg, #393939 0%, #dc3546c5 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .driver-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .eta-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        
+        .progress-bar-delivery {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .delivery-man-marker {
+            width: 50px;
+            height: 50px;
+            background: #dc3545;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .live-indicator {
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .order-items-card {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .contact-buttons .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-buttons .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+        }
+        
+        .delivery-progress {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+        
+        .order-summary {
+            background: linear-gradient(135deg, #393939 0%, #dc3546c5 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }

@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="DeliveryHJ - Guia Completo: Aprenda como fazer pedidos de comida delivery em Angola. Tutorial passo a passo com dicas profissionais." />
+        <meta name="keywords"
+            content="como pedir delivery, tutorial pedidos, guia delivery Angola, fazer pedido comida, delivery tutorial" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <!-- Open Graph -->
+        <meta property="og:title"
+            content="DeliveryHJ - Guia Completo: Como Fazer Pedidos" />
+        <meta property="og:description"
+            content="Aprenda a fazer pedidos de comida delivery em Angola em 4 passos simples. Tutorial interativo com dicas exclusivas." />
+        <meta property="og:url"
+            content="https://deliveryhj.rf.gd/pages/support/guide.html" />
+        <meta property="og:site_name" content="DeliveryHJ" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_AO" />
+
+        <title>DeliveryHJ - Guia Completo: Como Fazer Pedidos | Tutorial
+            Interativo</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/guide.css">
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <style>
+        .guide-hero {
+            background: linear-gradient(135deg, rgba(33, 37, 41, 0.9) 0%, rgba(52, 58, 64, 0.8) 100%),
+                        url('../../assets/img/guide/hero-bg.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .guide-section {
+            margin-bottom: 4rem;
+        }
+        
+        .interactive-guide-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .guide-step-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guide-step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .guide-step-card.active {
+            border-color: #dc3545;
+            box-shadow: 0 5px 20px rgba(220, 53, 69, 0.2);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #dc3545;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+        }
+        
+        .step-badge {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+        }
+        
+        .step-duration {
+            background: #e9ecef;
+            color: #6c757d;
+        }
+        
+        .step-difficulty {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .interactive-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .interactive-step {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .interactive-step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .interactive-step.active {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            box-shadow: 0 5px 20px rgba(220, 53, 69, 0.2);
+        }
+        
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #dc3545, #e35d6a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .demo-preview {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .tip-card {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-left: 4px solid #ffc107;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .warning-card {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-left: 4px solid #dc3545;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .success-card {
+            background: linear-gradient(135deg, #d1edff, #b3d9ff);
+            border-left: 4px solid #007bff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .progress-tracking {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .completion-badge {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .step-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .interactive-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .interactive-guide-container {
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .step-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+
+        <!-- Loading Script -->
+        <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+    </head>
+
+    <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+        <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Navigation -->
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <!-- Logo -->
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../index.html"
+                    itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Cart Mobile -->
+                    <a
+                        class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                        href="cart.html"
+                        aria-label="Carrinho de compras">
+                        <i class="bi bi-cart4" aria-hidden="true"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartCountMobile">5</span>
+                            <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Location Badge -->
+                <div class="navbar-text mx-3 d-none d-lg-block">
+                    <span class="badge bg-light text-danger cursor-pointer"
+                        data-bs-toggle="modal" data-bs-target="#locationModal">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span id="currentLocation"
+                            class="text-secondary">Luanda</span>
+                    </span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- Cart Desktop -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link position-relative fw-bold"
+                                href="../../pages/cart.html">
+                                <i class="bi bi-cart4" aria-hidden="true"></i>
+                                Carrinho
+                                <span
+                                    class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                                    <span id="cartCountDesktop">5</span>
+                                    <span class="visually-hidden">itens no
+                                        carrinho</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Main Navigation -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-house" aria-hidden="true"></i>
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="../../pages/restaurant.html">
+                                <i class="bi bi-shop" aria-hidden="true"></i>
+                                Restaurantes
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
+                                Descobrir
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/category.html">
+                                        <i class="bi bi-grid-3x3-gap"></i>
+                                        Categorias
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/culinaria-tradicional.html">
+                                        <i class="bi bi-egg-fried"></i>
+                                        Culinária Tradicional
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/most-restaurant.html">
+                                        <i class="bi bi-star"></i> Mais
+                                        Populares
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/new-restaurant.html">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                        Novos na Plataforma
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Support Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-question-circle"
+                                    aria-hidden="true"></i> Ajuda
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/help.html">
+                                        <i class="bi bi-life-preserver"></i>
+                                        Centro de Ajuda
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/guide.html">
+                                        <i class="bi bi-play-circle"></i> Como
+                                        Pedir
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/faq.html">
+                                        <i class="bi bi-patch-question"></i> FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/contact.html">
+                                        <i class="bi bi-chat-dots"></i>
+                                        Contactar Suporte
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"
+                                    aria-hidden="true"></i> Empresa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/about.html">
+                                        <i class="bi bi-building"></i> Sobre Nós
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/career.html">
+                                        <i class="bi bi-briefcase"></i>
+                                        Carreiras
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/enterprise.html">
+                                        <i class="bi bi-newspaper"></i> Imprensa
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/blog.html">
+                                        <i class="bi bi-journal-text"></i>
+                                        Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Legal Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-shield-check"
+                                    aria-hidden="true"></i> Legal
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/terms.html">
+                                        <i class="bi bi-file-text"></i> Termos
+                                        de Uso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/privacy.html">
+                                        <i class="bi bi-lock"></i> Política de
+                                        Privacidade
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/cookies.html">
+                                        <i class="bi bi-bricks"></i> Política de
+                                        Cookies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/security.html">
+                                        <i class="bi bi-shield-check"></i>
+                                        Segurança
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons -->
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person" aria-hidden="true"></i>
+                                Minha Conta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/login.html">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Entrar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/register.html">
+                                        <i class="bi bi-person-plus"></i>
+                                        Registar
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/profile.html">
+                                        <i class="bi bi-person-circle"></i> Meu
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/restaurant/request.html">
+                                        <i class="bi bi-bag-check"></i> Meus
+                                        Pedidos
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons Desktop -->
+                        <li
+                            class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../authentic/login.html" role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+                            <a class="btn btn-danger m-1"
+                                href="../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Location Modal -->
+        <div class="modal fade" id="locationModal" tabindex="-1"
+            aria-labelledby="locationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="locationModalLabel">
+                            <i class="bi bi-geo-alt-fill text-danger"></i>
+                            Alterar Localização
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="provinceSelect"
+                                class="form-label">Província</label>
+                            <select class="form-select" id="provinceSelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="benguela">Benguela</option>
+                                <option value="huila">Huíla</option>
+                                <option value="cabinda">Cabinda</option>
+                                <option value="huambo">Huambo</option>
+                                <option value="malanje">Malanje</option>
+                                <!-- Add all 18 provinces -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipalitySelect"
+                                class="form-label">Município</label>
+                            <select class="form-select" id="municipalitySelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="viana">Viana</option>
+                                <option value="cacuaco">Cacuaco</option>
+                                <option value="cazenga">Cazenga</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                id="detectLocation" />
+                            <label class="form-check-label"
+                                for="detectLocation">
+                                Detetar minha localização automaticamente
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                            id="saveLocation">
+                            Guardar Localização
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="guide-hero text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">
+                            <i class="bi bi-play-circle"></i>
+                            Guia Completo: Como Fazer Pedidos
+                        </h1>
+                        <p class="lead mb-4">
+                            Aprenda em 4 passos simples como pedir sua comida
+                            favorita e receber em casa.
+                            Tutorial interativo com dicas exclusivas para melhor
+                            experiência.
+                        </p>
+
+                        <!-- Quick Stats -->
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-auto">
+                                <div
+                                    class="card border-0 bg-white bg-opacity-10 text-white">
+                                    <div class="card-body py-3">
+                                        <div class="row text-center">
+                                            <div
+                                                class="col-4 border-end border-white border-opacity-25">
+                                                <h4 class="fw-bold mb-1">4</h4>
+                                                <small>Passos Simples</small>
+                                            </div>
+                                            <div
+                                                class="col-4 border-end border-white border-opacity-25">
+                                                <h4
+                                                    class="fw-bold mb-1">5min</h4>
+                                                <small>Tempo Médio</small>
+                                            </div>
+                                            <div class="col-4">
+                                                <h4
+                                                    class="fw-bold mb-1">24/7</h4>
+                                                <small>Disponível</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-light btn-lg"
+                                onclick="guideSystem.startInteractiveTutorial()">
+                                <i class="bi bi-play-fill"></i> Iniciar Tutorial
+                                Interativo
+                            </button>
+                            <button class="btn btn-outline-light btn-lg"
+                                onclick="guideSystem.downloadGuidePDF()">
+                                <i class="bi bi-download"></i> Baixar Guia PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container py-5">
+            <!-- Interactive Guide -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="interactive-guide-container">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-lightning-charge"></i>
+                                Tutorial Interativo
+                            </h2>
+                            <p class="text-muted">Clique em cada passo para ver
+                                detalhes e demonstrações</p>
+
+                            <!-- Progress Tracking -->
+                            <div class="progress-tracking text-center">
+                                <h5 class="fw-bold mb-3">Seu Progresso</h5>
+                                <div class="progress mb-3"
+                                    style="height: 10px;">
+                                    <div
+                                        class="progress-bar bg-white progress-bar-striped progress-bar-animated"
+                                        role="progressbar" style="width: 0%"
+                                        id="guideProgress">
+                                    </div>
+                                </div>
+                                <div class="completion-badge">
+                                    <i class="bi bi-trophy"></i>
+                                    <span id="progressText">0% Completo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="interactive-steps" id="interactiveSteps">
+                            <!-- Step 1 -->
+                            <div class="interactive-step active" data-step="1">
+                                <div class="step-icon">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                                <h5 class="fw-bold">Escolher</h5>
+                                <p class="text-muted small mb-2">Restaurante &
+                                    Comida</p>
+                                <div
+                                    class="d-flex justify-content-center gap-2">
+                                    <span class="step-badge step-duration">2
+                                        min</span>
+                                    <span
+                                        class="step-badge step-difficulty">Fácil</span>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="interactive-step" data-step="2">
+                                <div class="step-icon">
+                                    <i class="bi bi-basket"></i>
+                                </div>
+                                <h5 class="fw-bold">Personalizar</h5>
+                                <p class="text-muted small mb-2">Seu Pedido</p>
+                                <div
+                                    class="d-flex justify-content-center gap-2">
+                                    <span class="step-badge step-duration">1
+                                        min</span>
+                                    <span
+                                        class="step-badge step-difficulty">Fácil</span>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="interactive-step" data-step="3">
+                                <div class="step-icon">
+                                    <i class="bi bi-credit-card"></i>
+                                </div>
+                                <h5 class="fw-bold">Pagar</h5>
+                                <p class="text-muted small mb-2">Forma de
+                                    Pagamento</p>
+                                <div
+                                    class="d-flex justify-content-center gap-2">
+                                    <span class="step-badge step-duration">1
+                                        min</span>
+                                    <span
+                                        class="step-badge step-difficulty">Fácil</span>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="interactive-step" data-step="4">
+                                <div class="step-icon">
+                                    <i class="bi bi-truck"></i>
+                                </div>
+                                <h5 class="fw-bold">Acompanhar</h5>
+                                <p class="text-muted small mb-2">Entrega em
+                                    Tempo Real</p>
+                                <div
+                                    class="d-flex justify-content-center gap-2">
+                                    <span class="step-badge step-duration">1
+                                        min</span>
+                                    <span
+                                        class="step-badge step-difficulty">Fácil</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Demo Preview -->
+                        <div class="demo-preview" id="stepDemo">
+                            <i
+                                class="bi bi-phone display-1 text-muted mb-3"></i>
+                            <h5 class="text-muted">Selecione um passo para ver a
+                                demonstração</h5>
+                            <p class="text-muted">Visualização interativa e
+                                dicas práticas</p>
+                        </div>
+
+                        <!-- Step Navigation -->
+                        <div class="step-navigation">
+                            <button class="btn btn-outline-secondary"
+                                id="prevStep" disabled>
+                                <i class="bi bi-arrow-left"></i> Anterior
+                            </button>
+                            <div>
+                                <span class="text-muted" id="stepCounter">Passo
+                                    1 de 4</span>
+                            </div>
+                            <button class="btn btn-danger" id="nextStep">
+                                Próximo <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Steps -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="guide-section">
+                        <h2 class="fw-bold text-center mb-5">
+                            <i class="bi bi-list-check text-danger"></i>
+                            Passo a Passo Detalhado
+                        </h2>
+
+                        <!-- Step 1 -->
+                        <div class="guide-step-card active" id="step1">
+                            <div class="step-number">1</div>
+                            <h3 class="fw-bold text-danger mb-4">
+                                <i class="bi bi-search"></i>
+                                Encontrar Restaurante & Comida
+                            </h3>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-geo-alt display-6 text-primary mb-3"></i>
+                                    <h5 class="fw-bold">Por Localização</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Digite seu endereço
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Use deteção automática
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Veja restaurantes próximos
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-search display-6 text-warning mb-3"></i>
+                                    <h5 class="fw-bold">Por Busca</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Nome do restaurante
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Tipo de comida
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success me-2"></i>
+                                            Prato específico
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-funnel display-6 text-info mb-3"></i>
+                                    <h5 class="fw-bold">Filtros Avançados</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-star text-warning me-2"></i>
+                                            Por avaliação
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-clock text-primary me-2"></i>
+                                            Tempo de entrega
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-coin text-success me-2"></i>
+                                            Faixa de preço
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tip-card">
+                                <h6 class="fw-bold text-warning mb-2">
+                                    <i class="bi bi-lightbulb"></i> Dica
+                                    Profissional
+                                </h6>
+                                <p class="mb-0">
+                                    Use os filtros combinados para encontrar
+                                    rapidamente o restaurante ideal.
+                                    Exemplo: "Comida tradicional" +
+                                    "Entrega em menos de 30min" +
+                                    "Avaliação 4.5+"
+                                </p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-primary"
+                                    onclick="guideSystem.tryStep('search')">
+                                    <i class="bi bi-search"></i> Experimentar
+                                    Busca
+                                </button>
+                                <button class="btn btn-outline-success"
+                                    onclick="guideSystem.markStepComplete(1)">
+                                    <i class="bi bi-check-circle"></i> Marcar
+                                    como Concluído
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="guide-step-card" id="step2">
+                            <div class="step-number">2</div>
+                            <h3 class="fw-bold text-danger mb-4">
+                                <i class="bi bi-basket"></i>
+                                Fazer & Personalizar Pedido
+                            </h3>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="success-card">
+                                        <h6 class="fw-bold text-primary mb-2">
+                                            <i class="bi bi-list-check"></i>
+                                            Adicionar Itens
+                                        </h6>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2">
+                                                <i
+                                                    class="bi bi-plus-circle text-primary me-2"></i>
+                                                Escolha do cardápio
+                                            </li>
+                                            <li class="mb-2">
+                                                <i
+                                                    class="bi bi-plus-circle text-primary me-2"></i>
+                                                Selecione quantidades
+                                            </li>
+                                            <li class="mb-2">
+                                                <i
+                                                    class="bi bi-plus-circle text-primary me-2"></i>
+                                                Adicione ao carrinho
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="success-card">
+                                        <h6 class="fw-bold text-info mb-2">
+                                            <i class="bi bi-gear"></i>
+                                            Personalização
+                                        </h6>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2">
+                                                <i
+                                                    class="bi bi-chat-square-text me-2"></i>
+                                                Observações especiais
+                                            </li>
+                                            <li class="mb-2">
+                                                <i
+                                                    class="bi bi-sliders me-2"></i>
+                                                Ajuste de ingredientes
+                                            </li>
+                                            <li class="mb-2">
+                                                <i class="bi bi-clock me-2"></i>
+                                                Horário de entrega
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="warning-card">
+                                <h6 class="fw-bold text-danger mb-2">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Importante
+                                </h6>
+                                <p class="mb-0">
+                                    Você pode alterar o pedido apenas nos
+                                    primeiros 5 minutos após a confirmação.
+                                    Após esse período, o pedido já estará em
+                                    preparação.
+                                </p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-primary"
+                                    onclick="guideSystem.tryStep('customize')">
+                                    <i class="bi bi-basket"></i> Simular Pedido
+                                </button>
+                                <button class="btn btn-outline-success"
+                                    onclick="guideSystem.markStepComplete(2)">
+                                    <i class="bi bi-check-circle"></i> Marcar
+                                    como Concluído
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="guide-step-card" id="step3">
+                            <div class="step-number">3</div>
+                            <h3 class="fw-bold text-danger mb-4">
+                                <i class="bi bi-credit-card"></i>
+                                Escolher Pagamento & Confirmar
+                            </h3>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="success-card">
+                                        <h6 class="fw-bold text-success mb-3">
+                                            <i class="bi bi-shield-check"></i>
+                                            Pagamento Online
+                                        </h6>
+                                        <div
+                                            class="d-flex flex-wrap gap-2 mb-3">
+                                            <span
+                                                class="badge bg-primary">Multicaixa
+                                                Express</span>
+                                            <span class="badge bg-info">Cartão
+                                                Crédito/Débito</span>
+                                            <span
+                                                class="badge bg-success">Carteira
+                                                Digital</span>
+                                        </div>
+                                        <p
+                                            class="small mb-0 text-muted">Transações
+                                            100% seguras com criptografia
+                                            SSL</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="success-card">
+                                        <h6 class="fw-bold text-warning mb-3">
+                                            <i class="bi bi-cash"></i> Pagamento
+                                            na Entrega
+                                        </h6>
+                                        <div
+                                            class="d-flex flex-wrap gap-2 mb-3">
+                                            <span
+                                                class="badge bg-secondary">Dinheiro</span>
+                                            <span
+                                                class="badge bg-primary">Multicaixa
+                                                MB</span>
+                                            <span
+                                                class="badge bg-info">Transferência</span>
+                                        </div>
+                                        <p class="small mb-0 text-muted">Pague
+                                            quando receber seu pedido</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tip-card">
+                                <h6 class="fw-bold text-success mb-2">
+                                    <i class="bi bi-shield-check"></i> Segurança
+                                    Garantida
+                                </h6>
+                                <p class="mb-0">
+                                    Todos os pagamentos são processados com
+                                    segurança máxima. Seus dados estão
+                                    protegidos por criptografia de última
+                                    geração e nunca são compartilhados.
+                                </p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-primary"
+                                    onclick="guideSystem.tryStep('payment')">
+                                    <i class="bi bi-credit-card"></i> Ver
+                                    Métodos
+                                </button>
+                                <button class="btn btn-outline-success"
+                                    onclick="guideSystem.markStepComplete(3)">
+                                    <i class="bi bi-check-circle"></i> Marcar
+                                    como Concluído
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="guide-step-card" id="step4">
+                            <div class="step-number">4</div>
+                            <h3 class="fw-bold text-danger mb-4">
+                                <i class="bi bi-truck"></i>
+                                Acompanhar & Receber
+                            </h3>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-map display-6 text-primary mb-3"></i>
+                                    <h5 class="fw-bold">Rastreamento em Tempo
+                                        Real</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i class="bi bi-geo-alt me-2"></i>
+                                            Localização do entregador
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-clock me-2"></i>
+                                            Tempo estimado
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-bell me-2"></i>
+                                            Notificações
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-chat-dots display-6 text-info mb-3"></i>
+                                    <h5 class="fw-bold">Comunicação</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i class="bi bi-telephone me-2"></i>
+                                            Ligar para entregador
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-chat me-2"></i>
+                                            Enviar mensagem
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-headset me-2"></i>
+                                            Suporte 24/7
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="feature-item">
+                                    <i
+                                        class="bi bi-star display-6 text-warning mb-3"></i>
+                                    <h5 class="fw-bold">Avaliação</h5>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-2">
+                                            <i class="bi bi-star me-2"></i>
+                                            Avalie o restaurante
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-star me-2"></i>
+                                            Avalie o entregador
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-chat me-2"></i>
+                                            Deixe comentários
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tip-card">
+                                <h6 class="fw-bold text-warning mb-2">
+                                    <i class="bi bi-star"></i> Dica Final
+                                </h6>
+                                <p class="mb-0">
+                                    Avalie sua experiência após receber o
+                                    pedido. Sua opinião ajuda outros clientes
+                                    e nos permite melhorar continuamente nossos
+                                    serviços!
+                                </p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-primary"
+                                    onclick="guideSystem.tryStep('tracking')">
+                                    <i class="bi bi-geo-alt"></i> Simular
+                                    Rastreamento
+                                </button>
+                                <button class="btn btn-outline-success"
+                                    onclick="guideSystem.markStepComplete(4)">
+                                    <i class="bi bi-check-circle"></i> Finalizar
+                                    Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="guide-section">
+                        <h2 class="fw-bold text-center mb-4">
+                            <i class="bi bi-collection-play text-danger"></i>
+                            Recursos Adicionais
+                        </h2>
+
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i
+                                    class="bi bi-phone display-4 text-primary mb-3"></i>
+                                <h5 class="fw-bold">App Mobile</h5>
+                                <p class="text-muted">Peça ainda mais rápido
+                                    pelo nosso aplicativo</p>
+                                <div class="d-grid gap-2">
+                                    <button
+                                        class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-google-play"></i> Google
+                                        Play
+                                    </button>
+                                    <button class="btn btn-outline-dark btn-sm">
+                                        <i class="bi bi-apple"></i> App Store
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <i
+                                    class="bi bi-shield-check display-4 text-success mb-3"></i>
+                                <h5 class="fw-bold">Dicas de Segurança</h5>
+                                <p class="text-muted">Aprenda a fazer pedidos
+                                    com total segurança</p>
+                                <a href="seguranca.html"
+                                    class="btn btn-success w-100">
+                                    <i class="bi bi-shield-check"></i> Ver Dicas
+                                </a>
+                            </div>
+
+                            <div class="feature-item">
+                                <i
+                                    class="bi bi-headset display-4 text-warning mb-3"></i>
+                                <h5 class="fw-bold">Suporte 24/7</h5>
+                                <p class="text-muted">Nossa equipa está pronta
+                                    para ajudar</p>
+                                <a href="contact.html"
+                                    class="btn btn-warning w-100 text-white">
+                                    <i class="bi bi-headset"></i> Falar com
+                                    Suporte
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="guide-section">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-light">
+                                <h4 class="mb-0 text-dark">
+                                    <i
+                                        class="bi bi-patch-question text-danger"></i>
+                                    Perguntas Frequentes sobre Pedidos
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="accordion" id="faqAccordion">
+                                    <!-- FAQ items remain the same as in your original code -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq1">
+                                                Quanto tempo leva para o pedido
+                                                chegar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq1"
+                                            class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                O tempo de entrega varia entre
+                                                25-45 minutos, dependendo da sua
+                                                localização, trânsito e horário.
+                                                Você verá o tempo estimado antes
+                                                de
+                                                confirmar o pedido.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq2">
+                                                Posso alterar meu pedido depois
+                                                de feito?
+                                            </button>
+                                        </h2>
+                                        <div id="faq2"
+                                            class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Sim, você pode alterar o pedido
+                                                nos primeiros 5 minutos após a
+                                                confirmação. Após esse período,
+                                                o pedido já estará em
+                                                preparação.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq3">
+                                                E se eu não estiver em casa na
+                                                hora da entrega?
+                                            </button>
+                                        </h2>
+                                        <div id="faq3"
+                                            class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                O entregador tentará
+                                                contactá-lo. Se não for
+                                                possível, deixe instruções
+                                                no campo "Observações" ou peça
+                                                para deixar com um
+                                                vizinho/portaria.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-brand mb-3">
+                            <h5 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-bag-heart-fill"
+                                    aria-hidden="true"></i>
+                                Delivery<span class="text-dark">HJ</span>
+                            </h5>
+                            <p class="text-muted small">
+                                Conectando sabores, construindo comunidades. A
+                                plataforma de
+                                delivery feita por angolanos para Angola.
+                            </p>
+                        </div>
+
+                        <div class="footer-social mb-4">
+                            <h6 class="fw-semibold mb-3">Siga-nos</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Facebook"
+                                    title="Facebook">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Instagram"
+                                    title="Instagram">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Conecte-se no LinkedIn"
+                                    title="LinkedIn">
+                                    <i class="bi bi-linkedin fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Twitter"
+                                    title="Twitter">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Fale connosco no WhatsApp"
+                                    title="WhatsApp">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App Download -->
+                        <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+                    </div>
+
+                    <!-- For Customers -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-people" aria-hidden="true"></i> Para
+                            Clientes
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../../index.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-house"></i> Início
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-shop"></i> Restaurantes
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../promotion.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-percent"></i> Promoções
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../discover/category.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                    Categorias
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../discover/culinaria-tradicional.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-egg-fried"></i> Tradicional
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../discover/most-restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-star"></i> Mais Populares
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- For Partners -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                            Para
+                            Parceiros
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="partner-register.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building-add"></i> Junte-se
+                                    a Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="partner-login.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    Área do Parceiro
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="partnership.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-hand-index"></i> Nossos
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="resource.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    Recursos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="success-stories.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-trophy"></i> Histórias de
+                                    Sucesso
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="../support/help.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-life-preserver"></i> Centro
+                                    de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../support/guide.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-play-circle"></i> Como Pedir
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../support/faq.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-patch-question"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../support/contact.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-chat-dots"></i> Contactar
+                                    Suporte
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../support/complaints.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reclamações
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            Empresa
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="../enterprise/about.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-circle"></i> Sobre Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../enterprise/career.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-briefcase"></i> Carreiras
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../enterprise/enterprise.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-newspaper"></i> Imprensa
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="../enterprise/blog.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-pencil"></i> Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            Contacto
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-envelope"></i>
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:parceiros@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building"></i>
+                                    parceiros@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:info@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-square"></i>
+                                    info@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+244945678901"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-whatsapp"></i> +244 945 678
+                                    901
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Bottom Footer -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <small class="text-muted">
+                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="../legal/terms.html"
+                                class="text-muted text-decoration-none small">
+                                Termos de Uso
+                            </a>
+                            <a href="../legal/privacy.html"
+                                class="text-muted text-decoration-none small">
+                                Privacidade
+                            </a>
+                            <a href="../legal/cookies.html"
+                                class="text-muted text-decoration-none small">
+                                Cookies
+                            </a>
+                            <a href="../legal/seguranca.html"
+                                class="text-muted text-decoration-none small">
+                                Segurança
+                            </a>
+                            <a href="sitemap.html"
+                                class="text-muted text-decoration-none small">
+                                Mapa do Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-4">
+                                <small class="text-muted">
+                                    <i
+                                        class="bi bi-shield-check text-success"></i>
+                                    Pagamentos
+                                    Seguros
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-truck text-primary"></i>
+                                    Entregas Rápidas
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Avaliado 4.8/5
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart-fill text-danger"></i>
+                                    Feito em Angola
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5" />
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4" />
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3" />
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2" />
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1" />
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked />
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment" />
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue" />
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email
+                                    <small class="text-muted">(opcional - para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com" />
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required />
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a
+                                    <a href="pages/legal/privacy.html"
+                                        target="_blank">Política
+                                        de Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/delivery.js"></script>
+        <script src="../../js/guide.js"></script>
+    </body>
+
+</html>

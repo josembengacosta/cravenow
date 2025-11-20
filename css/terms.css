@@ -1,0 +1,87 @@
+.terms-hero {
+          background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(227, 93, 106, 0.8) 100%),
+                        url('../../assets/img/theme/partnership.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 3rem;
+        }
+        
+        .terms-card {
+            border-left: 4px solid #dc3545;
+            background-color: #f8f9fa;
+            margin-bottom: 1.5rem;
+        }
+        
+        .clause-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+        
+        .clause-number {
+            background: #dc3545;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .warning-box {
+            border-left: 4px solid #ffc107;
+            background-color: #fffbf0;
+        }
+        
+        .important-box {
+            border-left: 4px solid #dc3545;
+            background-color: #f8f9fa;
+        }
+        
+        .user-type-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .user-type-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+            box-shadow: 0 10px 25px rgba(220, 53, 69, 0.15);
+        }
+        
+        .responsibility-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .responsibility-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .responsibility-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .legal-highlight {
+            background: #e7f1ff;
+            border-left: 4px solid #0d6efd;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .clause-item {
+                padding: 1rem;
+            }
+        }

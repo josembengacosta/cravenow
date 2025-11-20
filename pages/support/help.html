@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="DeliveryHJ - Plataforma de delivery que reúne os melhores restaurantes de Angola. Encomende pizza, sushi, comida tradicional e churrascaria com entrega rápida." />
+        <meta name="keywords"
+            content="delivery, restaurantes, comida, encomenda, pizza, sushi, churrascaria, comida tradicional, Angola, Luanda, Viana" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <!-- Open Graph -->
+        <meta property="og:title"
+            content="DeliveryHJ - Sabor em Angola | Entrega de Comida" />
+        <meta property="og:description"
+            content="Encomende comida online em Luanda e toda Angola. Centenas de restaurantes com avaliações reais. Entrega rápida e segura." />
+        <meta property="og:url" content="https://deliveryhj.rf.gd/" />
+        <meta property="og:site_name" content="DeliveryHJ" />
+        <meta property="og:image"
+            content="https://deliveryhj.rf.gd/assets/img/og-deliveryhj.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_AO" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DeliveryHJ - Sabor em Angola" />
+        <meta name="twitter:description"
+            content="Entrega de comida dos melhores restaurantes angolanos" />
+
+        <title>DeliveryHJ - Entrega de Comida | Contacto</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/help.css">
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "DeliveryHJ",
+        "description": "Plataforma de delivery de comida em Angola",
+        "url": "https://deliveryhj.rf.gd",
+        "servesCuisine": ["Angolana", "Italiana", "Japonesa", "Brasileira"],
+        "areaServed": "Angola",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AO"
+        }
+      }
+    </script>
+
+        <!-- Loading Script -->
+        <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+    </head>
+
+    <div id="networkStatus"
+        class="alert alert-warning alert-dismissible fade show d-none position-fixed top-0 start-50 translate-middle-x mt-2"
+        style="z-index: 1060;">
+        <i class="bi bi-wifi-off"></i> <span id="networkMessage">Sem conexão á
+            internet</span>
+    </div>
+
+    <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+        <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%"
+                aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Navigation -->
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../../index.html" itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Cart Mobile -->
+                    <a
+                        class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                        href="cart.html"
+                        aria-label="Carrinho de compras">
+                        <i class="bi bi-cart4" aria-hidden="true"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            20 <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Location Badge -->
+                <div class="navbar-text mx-3 d-none d-lg-block">
+                    <span class="badge bg-light text-danger">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span id="currentLocation"
+                            class="text-secondary">Luanda</span>
+                    </span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- Cart Desktop -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link position-relative fw-bold"
+                                href="cart.html">
+                                <i class="bi bi-cart4" aria-hidden="true"></i>
+                                Carrinho
+                                <span
+                                    class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                                    20 <span class="visually-hidden">itens no
+                                        carrinho</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../restaurant.html"><i
+                                    class="bi bi-shop"
+                                    aria-hidden="true"></i> Restaurantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-danger"
+                                href="help.html"><i
+                                    class="bi bi-question-circle"
+                                    aria-hidden="true"></i>
+                                Ajuda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i
+                                    class="bi bi-chat"
+                                    aria-hidden="true"></i> Contacto</a>
+                        </li>
+
+                        <!-- Auth Buttons -->
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../../authentic/login.html"
+                                role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0">
+                            <a class="btn btn-danger m-1"
+                                href="../../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container py-5 mt-5">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold text-danger mb-3">
+                    <i class="bi bi-headset"></i>
+                    Centro de Ajuda
+                </h1>
+                <p class="lead text-muted">
+                    Encontre respostas rápidas para suas dúvidas ou entre em
+                    contacto com nossa equipa
+                </p>
+
+                <!-- Search Bar -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="input-group input-group-lg shadow-sm">
+                            <span
+                                class="input-group-text bg-white border-end-0 text-danger">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text"
+                                class="form-control border-start-0 border-end-0"
+                                id="helpSearch"
+                                placeholder="Pesquisar na ajuda... Ex: 'entregas', 'pagamento', 'problema'">
+                            <button class="btn btn-danger" type="button"
+                                id="searchButton">
+                                Pesquisar
+                            </button>
+                        </div>
+                        <div class="form-text text-start mt-2">
+                            <i class="bi bi-lightbulb"></i> Exemplos: cancelar
+                            pedido, problema com pagamento, tempo de entrega
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm sticky-top"
+                        style="top: 100px;">
+                        <div class="card-header bg-danger text-white">
+                            <h6 class="mb-0"><i class="bi bi-list"></i>
+                                Navegação</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                <a href="#faq"
+                                    class="list-group-item list-group-item-action active">
+                                    <i
+                                        class="bi bi-question-circle me-2"></i>FAQ
+                                    Geral
+                                </a>
+                                <a href="#pedidos"
+                                    class="list-group-item list-group-item-action">
+                                    <i class="bi bi-cart me-2"></i>Pedidos
+                                </a>
+                                <a href="#entregas"
+                                    class="list-group-item list-group-item-action">
+                                    <i class="bi bi-bicycle me-2"></i>Entregas
+                                </a>
+                                <a href="#pagamentos"
+                                    class="list-group-item list-group-item-action">
+                                    <i
+                                        class="bi bi-credit-card me-2"></i>Pagamentos
+                                </a>
+                                <a href="#conta"
+                                    class="list-group-item list-group-item-action">
+                                    <i class="bi bi-person me-2"></i>Minha Conta
+                                </a>
+                                <a href="#restaurantes"
+                                    class="list-group-item list-group-item-action">
+                                    <i class="bi bi-shop me-2"></i>Restaurantes
+                                </a>
+                                <a href="#contactos"
+                                    class="list-group-item list-group-item-action">
+                                    <i
+                                        class="bi bi-telephone me-2"></i>Contactos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-danger fw-bold">24/7</h5>
+                                    <small class="text-muted">Suporte</small>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="text-success fw-bold">15min</h5>
+                                    <small class="text-muted">Resposta
+                                        Média</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Quick Help Categories -->
+                    <div class="row mb-5">
+                        <div class="col-12 mb-4">
+                            <h3 class="fw-bold">
+                                <i
+                                    class="bi bi-lightning-charge text-warning"></i>
+                                Ajuda Rápida
+                            </h3>
+                            <p class="text-muted">Selecione uma categoria para
+                                encontrar ajuda específica</p>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div
+                                class="card help-category-card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="text-primary mb-3">
+                                        <i class="bi bi-cart display-6"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Fazer um Pedido</h5>
+                                    <p class="text-muted small">Como encontrar
+                                        restaurantes e fazer pedidos</p>
+                                    <a href="#fazer-pedido"
+                                        class="btn btn-outline-primary btn-sm">Ver
+                                        Guia</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div
+                                class="card help-category-card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="text-success mb-3">
+                                        <i class="bi bi-bicycle display-6"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Acompanhar Entrega</h5>
+                                    <p class="text-muted small">Rastreie seu
+                                        pedido em tempo real</p>
+                                    <a href="#acompanhar-entrega"
+                                        class="btn btn-outline-success btn-sm">Saiba
+                                        Mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div
+                                class="card help-category-card border-0 shadow-sm h-100 text-center">
+                                <div class="card-body">
+                                    <div class="text-warning mb-3">
+                                        <i
+                                            class="bi bi-credit-card display-6"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Problemas com
+                                        Pagamento</h5>
+                                    <p class="text-muted small">Soluções para
+                                        questões de pagamento</p>
+                                    <a href="#problemas-pagamento"
+                                        class="btn btn-outline-warning btn-sm">Resolver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div id="faq" class="mb-5">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-bold">
+                                <i
+                                    class="bi bi-question-circle text-danger"></i>
+                                Perguntas Frequentes
+                            </h3>
+                            <span class="badge bg-danger">24 FAQs</span>
+                        </div>
+
+                        <div class="accordion" id="faqAccordion">
+                            <!-- FAQ Category: Pedidos -->
+                            <div class="faq-category mb-4" id="pedidos">
+                                <h4 class="fw-bold mb-3 text-primary">
+                                    <i class="bi bi-cart me-2"></i>Pedidos
+                                </h4>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq1">
+                                            Como faço para cancelar um pedido?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p>Você pode cancelar um pedido
+                                                enquanto ele estiver com status
+                                                "Em preparação":</p>
+                                            <ol>
+                                                <li>Acesse "Meus Pedidos" no seu
+                                                    perfil</li>
+                                                <li>Selecione o pedido que
+                                                    deseja cancelar</li>
+                                                <li>Clique em
+                                                    "Cancelar Pedido"</li>
+                                                <li>Selecione o motivo do
+                                                    cancelamento</li>
+                                            </ol>
+                                            <p class="text-warning mb-0">
+                                                <i
+                                                    class="bi bi-exclamation-triangle"></i>
+                                                <strong>Importante:</strong>
+                                                Pedidos já "A caminho" não podem
+                                                ser cancelados.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq2">
+                                            Posso alterar um pedido depois de
+                                            feito?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p>Alterações no pedido são
+                                                possíveis apenas nos primeiros 5
+                                                minutos após a confirmação:</p>
+                                            <ul>
+                                                <li>Adicionar mais itens</li>
+                                                <li>Remover itens</li>
+                                                <li>Alterar observações</li>
+                                            </ul>
+                                            <p>Para solicitar alterações:</p>
+                                            <ol>
+                                                <li>Vá para "Meus Pedidos"</li>
+                                                <li>Clique em
+                                                    "Solicitar Alteração"</li>
+                                                <li>Descreva as mudanças
+                                                    desejadas</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq3">
+                                            Meu pedido chegou incompleto. O que
+                                            fazer?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <div class="alert alert-warning">
+                                                <i
+                                                    class="bi bi-exclamation-triangle"></i>
+                                                <strong>Relate o problema em até
+                                                    2 horas após a
+                                                    entrega</strong>
+                                            </div>
+                                            <p>Siga estes passos:</p>
+                                            <ol>
+                                                <li>Acesse "Meus Pedidos"</li>
+                                                <li>Selecione o pedido com
+                                                    problema</li>
+                                                <li>Clique em
+                                                    "Reportar Problema"</li>
+                                                <li>Selecione
+                                                    "Pedido Incompleto"</li>
+                                                <li>Descreva os itens em
+                                                    falta</li>
+                                                <li>Anexe fotos se possível</li>
+                                            </ol>
+                                            <p class="mb-0">Nossa equipa
+                                                responderá em até 30
+                                                minutos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Category: Entregas -->
+                            <div class="faq-category mb-4" id="entregas">
+                                <h4 class="fw-bold mb-3 text-success">
+                                    <i class="bi bi-bicycle me-2"></i>Entregas
+                                </h4>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq4">
+                                            Qual o tempo médio de entrega?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p>O tempo de entrega varia
+                                                conforme:</p>
+                                            <ul>
+                                                <li><strong>Localização:</strong>
+                                                    20-45 minutos em áreas
+                                                    centrais</li>
+                                                <li><strong>Trânsito:</strong>
+                                                    Pode aumentar em horários de
+                                                    pico</li>
+                                                <li><strong>Restaurante:</strong>
+                                                    Tempo de preparo do
+                                                    estabelecimento</li>
+                                                <li><strong>Clima:</strong>
+                                                    Condições
+                                                    meteorológicas</li>
+                                            </ul>
+                                            <p class="mb-0">
+                                                <i
+                                                    class="bi bi-info-circle"></i>
+                                                O tempo estimado é mostrado
+                                                antes de confirmar o pedido.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq5">
+                                            Posso rastrear meu pedido em tempo
+                                            real?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <p>Sim! Você pode acompanhar seu
+                                                pedido em tempo real:</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6><i
+                                                            class="bi bi-smartphone text-primary"></i>
+                                                        No App/Site:</h6>
+                                                    <ul>
+                                                        <li>Acesse
+                                                            "Meus Pedidos"</li>
+                                                        <li>Clique no pedido
+                                                            ativo</li>
+                                                        <li>Veja o mapa com
+                                                            localização do
+                                                            entregador</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h6><i
+                                                            class="bi bi-chat-dots text-success"></i>
+                                                        Notificações:</h6>
+                                                    <ul>
+                                                        <li>Pedido
+                                                            confirmado</li>
+                                                        <li>Saiu para
+                                                            entrega</li>
+                                                        <li>Entregador
+                                                            chegando</li>
+                                                        <li>Pedido entregue</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Category: Pagamentos -->
+                            <div class="faq-category mb-4" id="pagamentos">
+                                <h4 class="fw-bold mb-3 text-warning">
+                                    <i
+                                        class="bi bi-credit-card me-2"></i>Pagamentos
+                                </h4>
+
+                                <div class="accordion-item faq-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq6">
+                                            Quais métodos de pagamento são
+                                            aceites?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>Pagamentos Online:</h6>
+                                                    <ul>
+                                                        <li><i
+                                                                class="bi bi-phone text-primary"></i>
+                                                            Multicaixa
+                                                            Express</li>
+                                                        <li><i
+                                                                class="bi bi-credit-card text-info"></i>
+                                                            Cartão de
+                                                            Crédito/Débito</li>
+                                                        <li><i
+                                                                class="bi bi-wallet2 text-success"></i>
+                                                            Carteira
+                                                            Digital</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h6>Pagamento na
+                                                        Entrega:</h6>
+                                                    <ul>
+                                                        <li><i
+                                                                class="bi bi-cash text-success"></i>
+                                                            Dinheiro</li>
+                                                        <li><i
+                                                                class="bi bi-card-text text-primary"></i>
+                                                            Multicaixa MB</li>
+                                                        <li><i
+                                                                class="bi bi-phone text-info"></i>
+                                                            Transferência
+                                                            Instantânea</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add more FAQ categories as needed -->
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div id="contactos" class="mb-5">
+                        <h3 class="fw-bold mb-4">
+                            <i class="bi bi-telephone text-danger"></i>
+                            Precisa de Mais Ajuda?
+                        </h3>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div
+                                    class="card contact-option border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <div class="text-success mb-3">
+                                            <i
+                                                class="bi bi-whatsapp display-4"></i>
+                                        </div>
+                                        <h5 class="fw-bold">WhatsApp</h5>
+                                        <p class="text-muted">Suporte rápido e
+                                            direto</p>
+                                        <p class="fw-bold text-success">+244 923
+                                            456 789</p>
+                                        <a href="https://wa.me/244923456789"
+                                            class="btn btn-success w-100"
+                                            target="_blank">
+                                            <i class="bi bi-whatsapp"></i>
+                                            Iniciar Conversa
+                                        </a>
+                                        <small class="text-muted">Disponível
+                                            24/7</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div
+                                    class="card contact-option border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <div class="text-primary mb-3">
+                                            <i
+                                                class="bi bi-telephone display-4"></i>
+                                        </div>
+                                        <h5 class="fw-bold">Telefone</h5>
+                                        <p class="text-muted">Atendimento
+                                            personalizado</p>
+                                        <p class="fw-bold text-primary">+244 222
+                                            123 456</p>
+                                        <a href="tel:+244222123456"
+                                            class="btn btn-primary w-100">
+                                            <i class="bi bi-telephone"></i>
+                                            Ligar Agora
+                                        </a>
+                                        <small class="text-muted">Seg-Sex:
+                                            8h-20h | Sáb: 9h-18h</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div
+                                    class="card contact-option border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <div class="text-warning mb-3">
+                                            <i
+                                                class="bi bi-envelope display-4"></i>
+                                        </div>
+                                        <h5 class="fw-bold">Email</h5>
+                                        <p class="text-muted">Para questões
+                                            detalhadas</p>
+                                        <p
+                                            class="fw-bold text-warning">suporte@deliveryhj.com</p>
+                                        <a href="mailto:suporte@deliveryhj.com"
+                                            class="btn btn-warning w-100 text-white">
+                                            <i class="bi bi-envelope"></i>
+                                            Enviar Email
+                                        </a>
+                                        <small class="text-muted">Resposta em
+                                            até 4 horas</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div
+                                    class="card contact-option border-0 shadow-sm h-100">
+                                    <div class="card-body text-center">
+                                        <div class="text-info mb-3">
+                                            <i
+                                                class="bi bi-chat-dots display-4"></i>
+                                        </div>
+                                        <h5 class="fw-bold">Chat Online</h5>
+                                        <p class="text-muted">Atendimento
+                                            imediato</p>
+                                        <button
+                                            class="btn btn-info w-100 text-white"
+                                            id="startChat">
+                                            <i class="bi bi-chat-dots"></i>
+                                            Iniciar Chat
+                                        </button>
+                                        <small class="text-muted">Disponível no
+                                            horário comercial</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Section -->
+                    <div class="card border-0 shadow-sm bg-light">
+                        <div class="card-body text-center py-5">
+                            <i
+                                class="bi bi-emoji-smile display-4 text-danger mb-3"></i>
+                            <h4 class="fw-bold">Esta página foi útil?</h4>
+                            <p class="text-muted mb-4">Sua opinião nos ajuda a
+                                melhorar</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <button class="btn btn-success" id="helpfulYes">
+                                    <i class="bi bi-hand-thumbs-up"></i> Sim,
+                                    foi útil
+                                </button>
+                                <button class="btn btn-outline-danger"
+                                    id="helpfulNo">
+                                    <i class="bi bi-hand-thumbs-down"></i> Não
+                                    foi útil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-3 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-bold text-danger">
+                            <i class="bi bi-bag-heart-fill"
+                                aria-hidden="true"></i> DeliveryHJ
+                        </h5>
+                        <p class="text-muted small">
+                            Sua plataforma de delivery preferida em Angola.
+                        </p>
+                        <div class="mt-3 footer-social">
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Siga-nos no Facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Siga-nos no Instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Conecte-se no LinkedIn"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary fs-5"
+                                aria-label="Fale connosco no WhatsApp"><i
+                                    class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i class="bi bi-people"
+                                aria-hidden="true"></i> Para Clientes</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="../pages/support/guide.html"
+                                    class="text-decoration-none link-secondary">Como
+                                    Pedir</a>
+                            </li>
+                            <li>
+                                <a href="../pages/restaurant.html"
+                                    class="text-decoration-none link-secondary">Restaurantes</a>
+                            </li>
+                            <li>
+                                <a href="../pages/promotion.html"
+                                    class="text-decoration-none link-secondary">Promoções</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i
+                                class="bi bi-person-gear"
+                                aria-hidden="true"></i> Para Parceiros</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class></i><a
+                                    href="../partner-register.html"
+                                    class="text-decoration-none link-secondary">Junte-se
+                                    a
+                                    Nós</a>
+                            </li>
+                            <li>
+                                <a href="../partner-login.html"
+                                    class="text-decoration-none link-secondary">Área
+                                    do
+                                    Parceiro</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i
+                                class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="../support/help.html"
+                                    class="text-decoration-none link-secondary">Ajuda</a>
+                            </li>
+                            <li>
+                                <a href="../support/contact.html"
+                                    class="text-decoration-none link-secondary">Contacto</a>
+                            </li>
+                            <li>
+                                <a href="../support/faq.html"
+                                    class="text-decoration-none link-secondary">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 class="fw-bold text-dark"><i class="bi bi-envelope"
+                                aria-hidden="true"></i> Contacto</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary">
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary">
+                                    denunciar@deliveryhj.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+244923456789"
+                                    class="text-decoration-none link-secondary">
+                                    +244 923 456 789
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center pt-3 border-top mt-3">
+                    <small class="text-muted">&copy; 2025 DeliveryHJ. Todos os
+                        direitos
+                        reservados.</small>
+                    <br />
+                    <small class="text-muted">
+                        <a href="../pages/privacy.html"
+                            class="text-muted text-decoration-none">Privacidade</a>
+                        |
+                        <a href="../pages/terms.html"
+                            class="text-muted text-decoration-none">Termos de
+                            Uso</a>
+                        |
+                        <a href="../pages/cookies.html"
+                            class="text-muted text-decoration-none">Cookies</a>
+                    </small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5">
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4">
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3">
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2">
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1">
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked>
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment">
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue">
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email <small class="text-muted">(opcional -
+                                        para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com">
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required>
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a <a
+                                        href="../../pages/legal/privacy.html"
+                                        target="_blank">Política de
+                                        Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5">
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4">
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3">
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2">
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1">
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked>
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment">
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue">
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email <small class="text-muted">(opcional -
+                                        para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com">
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required>
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a <a
+                                        href="../../pages/legal/privacy.html"
+                                        target="_blank">Política de
+                                        Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem;"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/delivery.js"></script>
+        <script src="../../js/help.js"></script>
+    </body>
+
+</html>

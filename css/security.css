@@ -1,0 +1,97 @@
+.security-hero {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(227, 93, 106, 0.8) 100%),
+                        url('../../assets/img/theme/partnership.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .security-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .security-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+            box-shadow: 0 10px 25px rgba(220, 53, 69, 0.15);
+        }
+        
+        .encryption-badge {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+        
+        .security-feature {
+            border-left: 4px solid #dc3545;
+            background-color: #f8f9fa;
+        }
+        
+        .compliance-badge {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #dc3545;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto 1rem;
+        }
+        
+        .threat-level {
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .threat-low {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-left: 4px solid #28a745;
+        }
+        
+        .threat-medium {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-left: 4px solid #ffc107;
+        }
+        
+        .threat-high {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-left: 4px solid #dc3545;
+        }
+        
+        .security-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .security-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #dc3545, #e35d6a);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #dc3545;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #dc3545;
+        }

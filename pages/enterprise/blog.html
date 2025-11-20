@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="DeliveryHJ Blog - Dicas, notícias e novidades sobre delivery, comida angolana e gastronomia." />
+        <meta name="keywords"
+            content="blog delivery, dicas comida, gastronomia Angola, notícias restaurantes, receitas tradicionais" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <!-- Open Graph -->
+        <meta property="og:title"
+            content="DeliveryHJ Blog | Gastronomia, Dicas e Novidades" />
+        <meta property="og:description"
+            content="Descubra as melhores dicas de comida, notícias do mundo delivery e receitas tradicionais angolanas." />
+        <meta property="og:url"
+            content="https://deliveryhj.rf.gd/pages/blog/index.html" />
+        <meta property="og:site_name" content="DeliveryHJ Blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_AO" />
+
+        <title>DeliveryHJ Blog | Gastronomia, Dicas e Novidades</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <style>
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(33, 37, 41, 0.9) 0%, rgba(52, 58, 64, 0.8) 100%),
+                        url('../../assets/img/blog/hero-bg.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+        
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+        }
+        
+        .blog-read-time {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .featured-post {
+            border: 3px solid #dc3545;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .blog-tags .badge {
+            transition: all 0.3s ease;
+        }
+        
+        .blog-tags .badge:hover {
+            transform: translateY(-2px);
+        }
+        
+        .sidebar-widget {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            background: linear-gradient(135deg, #dc3545, #e35d6a);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .trending-badge {
+            background: linear-gradient(135deg, #ff6b35, #ff8e53);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .blog-content img {
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .blockquote-custom {
+            border-left: 4px solid #dc3545;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 4rem 0 2rem;
+            }
+            
+            .blog-image {
+                height: 200px;
+            }
+        }
+    </style>
+
+        <!-- Loading Script -->
+        <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+    </head>
+
+    <body class="bg-body" itemscope itemtype="https://schema.org/Blog">
+        <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Navigation -->
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../../index.html"
+                    itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../restaurant.html">
+                                <i class="bi bi-shop" aria-hidden="true"></i>
+                                Restaurantes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../support/guide.html">
+                                <i class="bi bi-play-circle"
+                                    aria-hidden="true"></i> Como Pedir
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-danger"
+                                href="index.html">
+                                <i class="bi bi-journal-text"
+                                    aria-hidden="true"></i> Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../support/help.html">
+                                <i class="bi bi-question-circle"
+                                    aria-hidden="true"></i> Ajuda
+                            </a>
+                        </li>
+
+                        <!-- Auth Buttons -->
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../../authentic/login.html" role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0">
+                            <a class="btn btn-danger m-1"
+                                href="../../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="blog-hero text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">
+                            <i class="bi bi-journal-text"></i>
+                            Blog DeliveryHJ
+                        </h1>
+                        <p class="lead mb-4">
+                            Descubra as melhores dicas de gastronomia, notícias
+                            do mundo delivery,
+                            receitas tradicionais e muito mais para tornar sua
+                            experiência culinária inesquecível.
+                        </p>
+                        <div
+                            class="d-flex flex-wrap justify-content-center gap-3">
+                            <span class="badge bg-light text-dark fs-6">
+                                <i class="bi bi-pencil-square text-primary"></i>
+                                +50 Artigos
+                            </span>
+                            <span class="badge bg-light text-dark fs-6">
+                                <i class="bi bi-chef-hat text-success"></i>
+                                Dicas de Chefs
+                            </span>
+                            <span class="badge bg-light text-dark fs-6">
+                                <i class="bi bi-newspaper text-warning"></i>
+                                Notícias Frescas
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container py-5">
+            <!-- Featured Post -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div
+                        class="card blog-card featured-post border-0 shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        class="blog-image w-100 h-100"
+                                        alt="História da Gastronomia Angolana">
+                                    <div class="blog-category">
+                                        <span
+                                            class="badge trending-badge text-white">
+                                            <i class="bi bi-star-fill"></i>
+                                            Destaque
+                                        </span>
+                                    </div>
+                                    <div
+                                        class="position-absolute bottom-0 end-0 m-3">
+                                        <span class="blog-read-time">8 min
+                                            leitura</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div
+                                    class="card-body p-4 d-flex flex-column h-100">
+                                    <div class="mb-3">
+                                        <span
+                                            class="badge bg-danger">Gastronomia</span>
+                                        <span
+                                            class="badge bg-secondary">História</span>
+                                    </div>
+                                    <h2
+                                        class="card-title fw-bold display-6 mb-3">
+                                        A Rica História da Gastronomia Angolana:
+                                        Dos Tempos Antigos aos Dias de Hoje
+                                    </h2>
+                                    <p class="card-text flex-grow-1">
+                                        Explore a fascinante jornada da
+                                        culinária angolana, desde as tradições
+                                        ancestrais até as fusões modernas que
+                                        conquistam paladares em todo o mundo.
+                                        Descubra como pratos como muamba, funje
+                                        e calulu se tornaram símbolos da cultura
+                                        nacional.
+                                    </p>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center mt-4">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                                class="author-avatar me-2"
+                                                alt="Chef João Silva">
+                                            <div>
+                                                <div class="fw-bold small">Chef
+                                                    João Silva</div>
+                                                <div class="text-muted small">15
+                                                    Dez, 2024</div>
+                                            </div>
+                                        </div>
+                                        <a href="post/gastronomia-angolana.html"
+                                            class="btn btn-danger">
+                                            Ler Artigo <i
+                                                class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Blog Posts -->
+                <div class="col-lg-8">
+                    <!-- Posts Grid -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-4">
+                                <h3 class="fw-bold text-danger">
+                                    <i class="bi bi-lightning"></i>
+                                    Artigos Recentes
+                                </h3>
+                                <div class="btn-group">
+                                    <button
+                                        class="btn btn-outline-danger btn-sm active"
+                                        data-filter="all">Todos</button>
+                                    <button
+                                        class="btn btn-outline-danger btn-sm"
+                                        data-filter="dicas">Dicas</button>
+                                    <button
+                                        class="btn btn-outline-danger btn-sm"
+                                        data-filter="receitas">Receitas</button>
+                                    <button
+                                        class="btn btn-outline-danger btn-sm"
+                                        data-filter="noticias">Notícias</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4" id="blogPosts">
+                        <!-- Post 1 -->
+                        <div class="col-md-6" data-category="dicas">
+                            <div
+                                class="card blog-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                        class="card-img-top blog-image"
+                                        alt="5 Dicas para Pedir Delivery Like a Pro">
+                                    <div class="blog-category">
+                                        <span
+                                            class="badge bg-success">Dicas</span>
+                                    </div>
+                                    <div
+                                        class="position-absolute bottom-0 end-0 m-2">
+                                        <span class="blog-read-time">5
+                                            min</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">5 Dicas para
+                                        Pedir Delivery Like a Pro</h5>
+                                    <p class="card-text text-muted small">
+                                        Aprenda como maximizar sua experiência
+                                        de delivery com dicas simples que vão
+                                        desde a escolha do restaurante até o
+                                        momento da entrega.
+                                    </p>
+                                    <div class="blog-tags mb-3">
+                                        <span
+                                            class="badge bg-light text-dark">#delivery</span>
+                                        <span
+                                            class="badge bg-light text-dark">#dicas</span>
+                                        <span
+                                            class="badge bg-light text-dark">#economia</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                                class="author-avatar me-2"
+                                                alt="Maria Santos">
+                                            <div>
+                                                <div class="fw-bold small">Maria
+                                                    Santos</div>
+                                                <div class="text-muted small">12
+                                                    Dez, 2024</div>
+                                            </div>
+                                        </div>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-eye"></i> 2.4K
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0">
+                                    <a href="post/dicas-delivery-pro.html"
+                                        class="btn btn-outline-danger w-100">
+                                        Ler Artigo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="col-md-6" data-category="receitas">
+                            <div
+                                class="card blog-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                        class="card-img-top blog-image"
+                                        alt="Receita Autêntica: Muamba de Galinha">
+                                    <div class="blog-category">
+                                        <span
+                                            class="badge bg-warning text-dark">Receitas</span>
+                                    </div>
+                                    <div
+                                        class="position-absolute bottom-0 end-0 m-2">
+                                        <span class="blog-read-time">12
+                                            min</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Receita
+                                        Autêntica: Muamba de Galinha da
+                                        Vovó</h5>
+                                    <p class="card-text text-muted small">
+                                        Descubra os segredos da receita
+                                        tradicional de muamba que passa de
+                                        geração em geração nas famílias
+                                        angolanas.
+                                    </p>
+                                    <div class="blog-tags mb-3">
+                                        <span
+                                            class="badge bg-light text-dark">#receitas</span>
+                                        <span
+                                            class="badge bg-light text-dark">#tradicional</span>
+                                        <span
+                                            class="badge bg-light text-dark">#angolana</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                                class="author-avatar me-2"
+                                                alt="Chef Ana Kiala">
+                                            <div>
+                                                <div class="fw-bold small">Chef
+                                                    Ana Kiala</div>
+                                                <div class="text-muted small">10
+                                                    Dez, 2024</div>
+                                            </div>
+                                        </div>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-eye"></i> 3.1K
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0">
+                                    <a href="post/muamba-galinha.html"
+                                        class="btn btn-outline-danger w-100">
+                                        Ler Receita
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="col-md-6" data-category="noticias">
+                            <div
+                                class="card blog-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                        class="card-img-top blog-image"
+                                        alt="Novos Restaurantes em Luanda">
+                                    <div class="blog-category">
+                                        <span
+                                            class="badge bg-info">Notícias</span>
+                                    </div>
+                                    <div
+                                        class="position-absolute bottom-0 end-0 m-2">
+                                        <span class="blog-read-time">4
+                                            min</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">5 Novos
+                                        Restaurantes que Chegaram a Luanda este
+                                        Mês</h5>
+                                    <p class="card-text text-muted small">
+                                        Conheça as novas opções gastronômicas
+                                        que estão agitando a cena culinary da
+                                        capital angolana.
+                                    </p>
+                                    <div class="blog-tags mb-3">
+                                        <span
+                                            class="badge bg-light text-dark">#noticias</span>
+                                        <span
+                                            class="badge bg-light text-dark">#restaurantes</span>
+                                        <span
+                                            class="badge bg-light text-dark">#luanda</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                                class="author-avatar me-2"
+                                                alt="Carlos Mendes">
+                                            <div>
+                                                <div
+                                                    class="fw-bold small">Carlos
+                                                    Mendes</div>
+                                                <div class="text-muted small">8
+                                                    Dez, 2024</div>
+                                            </div>
+                                        </div>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-eye"></i> 1.8K
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0">
+                                    <a href="post/novos-restaurantes.html"
+                                        class="btn btn-outline-danger w-100">
+                                        Ler Notícia
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 4 -->
+                        <div class="col-md-6" data-category="dicas">
+                            <div
+                                class="card blog-card border-0 shadow-sm h-100">
+                                <div class="position-relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                        class="card-img-top blog-image"
+                                        alt="Como Montar uma Mesa de Natal Angolana">
+                                    <div class="blog-category">
+                                        <span
+                                            class="badge bg-success">Dicas</span>
+                                    </div>
+                                    <div
+                                        class="position-absolute bottom-0 end-0 m-2">
+                                        <span class="blog-read-time">7
+                                            min</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Guia: Como
+                                        Montar uma Mesa de Natal Tipicamente
+                                        Angolana</h5>
+                                    <p class="card-text text-muted small">
+                                        Tudo o que você precisa saber para criar
+                                        uma celebração natalina autêntica com os
+                                        sabores de Angola.
+                                    </p>
+                                    <div class="blog-tags mb-3">
+                                        <span
+                                            class="badge bg-light text-dark">#natal</span>
+                                        <span
+                                            class="badge bg-light text-dark">#tradições</span>
+                                        <span
+                                            class="badge bg-light text-dark">#festas</span>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                                class="author-avatar me-2"
+                                                alt="Isabel Fernandes">
+                                            <div>
+                                                <div
+                                                    class="fw-bold small">Isabel
+                                                    Fernandes</div>
+                                                <div class="text-muted small">5
+                                                    Dez, 2024</div>
+                                            </div>
+                                        </div>
+                                        <span class="text-muted small">
+                                            <i class="bi bi-eye"></i> 2.7K
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-transparent border-0">
+                                    <a href="post/mesa-natal-angola.html"
+                                        class="btn btn-outline-danger w-100">
+                                        Ler Guia
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-5">
+                        <button class="btn btn-outline-danger btn-lg"
+                            id="loadMorePosts">
+                            <i class="bi bi-plus-circle"></i> Carregar Mais
+                            Artigos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- About Widget -->
+                    <div class="sidebar-widget">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-info-circle text-danger"></i>
+                            Sobre o Blog
+                        </h5>
+                        <p class="small text-muted">
+                            Bem-vindo ao blog oficial da DeliveryHJ! Aqui
+                            compartilhamos dicas, receitas,
+                            notícias e tudo sobre o universo gastronômico
+                            angolano.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-form">
+                        <h5 class="fw-bold mb-3 text-white">
+                            <i class="bi bi-envelope-check"></i>
+                            Newsletter
+                        </h5>
+                        <p class="small text-white opacity-75">
+                            Receba as melhores dicas e ofertas exclusivas
+                            diretamente no seu email.
+                        </p>
+                        <form id="blogNewsletter">
+                            <div class="mb-3">
+                                <input type="email" class="form-control"
+                                    placeholder="seu@email.com" required>
+                            </div>
+                            <button type="submit" class="btn btn-light w-100">
+                                <i class="bi bi-send"></i> Subscrever
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Trending Posts -->
+                    <div class="sidebar-widget">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-fire text-danger"></i>
+                            Em Alta
+                        </h5>
+                        <div class="list-group list-group-flush">
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <span class="badge bg-danger me-2">1</span>
+                                <div>
+                                    <div class="fw-bold small">Os Segredos do
+                                        Funje Perfeito</div>
+                                    <small class="text-muted">2.5K
+                                        visualizações</small>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <span class="badge bg-warning me-2">2</span>
+                                <div>
+                                    <div class="fw-bold small">Delivery
+                                        Saudável: Como Escolher</div>
+                                    <small class="text-muted">2.1K
+                                        visualizações</small>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <span class="badge bg-info me-2">3</span>
+                                <div>
+                                    <div class="fw-bold small">5 Erros ao Pedir
+                                        Comida Online</div>
+                                    <small class="text-muted">1.9K
+                                        visualizações</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-bookmarks text-danger"></i>
+                            Categorias
+                        </h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#"
+                                class="badge bg-danger text-decoration-none">Gastronomia</a>
+                            <a href="#"
+                                class="badge bg-success text-decoration-none">Dicas</a>
+                            <a href="#"
+                                class="badge bg-warning text-decoration-none">Receitas</a>
+                            <a href="#"
+                                class="badge bg-info text-decoration-none">Notícias</a>
+                            <a href="#"
+                                class="badge bg-secondary text-decoration-none">Tradições</a>
+                            <a href="#"
+                                class="badge bg-primary text-decoration-none">Saúde</a>
+                        </div>
+                    </div>
+
+                    <!-- Tags Cloud -->
+                    <div class="sidebar-widget">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-tags text-danger"></i>
+                            Tags Populares
+                        </h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span
+                                class="badge bg-light text-dark">#angolana</span>
+                            <span
+                                class="badge bg-light text-dark">#delivery</span>
+                            <span
+                                class="badge bg-light text-dark">#receitas</span>
+                            <span
+                                class="badge bg-light text-dark">#tradicional</span>
+                            <span
+                                class="badge bg-light text-dark">#luanda</span>
+                            <span
+                                class="badge bg-light text-dark">#gastronomia</span>
+                            <span
+                                class="badge bg-light text-dark">#comida</span>
+                            <span class="badge bg-light text-dark">#dicas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-3 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-bold text-danger">
+                            <i class="bi bi-bag-heart-fill"
+                                aria-hidden="true"></i> DeliveryHJ
+                        </h5>
+                        <p class="text-muted small">
+                            Sua plataforma de delivery preferida em Angola.
+                        </p>
+                        <div class="mt-3 footer-social">
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Siga-nos no Facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Siga-nos no Instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary me-3 fs-5"
+                                aria-label="Conecte-se no LinkedIn"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="#"
+                                class="text-decoration-none text-secondary fs-5"
+                                aria-label="Fale connosco no WhatsApp"><i
+                                    class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i class="bi bi-people"
+                                aria-hidden="true"></i> Para Clientes</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="../support/guide.html"
+                                    class="text-decoration-none link-secondary">Como
+                                    Pedir</a>
+                            </li>
+                            <li>
+                                <a href="../restaurant.html"
+                                    class="text-decoration-none link-secondary">Restaurantes</a>
+                            </li>
+                            <li>
+                                <a href="index.html"
+                                    class="text-decoration-none link-secondary active text-danger">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i
+                                class="bi bi-shield-check"
+                                aria-hidden="true"></i> Legal</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="../legal/privacy.html"
+                                    class="text-decoration-none link-secondary">Privacidade</a>
+                            </li>
+                            <li>
+                                <a href="../legal/terms.html"
+                                    class="text-decoration-none link-secondary">Termos
+                                    de Uso</a>
+                            </li>
+                            <li>
+                                <a href="../legal/cookies.html"
+                                    class="text-decoration-none link-secondary">Cookies</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2 mb-3">
+                        <h5 class="fw-bold text-dark"><i
+                                class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="../support/help.html"
+                                    class="text-decoration-none link-secondary">Ajuda</a>
+                            </li>
+                            <li>
+                                <a href="../support/faq.html"
+                                    class="text-decoration-none link-secondary">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="../support/contact.html"
+                                    class="text-decoration-none link-secondary">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 class="fw-bold text-dark"><i class="bi bi-envelope"
+                                aria-hidden="true"></i> Contacto</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary">
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:blog@deliveryhj.com"
+                                    class="text-decoration-none link-secondary">
+                                    blog@deliveryhj.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+244923456789"
+                                    class="text-decoration-none link-secondary">
+                                    +244 923 456 789
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center pt-3 border-top mt-3">
+                    <small class="text-muted">&copy; 2024 DeliveryHJ. Todos os
+                        direitos reservados.</small>
+                    <br />
+                    <small class="text-muted">
+                        <a href="../legal/privacy.html"
+                            class="text-muted text-decoration-none">Privacidade</a>
+                        |
+                        <a href="../legal/terms.html"
+                            class="text-muted text-decoration-none">Termos de
+                            Uso</a>
+                        |
+                        <a href="../legal/cookies.html"
+                            class="text-muted text-decoration-none">Cookies</a>
+                    </small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/delivery.js"></script>
+        <script src="../../js/blog.js"></script>
+    </body>
+
+</html>

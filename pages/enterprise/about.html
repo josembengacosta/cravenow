@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="DeliveryHJ Team" />
+    <meta name="description"
+      content="DeliveryHJ - Conheça nossa história, missão e valores. A plataforma de delivery que está revolucionando Angola com tecnologia e sabor." />
+    <meta name="keywords"
+      content="sobre deliveryhj, nossa história, missão, valores, Angola delivery, tecnologia comida" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#dc3545" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+      content="DeliveryHJ - Sobre Nós | Nossa História" />
+    <meta property="og:description"
+      content="Conheça a DeliveryHJ - a plataforma que está revolucionando o delivery em Angola com tecnologia e paixão pela comida." />
+    <meta property="og:url"
+      content="https://deliveryhj.rf.gd/pages/sobre.html" />
+    <meta property="og:site_name" content="DeliveryHJ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_AO" />
+
+    <title>DeliveryHJ - Sobre Nós | História e Valores</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+      type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../css/delivery.css" />
+    <link rel="preload" href="../../css/delivery.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'" />
+
+    <style>
+        .hero-about {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(227, 93, 106, 0.8) 100%),
+                        url('../../assets/img/theme/partnership.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #dc3545, #e35d6a);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            width: calc(50% - 4rem);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            width: calc(50% - 4rem);
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #dc3545;
+            z-index: 2;
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+            box-shadow: 0 10px 25px rgba(220, 53, 69, 0.15);
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        .vision-map {
+            position: relative;
+            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .province-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+            }
+            
+            .hero-about {
+                padding: 5rem 0 3rem;
+            }
+        }
+        
+        .mission-vision {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+        }
+        
+        .impact-stats {
+            background: url('../assets/img/about/pattern-bg.png') center/cover;
+        }
+    </style>
+
+    <!-- Loading Script -->
+    <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+  </head>
+
+  <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+    <!-- Loading Progress -->
+    <div class="progress fixed-top rounded-0"
+      style="height: 3px; z-index: 1050">
+      <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"
+        aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" id="loadingBar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+      itemprop="breadcrumb">
+      <div class="container">
+        <!-- Logo -->
+        <a
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+          href="../index.html"
+          itemprop="url">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+          <!-- Cart Mobile -->
+          <a
+            class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+            href="cart.html"
+            aria-label="Carrinho de compras">
+            <i class="bi bi-cart4" aria-hidden="true"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cartCountMobile">5</span>
+              <span class="visually-hidden">itens no carrinho</span>
+            </span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
+            title="Alternar tema"
+            aria-label="Alternar entre tema escuro e claro">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="navbar-text mx-3 d-none d-lg-block">
+          <span class="badge bg-light text-danger cursor-pointer"
+            data-bs-toggle="modal" data-bs-target="#locationModal">
+            <i class="bi bi-geo-alt-fill text-danger"></i>
+            <span id="currentLocation" class="text-secondary">Luanda</span>
+          </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <!-- Cart Desktop -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link position-relative fw-bold"
+                href="../../pages/cart.html">
+                <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
+                <span
+                  class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                  <span id="cartCountDesktop">5</span>
+                  <span class="visually-hidden">itens no carrinho</span>
+                </span>
+              </a>
+            </li>
+
+            <!-- Main Navigation -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-house" aria-hidden="true"></i> Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../../pages/restaurant.html">
+                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/category.html">
+                    <i class="bi bi-grid-3x3-gap"></i> Categorias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/culinaria-tradicional.html">
+                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/most-restaurant.html">
+                    <i class="bi bi-star"></i> Mais Populares
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/discover/new-restaurant.html">
+                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../../pages/support/help.html">
+                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/support/guide.html">
+                    <i class="bi bi-play-circle"></i> Como Pedir
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../../pages/support/faq.html">
+                    <i class="bi bi-patch-question"></i> FAQ
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/support/contact.html">
+                    <i class="bi bi-chat-dots"></i> Contactar Suporte
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/about.html">
+                    <i class="bi bi-building"></i> Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/career.html">
+                    <i class="bi bi-briefcase"></i> Carreiras
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/enterprise.html">
+                    <i class="bi bi-newspaper"></i> Imprensa
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/enterprise/blog.html">
+                    <i class="bi bi-journal-text"></i> Blog
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Legal Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../../pages/legal/terms.html">
+                    <i class="bi bi-file-text"></i> Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/privacy.html">
+                    <i class="bi bi-lock"></i> Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/cookies.html">
+                    <i class="bi bi-bricks"></i> Política de Cookies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/legal/security.html">
+                    <i class="bi bi-shield-check"></i> Segurança
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons -->
+            <li class="nav-item dropdown d-lg-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../authentic/login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/register.html">
+                    <i class="bi bi-person-plus"></i> Registar
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../authentic/profile.html">
+                    <i class="bi bi-person-circle"></i> Meu Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="../../pages/restaurant/request.html">
+                    <i class="bi bi-bag-check"></i> Meus Pedidos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons Desktop -->
+            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+              <a class="btn btn-outline-danger m-1"
+                href="../authentic/login.html" role="button">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                Entrar
+              </a>
+            </li>
+            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+              <a class="btn btn-danger m-1" href="../authentic/register.html"
+                role="button">
+                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+                Registar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1"
+      aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">
+              <i class="bi bi-geo-alt-fill text-danger"></i>
+              Alterar Localização
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="provinceSelect" class="form-label">Província</label>
+              <select class="form-select" id="provinceSelect">
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huila">Huíla</option>
+                <option value="cabinda">Cabinda</option>
+                <option value="huambo">Huambo</option>
+                <option value="malanje">Malanje</option>
+                <!-- Add all 18 provinces -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="municipalitySelect"
+                class="form-label">Município</label>
+              <select class="form-select" id="municipalitySelect">
+                <option value="luanda">Luanda</option>
+                <option value="viana">Viana</option>
+                <option value="cacuaco">Cacuaco</option>
+                <option value="cazenga">Cazenga</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                id="detectLocation" />
+              <label class="form-check-label" for="detectLocation">
+                Detetar minha localização automaticamente
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="saveLocation">
+              Guardar Localização
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-about text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">
+              <i class="bi bi-bag-heart-fill"></i>
+              DeliveryHJ - Nossa História
+            </h1>
+            <p class="lead mb-4">
+              Conectando sabores, construindo comunidades. Conheça a jornada da
+              plataforma que está
+              revolucionando o delivery em Angola.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-rocket-takeoff text-danger"></i> Desde 2024
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-geo-alt text-danger"></i> Presente em Angola
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-heart text-danger"></i> Feito com Paixão
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+      <!-- Mission & Vision -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="mission-vision p-5">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fw-bold text-black mb-4">
+                  <i class="bi bi-bullseye text-danger"></i>
+                  Nossa Missão & Visão
+                </h2>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="text-center">
+                      <div class="text-primary mb-3">
+                        <i class="bi bi-bullseye display-6"></i>
+                      </div>
+                      <h5 class="fw-bold text-dark">Missão</h5>
+                      <p class="text-muted">
+                        Conectar os melhores restaurantes de Angola aos
+                        clientes,
+                        proporcionando experiências gastronómicas excepcionais
+                        com
+                        tecnologia, velocidade e qualidade.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="text-center">
+                      <div class="text-success mb-3">
+                        <i class="bi bi-eye display-6"></i>
+                      </div>
+                      <h5 class="fw-bold text-dark">Visão</h5>
+                      <p class="text-muted">
+                        Ser a plataforma de delivery mais confiável e amada de
+                        Angola,
+                        impulsionando o crescimento do setor gastronómico e
+                        criando
+                        oportunidades para todos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="text-center">
+                  <img
+                    src="../../assets/img/theme/bifes-de-carne-cozida-em-chamas-na-grelha.jpg"
+                    alt="Missão e Visão DeliveryHJ"
+                    class="img-fluid rounded-3 shadow">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Story Timeline -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="fw-bold text-center mb-5">
+            <i class="bi bi-clock-history text-danger"></i>
+            Nossa Jornada
+          </h2>
+
+          <div class="timeline">
+            <!-- 2025 - Fundação -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="bi bi-rocket-takeoff"></i>
+              </div>
+              <div class="timeline-content">
+                <span class="badge bg-danger mb-2">2025</span>
+                <h4 class="fw-bold text-black">O Início de Tudo</h4>
+                <p class="text-muted">
+                  A DeliveryHJ nasceu da paixão por comida e tecnologia.
+                  Identificamos a
+                  necessidade de uma plataforma moderna que conectasse
+                  restaurantes angolanos
+                  aos seus clientes de forma eficiente.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-black">Fundação</span>
+                  <span class="badge bg-light text-black">Primeiros
+                    Restaurantes</span>
+                  <span class="badge bg-light text-black">Luanda</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025 - Expansão -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="bi bi-geo"></i>
+              </div>
+              <div class="timeline-content">
+                <span class="badge bg-success mb-2">2025</span>
+                <h4 class="fw-bold text-black">Primeira Expansão</h4>
+                <p class="text-muted">
+                  Expandimos para Viana e começamos a construir parcerias
+                  sólidas com
+                  restaurantes locais. Nossa base de clientes cresceu 300% em
+                  apenas 3 meses.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-black">Viana</span>
+                  <span class="badge bg-light text-black">+40
+                    Restaurantes</span>
+                  <span class="badge bg-light text-black">Crescimento</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2025 - Tecnologia -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <div class="timeline-content">
+                <span class="badge bg-primary mb-2">2025</span>
+                <h4 class="fw-bold text-black">Revolução Tecnológica</h4>
+                <p class="text-muted">
+                  Lançamento do nosso sistema de rastreamento em tempo real e
+                  aplicativo móvel.
+                  Implementamos pagamentos seguros via Multicaixa Express e
+                  carteiras digitais.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-black">App Móvel</span>
+                  <span class="badge bg-light text-black">Rastreamento</span>
+                  <span class="badge bg-light text-black">Pagamentos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Futuro -->
+            <div class="timeline-item">
+              <div class="timeline-icon">
+                <i class="bi bi-stars"></i>
+              </div>
+              <div class="timeline-content">
+                <span class="badge bg-warning mb-2">Futuro</span>
+                <h4 class="fw-bold text-black">Próximos Passos</h4>
+                <p class="text-muted">
+                  Expansão para outras províncias de Angola, programa de
+                  fidelidade exclusivo,
+                  e parcerias com agricultores locais para ingredientes frescos.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-black">Nacional</span>
+                  <span class="badge bg-light text-black">Fidelidade</span>
+                  <span
+                    class="badge bg-light text-black">Sustentabilidade</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="fw-bold text-center mb-5">
+            <i class="bi bi-heart text-danger"></i>
+            Nossos Valores
+          </h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="value-card card border-0 shadow-sm text-center h-100">
+                <div class="card-body">
+                  <div class="text-primary mb-3">
+                    <i class="bi bi-shield-check display-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Confiança</h5>
+                  <p class="text-muted">
+                    Cada pedido é uma promessa. Garantimos segurança,
+                    privacidade e
+                    transparência em todas as transações.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="value-card card border-0 shadow-sm text-center h-100">
+                <div class="card-body">
+                  <div class="text-success mb-3">
+                    <i class="bi bi-lightning-charge display-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Velocidade</h5>
+                  <p class="text-muted">
+                    Entregas rápidas sem comprometer a qualidade. Sua comida
+                    chega
+                    quente e no tempo prometido.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="value-card card border-0 shadow-sm text-center h-100">
+                <div class="card-body">
+                  <div class="text-warning mb-3">
+                    <i class="bi bi-people-fill display-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Comunidade</h5>
+                  <p class="text-muted">
+                    Apoiamos restaurantes locais e criamos oportunidades.
+                    Juntos,
+                    fortalecemos a economia angolana.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact Stats -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="impact-stats p-5 rounded-3">
+            <h2 class="fw-bold text-center mb-5 text-dark">
+              <i class="bi bi-graph-up-arrow text-danger"></i>
+              Nosso Impacto em Números
+            </h2>
+
+            <div class="row text-center">
+              <div class="col-md-3 col-6 mb-4">
+                <div class="stat-card">
+                  <h3 class="display-4 fw-bold mb-2">157</h3>
+                  <p class="mb-0">Restaurantes Parceiros</p>
+                  <small>Em crescimento constante</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="stat-card">
+                  <h3 class="display-4 fw-bold mb-2">10+</h3>
+                  <p class="mb-0">Cidades Atendidas</p>
+                  <small>Em todo Angola</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="stat-card">
+                  <h3 class="display-4 fw-bold mb-2">40K+</h3>
+                  <p class="mb-0">Pedidos Entregues</p>
+                  <small>Com satisfação garantida</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="stat-card">
+                  <h3 class="display-4 fw-bold mb-2">98%</h3>
+                  <p class="mb-0">Avaliação Positiva</p>
+                  <small>Clientes satisfeitos</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="fw-bold text-center mb-5">
+            <i class="bi bi-people text-danger"></i>
+            Conheça Nossa Equipa
+          </h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="team-card card border-0 shadow-sm text-center">
+                <div class="card-body">
+                  <img src="../assets/img/team/helder-chicale.jpg"
+                    alt="Hélder Gabriel Adão Chicale - Fundador da DeliveryHJ"
+                    class="rounded-circle mb-4"
+                    width="150" height="150">
+                  <h5 class="fw-bold text-dark">Hélder Chicale</h5>
+                  <p class="text-danger mb-2">Fundador & Visionário</p>
+                  <p class="text-muted small">
+                    Visionário por trás da DeliveryHJ, com paixão por tecnologia
+                    e gastronomia angolana.
+                  </p>
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="team-card card border-0 shadow-sm text-center">
+                <div class="card-body">
+                  <img src="../assets/img/team/jose-costa.jpg"
+                    alt="José Mbenga Mabuengo da Costa - Co-fundador da DeliveryHJ"
+                    class="rounded-circle mb-4"
+                    width="150" height="150">
+                  <h5 class="fw-bold text-dark">José Costa</h5>
+                  <p class="text-danger mb-2">Co-fundador & Desenvolvedor</p>
+                  <p class="text-muted small">
+                    Especialista em tecnologia com mais de 4 anos de experiência
+                    em desenvolvimento de plataformas.
+                  </p>
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="team-card card border-0 shadow-sm text-center">
+                <div class="card-body">
+                  <img src="../assets/img/team/helder-chicale.jpg"
+                    alt="Ana Santos - CMO"
+                    class="rounded-circle mb-4"
+                    width="150" height="150">
+
+                  <h5 class="fw-bold text-dark">Ana Santos</h5>
+                  <p class="text-danger mb-2">CMO</p>
+                  <p class="text-muted small">
+                    Estrategista de marketing dedicada a conectar a DeliveryHJ
+                    com a comunidade angolana.
+                  </p>
+                  <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-secondary">
+                      <i class="bi bi-twitch"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="fw-bold text-center mb-5">
+            <i class="bi bi-bullseye text-danger"></i>
+            Nossa Visão Para Angola
+          </h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                  <div class="text-success mb-3">
+                    <i class="bi bi-shop-window display-4"></i>
+                  </div>
+                  <h4 class="fw-bold text-dark">Para Restaurantes</h4>
+                  <p class="text-muted">
+                    "Queremos dar credibilidade aos restaurantes que não têm
+                    site próprio,
+                    ajudando-os a alcançar mais clientes em toda Angola. Dos
+                    pequenos
+                    negócios familiares às grandes churrascarias."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center p-4">
+                  <div class="text-primary mb-3">
+                    <i class="bi bi-people-fill display-4"></i>
+                  </div>
+                  <h4 class="fw-bold text-dark">Para Clientes</h4>
+                  <p class="text-muted">
+                    "Uma experiência seamless: cadastro único que sincroniza com
+                    todos
+                    os restaurantes, pagamentos locais seguros, e a capacidade
+                    de
+                    descobrir novos sabores em toda Angola."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Angola Expansion -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="vision-map p-5 rounded-3">
+            <h2 class="fw-bold text-center mb-5">
+              <i class="bi bi-map-fill text-danger"></i>
+              Rumo às 18 Províncias
+            </h2>
+
+            <div class="row text-center">
+              <div class="col-md-3 col-6 mb-4">
+                <div class="province-badge rounded p-3">
+                  <h4 class="fw-bold mb-2">Luanda</h4>
+                  <small>Sede Central</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="province-badge rounded p-3">
+                  <h4 class="fw-bold mb-2">Benguela</h4>
+                  <small>Em Breve</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="province-badge rounded p-3">
+                  <h4 class="fw-bold mb-2">Huíla</h4>
+                  <small>Em Breve</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-4">
+                <div class="province-badge rounded p-3">
+                  <h4 class="fw-bold mb-2">Cabinda</h4>
+                  <small>Em Breve</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <p class="lead">
+                "Começando por Luanda, com o objetivo de estar presente em todas
+                as
+                18 províncias de Angola, e quem sabe, um dia, romper fronteiras
+                como o Yango e outras plataformas globais."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Model -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="fw-bold text-center mb-5">
+            <i class="bi bi-graph-up-arrow text-danger"></i>
+            Nosso Modelo de Negócio
+          </h2>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card border-0 shadow-lg">
+                <div class="card-body text-center p-5">
+                  <div class="text-warning mb-4">
+                    <i class="bi bi-percent display-1"></i>
+                  </div>
+                  <h3 class="fw-bold mb-3">Porcentagem nas Entregas</h3>
+                  <p class="lead text-muted">
+                    "Ganhamos uma pequena porcentagem em cada entrega realizada
+                    através
+                    da nossa plataforma. Um modelo win-win onde só ganhamos
+                    quando
+                    os restaurantes ganham."
+                  </p>
+                  <div class="row mt-4">
+                    <div class="col-md-6">
+                      <h4 class="text-success fw-bold">+ Restaurantes</h4>
+                      <small class="text-muted">Mais visibilidade</small>
+                    </div>
+                    <div class="col-md-6">
+                      <h4 class="text-success fw-bold">+ Entregas</h4>
+                      <small class="text-muted">Mais crescimento</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-0 shadow-lg bg-danger text-white">
+            <div class="card-body text-center py-5">
+              <h2 class="fw-bold mb-3">
+                <i class="bi bi-rocket-takeoff-fill"></i>
+                Faça Parte Desta Jornada
+              </h2>
+              <p class="lead mb-4">
+                Seja cliente, restaurante parceiro ou faça parte da nossa
+                equipa.
+                Juntos, vamos transformar o delivery em Angola.
+              </p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="restaurant.html" class="btn btn-light btn-lg">
+                  <i class="bi bi-bag-check"></i> Fazer um Pedido
+                </a>
+                <a href="partner-register.html"
+                  class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-shop"></i> Ser Parceiro
+                </a>
+                <a href="support/contact.html"
+                  class="btn btn-outline-light btn-lg">
+                  <i class="bi bi-chat-dots"></i> Trabalhe Conosco
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-fade"></div>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Company Info -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-brand mb-3">
+              <h5 class="fw-bold text-danger mb-3">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Delivery<span class="text-dark">HJ</span>
+              </h5>
+              <p class="text-muted small">
+                Conectando sabores, construindo comunidades. A plataforma de
+                delivery feita por angolanos para Angola.
+              </p>
+            </div>
+
+            <div class="footer-social mb-4">
+              <h6 class="fw-semibold mb-3">Siga-nos</h6>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Facebook"
+                  title="Facebook">
+                  <i class="bi bi-facebook fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Instagram"
+                  title="Instagram">
+                  <i class="bi bi-instagram fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Conecte-se no LinkedIn"
+                  title="LinkedIn">
+                  <i class="bi bi-linkedin fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Twitter" title="Twitter">
+                  <i class="bi bi-twitter fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Fale connosco no WhatsApp"
+                  title="WhatsApp">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- App Download -->
+            <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+          </div>
+
+          <!-- For Customers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-people" aria-hidden="true"></i> Para Clientes
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../../index.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-house"></i> Início
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-shop"></i> Restaurantes
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/promotion.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-percent"></i> Promoções
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/discover/category.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-grid-3x3-gap"></i> Categorias
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/discover/culinaria-tradicional.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-egg-fried"></i> Tradicional
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/discover/most-restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-star"></i> Mais Populares
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- For Partners -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-person-gear" aria-hidden="true"></i> Para
+              Parceiros
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../../pages/partner/partner-register.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building-add"></i> Junte-se a Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/partner/partner-login.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-box-arrow-in-right"></i> Área do Parceiro
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/partner/partnership.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-hand-index"></i> Nossos Parceiros
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/partner/resource.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-file-earmark-text"></i> Recursos
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/partner/success-stories.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-trophy"></i> Histórias de Sucesso
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-question-circle" aria-hidden="true"></i> Suporte
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../../pages/support/help.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/support/guide.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-play-circle"></i> Como Pedir
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/support/faq.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-patch-question"></i> FAQ
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/support/contact.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-chat-dots"></i> Contactar Suporte
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/support/complaints.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-exclamation-triangle"></i> Reclamações
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-building" aria-hidden="true"></i> Empresa
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">
+                <a href="../../pages/enterprise/about.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-circle"></i> Sobre Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/enterprise/career.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-briefcase"></i> Carreiras
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/enterprise/enterprise.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-newspaper"></i> Imprensa
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../../pages/enterprise/blog.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-pencil"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Contacto
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="mailto:suporte@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-envelope"></i> suporte@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:parceiros@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building"></i> parceiros@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:info@deliveryhj.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-square"></i> info@deliveryhj.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="tel:+244945678901"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-whatsapp"></i> +244 945 678 901
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Bottom Footer -->
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <small class="text-muted">
+              &copy;2025 DeliveryHJ. Todos os direitos reservados.
+            </small>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-flex flex-wrap justify-content-md-end gap-3">
+              <a href="../../pages/legal/terms.html"
+                class="text-muted text-decoration-none small">
+                Termos de Uso
+              </a>
+              <a href="../../pages/legal/privacy.html"
+                class="text-muted text-decoration-none small">
+                Privacidade
+              </a>
+              <a href="../../pages/legal/cookies.html"
+                class="text-muted text-decoration-none small">
+                Cookies
+              </a>
+              <a href="../../pages/legal/seguranca.html"
+                class="text-muted text-decoration-none small">
+                Segurança
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="text-center">
+              <div class="d-flex flex-wrap justify-content-center gap-4">
+                <small class="text-muted">
+                  <i class="bi bi-shield-check text-success"></i> Pagamentos
+                  Seguros
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-truck text-primary"></i> Entregas Rápidas
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-star-fill text-warning"></i> Avaliado 4.8/5
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-heart-fill text-danger"></i> Feito em Angola
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================== -->
+    <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+    <!-- ================================== -->
+    <div class="feedback-widget">
+      <!-- Botão Flutuante -->
+      <button class="feedback-btn" data-bs-toggle="modal"
+        data-bs-target="#feedbackModal">
+        <i class="bi bi-star-fill"></i>
+        <span class="feedback-label">Avaliar</span>
+      </button>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE AVALIAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1"
+      data-bs-backdrop="static"
+      aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-danger" id="feedbackModalLabel">
+              <i class="bi bi-chat-heart-fill me-2"></i>
+              Avalie a DeliveryHJ
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="platformFeedbackForm">
+              <!-- Avaliação com Estrelas -->
+              <div class="text-center mb-4">
+                <h6 class="mb-3">Como foi sua experiência?</h6>
+                <div class="star-rating-large mb-2">
+                  <input type="radio" id="star5" name="rating" value="5" />
+                  <label for="star5" class="star-label">★</label>
+                  <input type="radio" id="star4" name="rating" value="4" />
+                  <label for="star4" class="star-label">★</label>
+                  <input type="radio" id="star3" name="rating" value="3" />
+                  <label for="star3" class="star-label">★</label>
+                  <input type="radio" id="star2" name="rating" value="2" />
+                  <label for="star2" class="star-label">★</label>
+                  <input type="radio" id="star1" name="rating" value="1" />
+                  <label for="star1" class="star-label">★</label>
+                </div>
+                <small class="text-muted" id="ratingText">Clique para
+                  avaliar</small>
+              </div>
+
+              <!-- Campo de Comentário -->
+              <div class="mb-3">
+                <label for="feedbackComment"
+                  class="form-label fw-semibold">Deixe seu comentário
+                  (opcional)</label>
+                <textarea class="form-control" id="feedbackComment" rows="4"
+                  placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                  maxlength="500"></textarea>
+                <div class="form-text text-end">
+                  <span id="charCount">0</span>/500 caracteres
+                </div>
+              </div>
+
+              <!-- Tipo de Feedback -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Tipo de feedback</label>
+                <div class="btn-group w-100" role="group">
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="suggestion" value="suggestion" checked />
+                  <label class="btn btn-outline-primary" for="suggestion">
+                    <i class="bi bi-lightbulb"></i> Sugestão
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="compliment" value="compliment" />
+                  <label class="btn btn-outline-success" for="compliment">
+                    <i class="bi bi-heart"></i> Elogio
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="issue" value="issue" />
+                  <label class="btn btn-outline-warning" for="issue">
+                    <i class="bi bi-exclamation-triangle"></i> Problema
+                  </label>
+                </div>
+              </div>
+
+              <!-- Email (opcional) -->
+              <div class="mb-4">
+                <label for="feedbackEmail" class="form-label fw-semibold">
+                  Email
+                  <small class="text-muted">(opcional - para
+                    respondermos)</small>
+                </label>
+                <input type="email" class="form-control" id="feedbackEmail"
+                  placeholder="seu@email.com" />
+              </div>
+
+              <!-- Termos -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox"
+                  id="feedbackTerms" required />
+                <label class="form-check-label small" for="feedbackTerms">
+                  Concordo com a
+                  <a href="../../pages/legal/privacy.html"
+                    target="_blank">Política
+                    de Privacidade</a>
+                  e permito o uso deste feedback para melhorias na plataforma
+                </label>
+              </div>
+
+              <!-- Botões -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger btn-md">
+                  <i class="bi bi-send-fill me-2"></i>
+                  Enviar Avaliação
+                </button>
+                <button type="button" class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content text-center">
+          <div class="modal-body py-5">
+            <div class="text-success mb-3">
+              <i class="bi bi-check-circle-fill" style="font-size: 3rem"></i>
+            </div>
+            <h5 class="fw-bold">Obrigado!</h5>
+            <p class="text-muted">Sua avaliação foi enviada com sucesso.</p>
+            <button type="button" class="btn btn-danger w-100"
+              data-bs-dismiss="modal">
+              Continuar Navegando
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/delivery.js"></script>
+    <script src="../../js/about.js"></script>
+  </body>
+
+</html>

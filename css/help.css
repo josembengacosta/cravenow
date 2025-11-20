@@ -1,0 +1,27 @@
+ .help-category-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+                   background-color: #dc35469b;
+        }
+        .help-category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        .faq-item {
+            border-bottom: 1px solid #e9ecef;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .contact-option {
+            transition: all 0.3s ease;
+        }
+        .contact-option:hover {
+            transform: scale(1.05);
+        }
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        

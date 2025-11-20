@@ -688,3 +688,28 @@ footer {
 [data-bs-theme="dark"] .food-category-icon:hover {
     background: rgba(220, 53, 69, 0.3);
 }
+
+ /* Adicionar em delivery.css */
+    .cta-banner {
+      background: linear-gradient(135deg, #dc3545 0%, #e35d6a 100%);
+    }
+
+    .feature-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .feature-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Otimizações de performance */
+    .carousel-image {
+      object-fit: cover;
+      height: 400px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-image {
+        height: 250px;
+      }
+    }

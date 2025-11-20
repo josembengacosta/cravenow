@@ -1,0 +1,95 @@
+.partner-login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-login-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .partner-login-header {
+            background: linear-gradient(135deg, #dc3545 0%, #e35d6a 100%);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        
+        .partner-feature-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .partner-feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .login-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .login-divider::before,
+        .login-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .login-divider span {
+            padding: 0 1rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        .partner-stats {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .security-badge {
+            background-color: #e7f5ff;
+            border: 2px solid #0066cc;
+            color: #0066cc;
+        }
+        
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-right: none;
+        }
+        
+        .form-control {
+            border-left: none;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #dc3545;
+        }
+        
+        .partner-benefits {
+            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .partner-login-container {
+                padding: 1rem;
+            }
+            
+            .partner-login-header {
+                padding: 1.5rem;
+            }
+        } 

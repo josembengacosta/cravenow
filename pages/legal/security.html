@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="description"
+            content="DeliveryHJ - Segurança e Proteção de Dados. Conheça as medidas de segurança que implementamos para proteger suas informações e transações." />
+        <meta name="keywords"
+            content="segurança deliveryhj, proteção dados, pagamentos seguros, privacidade, segurança Angola" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#dc3545" />
+
+        <!-- Open Graph -->
+        <meta property="og:title"
+            content="DeliveryHJ - Segurança | Sua Proteção é Nossa Prioridade" />
+        <meta property="og:description"
+            content="Conheça as medidas de segurança avançadas que implementamos para proteger suas informações e transações na DeliveryHJ." />
+        <meta property="og:url"
+            content="https://deliveryhj.rf.gd/pages/legal/seguranca.html" />
+        <meta property="og:site_name" content="DeliveryHJ" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_AO" />
+
+        <title>DeliveryHJ - Segurança | Proteção de Dados e Transações</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+            type="image/x-icon" />
+        <link rel="apple-touch-icon"
+            href="../../assets/img/apple-touch-icon.png" />
+
+        <!-- CSS -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../../css/delivery.css" />
+        <link rel="stylesheet" href="../../css/security.css">
+        <link rel="preload" href="../../css/delivery.min.css" as="style"
+            onload="this.onload=null;this.rel='stylesheet'" />
+
+        <!-- Loading Script -->
+        <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector("body").classList.add("loaded");
+        document.getElementById("loadingBar").style.width = "100%";
+      }, 500);
+    });
+  </script>
+    </head>
+
+    <body class="bg-body" itemscope itemtype="https://schema.org/WebSite">
+        <!-- Loading Progress -->
+        <div class="progress fixed-top rounded-0"
+            style="height: 3px; z-index: 1050">
+            <div class="progress-bar bg-danger" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                aria-valuemax="100" id="loadingBar"></div>
+        </div>
+
+        <!-- Preloader -->
+        <!-- <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+      <div class="loading-logo">
+        <div
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Delivery<span class="text-dark">HJ</span>
+        </div>
+        <div class="spinner-border text-danger mt-3" role="status">
+          <span class="visually-hidden">A carregar...</span>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- Navigation -->
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <!-- Logo -->
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="../index.html"
+                    itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Delivery<span class="text-dark">HJ</span>
+                </a>
+
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Cart Mobile -->
+                    <a
+                        class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                        href="cart.html"
+                        aria-label="Carrinho de compras">
+                        <i class="bi bi-cart4" aria-hidden="true"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartCountMobile">5</span>
+                            <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Location Badge -->
+                <div class="navbar-text mx-3 d-none d-lg-block">
+                    <span class="badge bg-light text-danger cursor-pointer"
+                        data-bs-toggle="modal" data-bs-target="#locationModal">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span id="currentLocation"
+                            class="text-secondary">Luanda</span>
+                    </span>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- Cart Desktop -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link position-relative fw-bold"
+                                href="../../pages/cart.html">
+                                <i class="bi bi-cart4" aria-hidden="true"></i>
+                                Carrinho
+                                <span
+                                    class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                                    <span id="cartCountDesktop">5</span>
+                                    <span class="visually-hidden">itens no
+                                        carrinho</span>
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Main Navigation -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="bi bi-house" aria-hidden="true"></i>
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="../../pages/restaurant.html">
+                                <i class="bi bi-shop" aria-hidden="true"></i>
+                                Restaurantes
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
+                                Descobrir
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/category.html">
+                                        <i class="bi bi-grid-3x3-gap"></i>
+                                        Categorias
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/culinaria-tradicional.html">
+                                        <i class="bi bi-egg-fried"></i>
+                                        Culinária Tradicional
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/most-restaurant.html">
+                                        <i class="bi bi-star"></i> Mais
+                                        Populares
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/discover/new-restaurant.html">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                        Novos na Plataforma
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Support Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-question-circle"
+                                    aria-hidden="true"></i> Ajuda
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/help.html">
+                                        <i class="bi bi-life-preserver"></i>
+                                        Centro de Ajuda
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/guide.html">
+                                        <i class="bi bi-play-circle"></i> Como
+                                        Pedir
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/faq.html">
+                                        <i class="bi bi-patch-question"></i> FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/support/contact.html">
+                                        <i class="bi bi-chat-dots"></i>
+                                        Contactar Suporte
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"
+                                    aria-hidden="true"></i> Empresa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/about.html">
+                                        <i class="bi bi-building"></i> Sobre Nós
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/career.html">
+                                        <i class="bi bi-briefcase"></i>
+                                        Carreiras
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/enterprise.html">
+                                        <i class="bi bi-newspaper"></i> Imprensa
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/enterprise/blog.html">
+                                        <i class="bi bi-journal-text"></i>
+                                        Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Legal Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-shield-check"
+                                    aria-hidden="true"></i> Legal
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/terms.html">
+                                        <i class="bi bi-file-text"></i> Termos
+                                        de Uso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/privacy.html">
+                                        <i class="bi bi-lock"></i> Política de
+                                        Privacidade
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/cookies.html">
+                                        <i class="bi bi-bricks"></i> Política de
+                                        Cookies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/legal/security.html">
+                                        <i class="bi bi-shield-check"></i>
+                                        Segurança
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons -->
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person" aria-hidden="true"></i>
+                                Minha Conta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/login.html">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Entrar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/register.html">
+                                        <i class="bi bi-person-plus"></i>
+                                        Registar
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../authentic/profile.html">
+                                        <i class="bi bi-person-circle"></i> Meu
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../pages/restaurant/request.html">
+                                        <i class="bi bi-bag-check"></i> Meus
+                                        Pedidos
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Auth Buttons Desktop -->
+                        <li
+                            class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../authentic/login.html" role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+                            <a class="btn btn-danger m-1"
+                                href="../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Location Modal -->
+        <div class="modal fade" id="locationModal" tabindex="-1"
+            aria-labelledby="locationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="locationModalLabel">
+                            <i class="bi bi-geo-alt-fill text-danger"></i>
+                            Alterar Localização
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="provinceSelect"
+                                class="form-label">Província</label>
+                            <select class="form-select" id="provinceSelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="benguela">Benguela</option>
+                                <option value="huila">Huíla</option>
+                                <option value="cabinda">Cabinda</option>
+                                <option value="huambo">Huambo</option>
+                                <option value="malanje">Malanje</option>
+                                <!-- Add all 18 provinces -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipalitySelect"
+                                class="form-label">Município</label>
+                            <select class="form-select" id="municipalitySelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="viana">Viana</option>
+                                <option value="cacuaco">Cacuaco</option>
+                                <option value="cazenga">Cazenga</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                id="detectLocation" />
+                            <label class="form-check-label"
+                                for="detectLocation">
+                                Detetar minha localização automaticamente
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                            id="saveLocation">
+                            Guardar Localização
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="security-hero text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">
+                            <i class="bi bi-shield-check"></i>
+                            Segurança na DeliveryHJ
+                        </h1>
+                        <p class="lead mb-4">
+                            Sua proteção é nossa prioridade. Conheça as medidas
+                            avançadas de segurança
+                            que implementamos para proteger suas informações e
+                            transações.
+                        </p>
+                        <div
+                            class="d-flex flex-wrap justify-content-center gap-3">
+                            <span class="badge bg-light text-black fs-6">
+                                <i class="bi bi-lock-fill text-success"></i>
+                                Criptografia SSL 256-bit
+                            </span>
+                            <span class="badge bg-light text-black fs-6">
+                                <i class="bi bi-shield-lock text-primary"></i>
+                                Pagamentos Seguros
+                            </span>
+                            <span class="badge bg-light text-black fs-6">
+                                <i class="bi bi-eye-slash text-warning"></i>
+                                Privacidade Garantida
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container py-5">
+            <!-- Security Overview -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-center mb-5">
+                        <i class="bi bi-shield-shaded text-danger"></i>
+                        Nossa Abordagem de Segurança
+                    </h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div
+                                class="security-card card border-0 shadow-sm text-center h-100">
+                                <div class="card-body">
+                                    <div
+                                        class="encryption-badge rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 80px; height: 80px;">
+                                        <i class="bi bi-lock-fill fs-2"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Criptografia
+                                        Avançada</h5>
+                                    <p class="text-muted">
+                                        Todas as suas informações são protegidas
+                                        com criptografia SSL 256-bit,
+                                        o mesmo padrão usado por instituições
+                                        financeiras.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span
+                                            class="badge bg-success">HTTPS</span>
+                                        <span class="badge bg-primary">TLS
+                                            1.3</span>
+                                        <span
+                                            class="badge bg-info">256-bit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div
+                                class="security-card card border-0 shadow-sm text-center h-100">
+                                <div class="card-body">
+                                    <div class="text-danger mb-3">
+                                        <i
+                                            class="bi bi-credit-card display-4"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Pagamentos Seguros</h5>
+                                    <p class="text-muted">
+                                        Processamos pagamentos através de
+                                        gateways seguros.
+                                        Suas informações bancárias nunca são
+                                        armazenadas nos nossos servidores.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-black">PCI
+                                            DSS</span>
+                                        <span
+                                            class="badge bg-warning">Tokenizaçao</span>
+                                        <span class="badge bg-secondary">3D
+                                            Secure</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div
+                                class="security-card card border-0 shadow-sm text-center h-100">
+                                <div class="card-body">
+                                    <div class="text-primary mb-3">
+                                        <i
+                                            class="bi bi-database-lock display-4"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Proteção de Dados</h5>
+                                    <p class="text-muted">
+                                        Implementamos firewalls avançados e
+                                        monitoramento contínuo
+                                        para proteger seus dados contra acessos
+                                        não autorizados.
+                                    </p>
+                                    <div class="mt-3">
+                                        <span
+                                            class="badge bg-danger">Firewall</span>
+                                        <span
+                                            class="badge bg-success">Backup</span>
+                                        <span
+                                            class="badge bg-info">Monitoramento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Protection -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-header bg-danger text-white">
+                            <h4 class="mb-0">
+                                <i class="bi bi-database-gear"></i>
+                                Proteção de Dados Pessoais
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="fw-bold mb-3">O que
+                                        Protegemos</h5>
+                                    <div class="security-feature p-3 mb-3">
+                                        <h6 class="fw-bold text-black">
+                                            <i
+                                                class="bi bi-person-badge text-primary"></i>
+                                            Informações Pessoais
+                                        </h6>
+                                        <p
+                                            class="mb-0 small text-black-50">Nome,
+                                            email,
+                                            telefone, endereço e dados de
+                                            perfil</p>
+                                    </div>
+                                    <div class="security-feature p-3 mb-3">
+                                        <h6 class="fw-bold text-black">
+                                            <i
+                                                class="bi bi-geo-alt text-success"></i>
+                                            Dados de Localização
+                                        </h6>
+                                        <p
+                                            class="mb-0 small text-black-50">Endereços
+                                            de
+                                            entrega e localização em tempo
+                                            real</p>
+                                    </div>
+                                    <div class="security-feature p-3">
+                                        <h6 class="fw-bold text-black">
+                                            <i
+                                                class="bi bi-clock-history text-warning"></i>
+                                            Histórico de Pedidos
+                                        </h6>
+                                        <p class="mb-0 small text-black-50">Seu
+                                            histórico
+                                            completo de pedidos e
+                                            preferências</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="fw-bold mb-3">Como
+                                        Protegemos</h5>
+                                    <div class="security-timeline">
+                                        <div class="timeline-item">
+                                            <h6 class="fw-bold">Criptografia de
+                                                Dados</h6>
+                                            <p
+                                                class="small text-muted mb-0">Todos
+                                                os dados são criptografados em
+                                                repouso e em trânsito</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <h6 class="fw-bold">Acesso
+                                                Restrito</h6>
+                                            <p
+                                                class="small text-muted mb-0">Apenas
+                                                pessoal autorizado tem acesso
+                                                aos dados</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <h6 class="fw-bold">Backups
+                                                Seguros</h6>
+                                            <p
+                                                class="small text-muted mb-0">Backups
+                                                automáticos em locais
+                                                seguros</p>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <h6 class="fw-bold">Auditoria
+                                                Regular</h6>
+                                            <p
+                                                class="small text-muted mb-0">Monitoramento
+                                                e auditoria contínua dos
+                                                sistemas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Security -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-center mb-5">
+                        <i class="bi bi-credit-card-2-front text-danger"></i>
+                        Segurança em Pagamentos
+                    </h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-success mb-3">
+                                        <i class="bi bi-shield-check"></i>
+                                        Métodos de Pagamento Seguros
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="text-center">
+                                                <i
+                                                    class="bi bi-phone text-primary fs-1 mb-2"></i>
+                                                <h6>Multicaixa Express</h6>
+                                                <small
+                                                    class="text-muted">Pagamento
+                                                    seguro via
+                                                    referência</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="text-center">
+                                                <i
+                                                    class="bi bi-credit-card text-info fs-1 mb-2"></i>
+                                                <h6>Cartões</h6>
+                                                <small
+                                                    class="text-muted">Tokenização
+                                                    de dados</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center">
+                                                <i
+                                                    class="bi bi-cash-coin text-success fs-1 mb-2"></i>
+                                                <h6>Dinheiro</h6>
+                                                <small
+                                                    class="text-muted">Pagamento
+                                                    na entrega</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="text-center">
+                                                <i
+                                                    class="bi bi-wallet2 text-warning fs-1 mb-2"></i>
+                                                <h6>Carteira Digital</h6>
+                                                <small
+                                                    class="text-muted">Pagamentos
+                                                    rápidos</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-primary mb-3">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                        Monitoramento de Transações
+                                    </h5>
+                                    <p class="text-muted mb-4">
+                                        Nossa equipa monitora todas as
+                                        transações em tempo real para
+                                        detectar e prevenir atividades
+                                        suspeitas.
+                                    </p>
+
+                                    <div class="threat-level threat-low">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center">
+                                            <h6
+                                                class="fw-bold mb-0 text-black">Transações
+                                                Normais</h6>
+                                            <span class="badge bg-success">Baixo
+                                                Risco</span>
+                                        </div>
+                                        <p
+                                            class="small mb-0 mt-2 text-black-50">Monitoramento
+                                            padrão aplicado</p>
+                                    </div>
+
+                                    <div class="threat-level threat-medium">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center">
+                                            <h6
+                                                class="fw-bold mb-0 text-black">Atividade
+                                                Incomum</h6>
+                                            <span class="badge bg-warning">Médio
+                                                Risco</span>
+                                        </div>
+                                        <p
+                                            class="small mb-0 mt-2 text-black-50">Verificação
+                                            adicional necessária</p>
+                                    </div>
+
+                                    <div class="threat-level threat-high">
+                                        <div
+                                            class="d-flex justify-content-between align-items-center">
+                                            <h6
+                                                class="fw-bold mb-0 text-black">Comportamento
+                                                Suspeito</h6>
+                                            <span class="badge bg-danger">Alto
+                                                Risco</span>
+                                        </div>
+                                        <p
+                                            class="small mb-0 mt-2 text-black-50">Bloqueio
+                                            automático aplicado</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance & Certifications -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card border-0 shadow-lg bg-light">
+                        <div class="card-body text-center py-5">
+                            <h2 class="fw-bold mb-4">
+                                <i class="bi bi-award text-danger"></i>
+                                Conformidade e Certificações
+                            </h2>
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-3 mb-4">
+                                    <div class="compliance-badge">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <h6>SSL Certificate</h6>
+                                    <small class="text-muted">Criptografia
+                                        256-bit</small>
+                                </div>
+                                <div class="col-md-3 mb-4">
+                                    <div class="compliance-badge">
+                                        <i class="bi bi-file-earmark-lock"></i>
+                                    </div>
+                                    <h6>LGPD</h6>
+                                    <small class="text-muted">Conformidade
+                                        Angola</small>
+                                </div>
+                                <div class="col-md-3 mb-4">
+                                    <div class="compliance-badge">
+                                        <i class="bi bi-patch-check"></i>
+                                    </div>
+                                    <h6>PCI DSS</h6>
+                                    <small class="text-muted">Pagamentos
+                                        Seguros</small>
+                                </div>
+                                <div class="col-md-3 mb-4">
+                                    <div class="compliance-badge">
+                                        <i class="bi bi-incognito"></i>
+                                    </div>
+                                    <h6>Privacidade</h6>
+                                    <small class="text-muted">Dados
+                                        Protegidos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Tips -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-center mb-5">
+                        <i class="bi bi-lightbulb text-warning"></i>
+                        Dicas de Segurança Para Você
+                    </h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-warning h-100">
+                                <div class="card-header bg-warning text-dark">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-key"></i>
+                                        Proteja Sua Conta
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Use uma senha forte e única
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Não compartilhe suas credenciais
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Verifique sempre o URL do site
+                                        </li>
+                                        <li class="mb-0">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Use autenticação de dois fatores
+                                            quando disponível
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-info h-100">
+                                <div class="card-header bg-info text-white">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-credit-card"></i>
+                                        Pagamentos Seguros
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Verifique sempre o ícone de cadeado
+                                            no navegador
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Use cartões virtuais para pagamentos
+                                            online
+                                        </li>
+                                        <li class="mb-2">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Monitore seus extratos regularmente
+                                        </li>
+                                        <li class="mb-0">
+                                            <i
+                                                class="bi bi-check-circle text-success"></i>
+                                            Nunca envie dados de cartão por
+                                            email ou mensagem
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Security -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm bg-danger text-white">
+                        <div class="card-body text-center py-5">
+                            <h3 class="fw-bold mb-3">
+                                <i class="bi bi-megaphone"></i>
+                                Reportar Problemas de Segurança
+                            </h3>
+                            <p class="lead mb-4">
+                                Se você identificou alguma vulnerabilidade ou
+                                tem preocupações de segurança,
+                                entre em contacto connosco imediatamente.
+                            </p>
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-3">
+                                <a href="mailto:seguranca@deliveryhj.com"
+                                    class="btn btn-light btn-lg">
+                                    <i class="bi bi-envelope"></i>
+                                    seguranca@deliveryhj.com
+                                </a>
+                                <a href="../support/contact.html"
+                                    class="btn btn-outline-light btn-lg">
+                                    <i class="bi bi-headset"></i> Suporte 24/7
+                                </a>
+                            </div>
+                            <p class="mt-4 mb-0 small opacity-75">
+                                <i class="bi bi-clock"></i> Resposta em até 24
+                                horas para questões de segurança
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-fade"></div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-brand mb-3">
+                            <h5 class="fw-bold text-danger mb-3">
+                                <i class="bi bi-bag-heart-fill"
+                                    aria-hidden="true"></i>
+                                Delivery<span class="text-dark">HJ</span>
+                            </h5>
+                            <p class="text-muted small">
+                                Conectando sabores, construindo comunidades. A
+                                plataforma de
+                                delivery feita por angolanos para Angola.
+                            </p>
+                        </div>
+
+                        <div class="footer-social mb-4">
+                            <h6 class="fw-semibold mb-3">Siga-nos</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Facebook"
+                                    title="Facebook">
+                                    <i class="bi bi-facebook fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Instagram"
+                                    title="Instagram">
+                                    <i class="bi bi-instagram fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Conecte-se no LinkedIn"
+                                    title="LinkedIn">
+                                    <i class="bi bi-linkedin fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Siga-nos no Twitter"
+                                    title="Twitter">
+                                    <i class="bi bi-twitter fs-5"></i>
+                                </a>
+                                <a href="#"
+                                    class="text-decoration-none text-secondary"
+                                    aria-label="Fale connosco no WhatsApp"
+                                    title="WhatsApp">
+                                    <i class="bi bi-whatsapp fs-5"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- App Download -->
+                        <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+                    </div>
+
+                    <!-- For Customers -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-people" aria-hidden="true"></i> Para
+                            Clientes
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="index.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-house"></i> Início
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-shop"></i> Restaurantes
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/promotion.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-percent"></i> Promoções
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/discover/category.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                    Categorias
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a
+                                    href="pages/discover/culinaria-tradicional.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-egg-fried"></i> Tradicional
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/discover/most-restaurant.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-star"></i> Mais Populares
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- For Partners -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                            Para
+                            Parceiros
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="pages/partner/partner-register.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building-add"></i> Junte-se
+                                    a Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/partner/partner-login.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    Área do Parceiro
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/partner/partnership.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-hand-index"></i> Nossos
+                                    Parceiros
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/partner/resource.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    Recursos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/partner/success-stories.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-trophy"></i> Histórias de
+                                    Sucesso
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-question-circle"
+                                aria-hidden="true"></i> Suporte
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="pages/support/help.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-life-preserver"></i> Centro
+                                    de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/support/guide.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-play-circle"></i> Como Pedir
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/support/faq.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-patch-question"></i> FAQ
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/support/contact.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-chat-dots"></i> Contactar
+                                    Suporte
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/support/complaints.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Reclamações
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            Empresa
+                        </h6>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <a href="pages/enterprise/about.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-circle"></i> Sobre Nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/enterprise/career.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-briefcase"></i> Carreiras
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/enterprise/enterprise.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-newspaper"></i> Imprensa
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="pages/enterprise/blog.html"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-pencil"></i> Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="fw-bold text-dark mb-3">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            Contacto
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="mailto:suporte@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-envelope"></i>
+                                    suporte@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:parceiros@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-building"></i>
+                                    parceiros@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="mailto:info@deliveryhj.com"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-info-square"></i>
+                                    info@deliveryhj.com
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="tel:+244945678901"
+                                    class="text-decoration-none link-secondary small">
+                                    <i class="bi bi-whatsapp"></i> +244 945 678
+                                    901
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Bottom Footer -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <small class="text-muted">
+                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="d-flex flex-wrap justify-content-md-end gap-3">
+                            <a href="pages/legal/terms.html"
+                                class="text-muted text-decoration-none small">
+                                Termos de Uso
+                            </a>
+                            <a href="../../pages/legal/privacy.html"
+                                class="text-muted text-decoration-none small">
+                                Privacidade
+                            </a>
+                            <a href="pages/legal/cookies.html"
+                                class="text-muted text-decoration-none small">
+                                Cookies
+                            </a>
+                            <a href="pages/legal/seguranca.html"
+                                class="text-muted text-decoration-none small">
+                                Segurança
+                            </a>
+                            <a href="sitemap.html"
+                                class="text-muted text-decoration-none small">
+                                Mapa do Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div
+                                class="d-flex flex-wrap justify-content-center gap-4">
+                                <small class="text-muted">
+                                    <i
+                                        class="bi bi-shield-check text-success"></i>
+                                    Pagamentos
+                                    Seguros
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-truck text-primary"></i>
+                                    Entregas Rápidas
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    Avaliado 4.8/5
+                                </small>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart-fill text-danger"></i>
+                                    Feito em Angola
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ================================== -->
+        <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+        <!-- ================================== -->
+        <div class="feedback-widget">
+            <!-- Botão Flutuante -->
+            <button class="feedback-btn" data-bs-toggle="modal"
+                data-bs-target="#feedbackModal">
+                <i class="bi bi-star-fill"></i>
+                <span class="feedback-label">Avaliar</span>
+            </button>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE AVALIAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1"
+            data-bs-backdrop="static"
+            aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold text-danger"
+                            id="feedbackModalLabel">
+                            <i class="bi bi-chat-heart-fill me-2"></i>
+                            Avalie a DeliveryHJ
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="platformFeedbackForm">
+                            <!-- Avaliação com Estrelas -->
+                            <div class="text-center mb-4">
+                                <h6 class="mb-3">Como foi sua experiência?</h6>
+                                <div class="star-rating-large mb-2">
+                                    <input type="radio" id="star5" name="rating"
+                                        value="5" />
+                                    <label for="star5"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star4" name="rating"
+                                        value="4" />
+                                    <label for="star4"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star3" name="rating"
+                                        value="3" />
+                                    <label for="star3"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star2" name="rating"
+                                        value="2" />
+                                    <label for="star2"
+                                        class="star-label">★</label>
+                                    <input type="radio" id="star1" name="rating"
+                                        value="1" />
+                                    <label for="star1"
+                                        class="star-label">★</label>
+                                </div>
+                                <small class="text-muted" id="ratingText">Clique
+                                    para
+                                    avaliar</small>
+                            </div>
+
+                            <!-- Campo de Comentário -->
+                            <div class="mb-3">
+                                <label for="feedbackComment"
+                                    class="form-label fw-semibold">Deixe seu
+                                    comentário
+                                    (opcional)</label>
+                                <textarea class="form-control"
+                                    id="feedbackComment" rows="4"
+                                    placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                                    maxlength="500"></textarea>
+                                <div class="form-text text-end">
+                                    <span id="charCount">0</span>/500 caracteres
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Feedback -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tipo de
+                                    feedback</label>
+                                <div class="btn-group w-100" role="group">
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="suggestion" value="suggestion"
+                                        checked />
+                                    <label class="btn btn-outline-primary"
+                                        for="suggestion">
+                                        <i class="bi bi-lightbulb"></i> Sugestão
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="compliment" value="compliment" />
+                                    <label class="btn btn-outline-success"
+                                        for="compliment">
+                                        <i class="bi bi-heart"></i> Elogio
+                                    </label>
+
+                                    <input type="radio" class="btn-check"
+                                        name="feedbackType"
+                                        id="issue" value="issue" />
+                                    <label class="btn btn-outline-warning"
+                                        for="issue">
+                                        <i
+                                            class="bi bi-exclamation-triangle"></i>
+                                        Problema
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Email (opcional) -->
+                            <div class="mb-4">
+                                <label for="feedbackEmail"
+                                    class="form-label fw-semibold">
+                                    Email
+                                    <small class="text-muted">(opcional - para
+                                        respondermos)</small>
+                                </label>
+                                <input type="email" class="form-control"
+                                    id="feedbackEmail"
+                                    placeholder="seu@email.com" />
+                            </div>
+
+                            <!-- Termos -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox"
+                                    id="feedbackTerms" required />
+                                <label class="form-check-label small"
+                                    for="feedbackTerms">
+                                    Concordo com a
+                                    <a href="../../pages/legal/privacy.html"
+                                        target="_blank">Política
+                                        de Privacidade</a>
+                                    e permito o uso deste feedback para
+                                    melhorias na plataforma
+                                </label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-grid gap-2">
+                                <button type="submit"
+                                    class="btn btn-danger btn-md">
+                                    <i class="bi bi-send-fill me-2"></i>
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================== -->
+        <!-- MODAL DE CONFIRMAÇÃO -->
+        <!-- ================================== -->
+        <div class="modal fade" id="successModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-body py-5">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-check-circle-fill"
+                                style="font-size: 3rem"></i>
+                        </div>
+                        <h5 class="fw-bold">Obrigado!</h5>
+                        <p class="text-muted">Sua avaliação foi enviada com
+                            sucesso.</p>
+                        <button type="button" class="btn btn-danger w-100"
+                            data-bs-dismiss="modal">
+                            Continuar Navegando
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/delivery.js"></script>
+    </body>
+
+</html>
