@@ -1,122 +1,136 @@
 .contact-hero {
-            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-        }
-        
-        .contact-card {
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            height: 100%;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .contact-icon {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .contact-form-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .form-floating > .form-control:focus ~ label,
-        .form-floating > .form-control:not(:placeholder-shown) ~ label {
-            color: #dc3545;
-        }
-        
-        .form-control:focus {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-        }
-        
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .office-hours {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 2rem;
-        }
-        
-        .social-contact {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-contact a {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: #f8f9fa;
-            color: #dc3545;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-contact a:hover {
-            background: #dc3545;
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .response-time {
-            background-color: #e7f5ff;
-            border-left: 4px solid #0066cc;
-            padding: 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .contact-divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .contact-divider::before,
-        .contact-divider::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .contact-divider span {
-            padding: 0 1rem;
-            color: #6c757d;
-            font-weight: 500;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-hero {
-                padding: 2rem 0;
-                text-align: center;
-            }
-            
-            .contact-icon {
-                width: 60px;
-                height: 60px;
-            }
-        }
+  background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+  color: white;
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+  background-size: cover;
+}
+
+.contact-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.contact-form-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #dc3545;
+}
+
+.form-control:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.office-hours {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.social-contact {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-contact a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bs-body-bg);
+  transition: transform 0.3s ease;
+  color: var(--bs-body-color);
+  color: #dc3545;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-contact a:hover {
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+}
+
+.response-time {
+  background-color: #e7f5ff;
+  border-left: 4px solid #0066cc;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.contact-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.contact-divider span {
+  padding: 0 1rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+}

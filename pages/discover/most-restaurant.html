@@ -5,9 +5,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="DeliveryHJ Team" />
+        <meta name="author" content="CraveNow Team" />
         <meta name="description"
-            content="DeliveryHJ - Restaurantes Mais Populares. Descubra os restaurantes mais bem avaliados e populares de Angola." />
+            content="CraveNow - Restaurantes Mais Populares. Descubra os restaurantes mais bem avaliados e populares de Angola." />
         <meta name="keywords"
             content="restaurantes populares, mais avaliados, melhor rating, delivery Angola, comida popular" />
         <meta name="robots" content="index, follow" />
@@ -15,19 +15,19 @@
 
         <!-- Open Graph -->
         <meta property="og:title"
-            content="DeliveryHJ - Mais Populares | Restaurantes em Alta" />
+            content="CraveNow - Mais Populares | Restaurantes em Alta" />
         <meta property="og:description"
-            content="Os restaurantes mais populares e bem avaliados da DeliveryHJ. Baseado em avaliações reais de clientes." />
+            content="Os restaurantes mais populares e bem avaliados da CraveNow. Baseado em avaliações reais de clientes." />
         <meta property="og:url"
-            content="https://deliveryhj.rf.gd/pages/categories/popular.html" />
-        <meta property="og:site_name" content="DeliveryHJ" />
+            content="https://cravenow.rf.gd/pages/categories/popular.html" />
+        <meta property="og:site_name" content="CraveNow" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_AO" />
 
-        <title>DeliveryHJ - Mais Populares | Restaurantes em Alta</title>
+        <title>CraveNow - Mais Populares | Restaurantes em Alta</title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
+        <link rel="shortcut icon" href="../../assets/img/icones/cravenow.png"
             type="image/x-icon" />
         <link rel="apple-touch-icon"
             href="../../assets/img/apple-touch-icon.png" />
@@ -35,8 +35,8 @@
         <!-- CSS -->
         <link href="../../css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
-        <link rel="stylesheet" href="../../css/delivery.css" />
-        <link rel="preload" href="../../css/delivery.min.css" as="style"
+        <link rel="stylesheet" href="../../css/cravenow.css" />
+        <link rel="preload" href="../../css/cravenow.min.css" as="style"
             onload="this.onload=null;this.rel='stylesheet'" />
 
         <style>
@@ -134,7 +134,7 @@
         <div
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
           <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Delivery<span class="text-dark">HJ</span>
+          Crave<span class="text-dark">Now</span>
         </div>
         <div class="spinner-border text-danger mt-3" role="status">
           <span class="visually-hidden">A carregar...</span>
@@ -143,323 +143,381 @@
     </div> -->
 
         <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
-      itemprop="breadcrumb">
-      <div class="container">
-        <!-- Logo -->
-        <a
-          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
-          href="../../index.html"
-          itemprop="url">
-          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Delivery<span class="text-dark">HJ</span>
-        </a>
+        <nav
+            class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+            itemprop="breadcrumb">
+            <div class="container">
+                <!-- Logo -->
+                <a
+                    class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+                    href="/"
+                    itemprop="url">
+                    <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                    Crave<span class="text-dark">Now</span>
+                </a>
 
-        <div class="d-flex align-items-center order-lg-last">
-          <!-- Cart Mobile -->
-          <a
-            class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
-            href="../cart.html"
-            aria-label="Carrinho de compras">
-            <i class="bi bi-cart4" aria-hidden="true"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              <span id="cartCountMobile">0</span>
-              <span class="visually-hidden">itens no carrinho</span>
-            </span>
-          </a>
+                <div class="d-flex align-items-center order-lg-last">
+                    <!-- Cart Mobile -->
+                    <a
+                        class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+                        href="../cart.html"
+                        aria-label="Carrinho de compras">
+                        <i class="bi bi-cart4" aria-hidden="true"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cartCountMobile">0</span>
+                            <span class="visually-hidden">itens no
+                                carrinho</span>
+                        </span>
+                    </a>
 
-          <!-- Theme Toggle -->
-          <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
-            title="Alternar tema"
-            aria-label="Alternar entre tema escuro e claro">
-            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
-          </button>
+                    <!-- Theme Toggle -->
+                    <button id="toggleDark"
+                        class="btn btn-outline-danger btn-md me-2"
+                        title="Alternar tema"
+                        aria-label="Alternar entre tema escuro e claro">
+                        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    </button>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false"
-            aria-label="Alternar navegação">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Alternar navegação">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
 
-        <!-- Location Badge -->
-        <div class="navbar-text mx-3 d-none d-lg-block">
-          <span class="badge bg-light text-danger cursor-pointer"
-            data-bs-toggle="modal" data-bs-target="#locationModal">
-            <i class="bi bi-geo-alt-fill text-danger"></i>
-            <span id="currentLocation" class="text-secondary">Luanda</span>
-          </span>
-        </div>
+                <!-- Location Badge -->
+                <div class="navbar-text mx-3 d-none d-lg-block">
+                    <span class="badge bg-light text-danger cursor-pointer"
+                        data-bs-toggle="modal" data-bs-target="#locationModal">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span id="currentLocation"
+                            class="text-secondary">Luanda</span>
+                    </span>
+                </div>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <!-- Cart Desktop -->
-            <li class="nav-item d-none d-lg-block">
-              <a class="nav-link position-relative fw-bold"
-                href="../pages/cart.html">
-                <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
-                <span
-                  class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
-                  <span id="cartCountDesktop">0</span>
-                  <span class="visually-hidden">itens no carrinho</span>
-                </span>
-              </a>
-            </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <!-- Cart Desktop -->
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link position-relative fw-bold"
+                                href="../cart.html">
+                                <i class="bi bi-cart4" aria-hidden="true"></i>
+                                Carrinho
+                                <span
+                                    class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                                    <span id="cartCountDesktop">5</span>
+                                    <span class="visually-hidden">itens no
+                                        carrinho</span>
+                                </span>
+                            </a>
+                        </li>
 
-            <!-- Main Navigation -->
-            <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
-                <i class="bi bi-house" aria-hidden="true"></i> Início
-              </a>
-            </li>
+                        <!-- Main Navigation -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="bi bi-house" aria-hidden="true"></i>
+                                Início
+                            </a>
+                        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="../pages/restaurant.html">
-                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
-              </a>
-            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/restaurant.html">
+                                <i class="bi bi-shop" aria-hidden="true"></i>
+                                Restaurantes
+                            </a>
+                        </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="../pages/discover/category.html">
-                    <i class="bi bi-grid-3x3-gap"></i> Categorias
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    href="../pages/discover/culinaria-tradicional.html">
-                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    href="../pages/discover/most-restaurant.html">
-                    <i class="bi bi-star"></i> Mais Populares
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    href="../pages/discover/new-restaurant.html">
-                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
+                                Descobrir
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/discover/category.html">
+                                        <i class="bi bi-grid-3x3-gap"></i>
+                                        Categorias
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/discover/culinaria-tradicional.html">
+                                        <i class="bi bi-egg-fried"></i>
+                                        Culinária Tradicional
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/discover/most-restaurant.html">
+                                        <i class="bi bi-star"></i> Mais
+                                        Populares
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/discover/new-restaurant.html">
+                                        <i class="bi bi-rocket-takeoff"></i>
+                                        Novos na Plataforma
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-            <!-- Support Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="../pages/support/help.html">
-                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/support/guide.html">
-                    <i class="bi bi-play-circle"></i> Como Pedir
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/support/faq.html">
-                    <i class="bi bi-patch-question"></i> FAQ
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/support/contact.html">
-                    <i class="bi bi-chat-dots"></i> Contactar Suporte
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <!-- Support Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-question-circle"
+                                    aria-hidden="true"></i> Ajuda
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/support/help.html">
+                                        <i class="bi bi-life-preserver"></i>
+                                        Centro de Ajuda
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/support/guide.html">
+                                        <i class="bi bi-play-circle"></i> Como
+                                        Pedir
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/support/faq.html">
+                                        <i class="bi bi-patch-question"></i> FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/support/contact.html">
+                                        <i class="bi bi-chat-dots"></i>
+                                        Contactar Suporte
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-            <!-- About Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="../pages/enterprise/about.html">
-                    <i class="bi bi-building"></i> Sobre Nós
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/enterprise/career.html">
-                    <i class="bi bi-briefcase"></i> Carreiras
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    href="../pages/enterprise/enterprise.html">
-                    <i class="bi bi-newspaper"></i> Imprensa
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    href="../pages/enterprise/blog.html">
-                    <i class="bi bi-journal-text"></i> Blog
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-info-circle"
+                                    aria-hidden="true"></i> Empresa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/enterprise/about.html">
+                                        <i class="bi bi-building"></i> Sobre Nós
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/enterprise/career.html">
+                                        <i class="bi bi-briefcase"></i>
+                                        Carreiras
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/enterprise/press.html">
+                                        <i class="bi bi-newspaper"></i> Imprensa
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/enterprise/blog.html">
+                                        <i class="bi bi-journal-text"></i> Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-            <!-- Legal Dropdown -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="../pages/legal/terms.html">
-                    <i class="bi bi-file-text"></i> Termos de Uso
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/legal/privacy.html">
-                    <i class="bi bi-lock"></i> Política de Privacidade
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/legal/cookies.html">
-                    <i class="bi bi-bricks"></i> Política de Cookies
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/legal/security.html">
-                    <i class="bi bi-shield-check"></i> Segurança
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <!-- Legal Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-shield-check"
+                                    aria-hidden="true"></i> Legal
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/legal/terms.html">
+                                        <i class="bi bi-file-text"></i> Termos
+                                        de Uso
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/legal/privacy.html">
+                                        <i class="bi bi-lock"></i> Política de
+                                        Privacidade
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/legal/cookies.html">
+                                        <i class="bi bi-bricks"></i> Política de
+                                        Cookies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/legal/security.html">
+                                        <i class="bi bi-shield-check"></i>
+                                        Segurança
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-            <!-- Auth Buttons -->
-            <li class="nav-item dropdown d-lg-none">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="../authentic/login.html">
-                    <i class="bi bi-box-arrow-in-right"></i> Entrar
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../authentic/register.html">
-                    <i class="bi bi-person-plus"></i> Registar
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../authentic/profile.html">
-                    <i class="bi bi-person-circle"></i> Meu Perfil
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="../pages/restaurant/request.html">
-                    <i class="bi bi-bag-check"></i> Meus Pedidos
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <!-- Auth Buttons -->
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person" aria-hidden="true"></i>
+                                Minha Conta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../authentic/login.html">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Entrar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../authentic/register.html">
+                                        <i class="bi bi-person-plus"></i>
+                                        Registar
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="../../authentic/profile.html">
+                                        <i class="bi bi-person-circle"></i> Meu
+                                        Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="/pages/restaurant/request.html">
+                                        <i class="bi bi-bag-check"></i> Meus
+                                        Pedidos
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-            <!-- Auth Buttons Desktop -->
-            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
-              <a class="btn btn-outline-danger m-1"
-                href="../authentic/login.html" role="button">
-                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
-                Entrar
-              </a>
-            </li>
-            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
-              <a class="btn btn-danger m-1" href="../authentic/register.html"
-                role="button">
-                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
-                Registar
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Location Modal -->
-    <div class="modal fade" id="locationModal" tabindex="-1"
-      aria-labelledby="locationModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="locationModalLabel">
-              <i class="bi bi-geo-alt-fill text-danger"></i>
-              Alterar Localização
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"
-              aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="provinceSelect" class="form-label">Província</label>
-              <select class="form-select" id="provinceSelect">
-                <option value="luanda">Luanda</option>
-                <option value="benguela">Benguela</option>
-                <option value="huila">Huíla</option>
-                <option value="cabinda">Cabinda</option>
-                <option value="huambo">Huambo</option>
-                <option value="malanje">Malanje</option>
-                <!-- Add all 18 provinces -->
-              </select>
+                        <!-- Auth Buttons Desktop -->
+                        <li
+                            class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+                            <a class="btn btn-outline-danger m-1"
+                                href="../../authentic/login.html" role="button">
+                                <i class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true"></i>
+                                Entrar
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+                            <a class="btn btn-danger m-1"
+                                href="../../authentic/register.html"
+                                role="button">
+                                <i class="bi bi-person-plus-fill"
+                                    aria-hidden="true"></i>
+                                Registar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="municipalitySelect"
-                class="form-label">Município</label>
-              <select class="form-select" id="municipalitySelect">
-                <option value="luanda">Luanda</option>
-                <option value="viana">Viana</option>
-                <option value="cacuaco">Cacuaco</option>
-                <option value="cazenga">Cazenga</option>
-              </select>
+        </nav>
+
+        <!-- Location Modal -->
+        <div class="modal fade" id="locationModal" tabindex="-1"
+            aria-labelledby="locationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="locationModalLabel">
+                            <i class="bi bi-geo-alt-fill text-danger"></i>
+                            Alterar Localização
+                        </h5>
+                        <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="provinceSelect"
+                                class="form-label">Província</label>
+                            <select class="form-select" id="provinceSelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="benguela">Benguela</option>
+                                <option value="huila">Huíla</option>
+                                <option value="cabinda">Cabinda</option>
+                                <option value="huambo">Huambo</option>
+                                <option value="malanje">Malanje</option>
+                                <!-- Add all 18 provinces -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipalitySelect"
+                                class="form-label">Município</label>
+                            <select class="form-select" id="municipalitySelect">
+                                <option value="luanda">Luanda</option>
+                                <option value="viana">Viana</option>
+                                <option value="cacuaco">Cacuaco</option>
+                                <option value="cazenga">Cazenga</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"
+                                id="detectLocation" />
+                            <label class="form-check-label"
+                                for="detectLocation">
+                                Detetar minha localização automaticamente
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                            id="saveLocation">
+                            Guardar Localização
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox"
-                id="detectLocation" />
-              <label class="form-check-label" for="detectLocation">
-                Detetar minha localização automaticamente
-              </label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary"
-              data-bs-dismiss="modal">
-              Cancelar
-            </button>
-            <button type="button" class="btn btn-danger" id="saveLocation">
-              Guardar Localização
-            </button>
-          </div>
         </div>
-      </div>
-    </div>
 
         <!-- Main Content (SEM HERO) -->
         <div class="container py-5 mt-5">
@@ -658,7 +716,7 @@
                                         class="d-flex justify-content-between align-items-start mb-2">
                                         <h5 class="card-title fw-bold">Pizza
                                             Palace</h5>
-                                        <span class="badge bg-light text-dark">
+                                        <span class="badge bg-light text-black">
                                             <i
                                                 class="bi bi-star-fill text-warning"></i>
                                             4.9
@@ -730,7 +788,7 @@
                                         class="d-flex justify-content-between align-items-start mb-2">
                                         <h5 class="card-title fw-bold">Sushi
                                             Master</h5>
-                                        <span class="badge bg-light text-dark">
+                                        <span class="badge bg-light text-black">
                                             <i
                                                 class="bi bi-star-fill text-warning"></i>
                                             4.8
@@ -802,7 +860,7 @@
                                         class="d-flex justify-content-between align-items-start mb-2">
                                         <h5 class="card-title fw-bold">Sabores
                                             de Angola</h5>
-                                        <span class="badge bg-light text-dark">
+                                        <span class="badge bg-light text-black">
                                             <i
                                                 class="bi bi-star-fill text-warning"></i>
                                             4.7
@@ -876,7 +934,7 @@
             </div>
         </div>
 
-       <div class="divider-fade"></div>
+        <div class="divider-fade"></div>
 
         <!-- Footer -->
         <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
@@ -888,7 +946,7 @@
                             <h5 class="fw-bold text-danger mb-3">
                                 <i class="bi bi-bag-heart-fill"
                                     aria-hidden="true"></i>
-                                Delivery<span class="text-dark">HJ</span>
+                                Crave<span class="text-dark">Now</span>
                             </h5>
                             <p class="text-muted small">
                                 Conectando sabores, construindo comunidades. A
@@ -955,7 +1013,7 @@
                         </h6>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <a href="../../index.html"
+                                <a href="/"
                                     class="text-decoration-none link-secondary small">
                                     <i class="bi bi-house"></i> Início
                                 </a>
@@ -1107,7 +1165,7 @@
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="../../pages/enterprise/enterprise.html"
+                                <a href="../../pages/enterprise/press.html"
                                     class="text-decoration-none link-secondary small">
                                     <i class="bi bi-newspaper"></i> Imprensa
                                 </a>
@@ -1129,24 +1187,24 @@
                         </h6>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <a href="mailto:suporte@deliveryhj.com"
+                                <a href="mailto:suporte@cravenow.com"
                                     class="text-decoration-none link-secondary small">
                                     <i class="bi bi-envelope"></i>
-                                    suporte@deliveryhj.com
+                                    suporte@cravenow.com
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="mailto:parceiros@deliveryhj.com"
+                                <a href="mailto:parceiros@cravenow.com"
                                     class="text-decoration-none link-secondary small">
                                     <i class="bi bi-building"></i>
-                                    parceiros@deliveryhj.com
+                                    parceiros@cravenow.com
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="mailto:info@deliveryhj.com"
+                                <a href="mailto:info@cravenow.com"
                                     class="text-decoration-none link-secondary small">
                                     <i class="bi bi-info-square"></i>
-                                    info@deliveryhj.com
+                                    info@cravenow.com
                                 </a>
                             </li>
                             <li class="mb-2">
@@ -1166,7 +1224,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <small class="text-muted">
-                            &copy;2025 DeliveryHJ. Todos os direitos reservados.
+                            &copy;2026 CraveNow. Todos os direitos reservados.
                         </small>
                     </div>
 
@@ -1265,7 +1323,7 @@
                         <h5 class="modal-title fw-bold text-danger"
                             id="feedbackModalLabel">
                             <i class="bi bi-chat-heart-fill me-2"></i>
-                            Avalie a DeliveryHJ
+                            Avalie a CraveNow
                         </h5>
                         <button type="button" class="btn-close"
                             data-bs-dismiss="modal"
@@ -1461,7 +1519,7 @@
 }</style>
         <!-- Scripts -->
         <script src="../../js/bootstrap.bundle.min.js"></script>
-        <script src="../../js/delivery.js"></script>
+        <script src="../../js/cravenow.js"></script>
         <script src="../../js/most-restaurant.js"></script>
     </body>
 

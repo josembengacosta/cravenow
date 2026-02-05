@@ -5,37 +5,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="DeliveryHJ Team" />
+    <meta name="author" content="CraveNow Team" />
     <meta name="description"
-      content="DeliveryHJ - Conheça nossa história, missão e valores. A plataforma de delivery que está revolucionando Angola com tecnologia e sabor." />
+      content="CraveNow - Conheça nossa história, missão e valores. A plataforma de delivery que está revolucionando Angola com tecnologia e sabor." />
     <meta name="keywords"
-      content="sobre deliveryhj, nossa história, missão, valores, Angola delivery, tecnologia comida" />
+      content="sobre CraveNow, nossa história, missão, valores, Angola delivery, tecnologia comida" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#dc3545" />
 
     <!-- Open Graph -->
     <meta property="og:title"
-      content="DeliveryHJ - Sobre Nós | Nossa História" />
+      content="CraveNow - Sobre Nós | Nossa História" />
     <meta property="og:description"
-      content="Conheça a DeliveryHJ - a plataforma que está revolucionando o delivery em Angola com tecnologia e paixão pela comida." />
+      content="Conheça a CraveNow - a plataforma que está revolucionando o delivery em Angola com tecnologia e paixão pela comida." />
     <meta property="og:url"
-      content="https://deliveryhj.rf.gd/pages/sobre.html" />
-    <meta property="og:site_name" content="DeliveryHJ" />
+      content="https://cravenow.rf.gd/pages/sobre.html" />
+    <meta property="og:site_name" content="CraveNow" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_AO" />
 
-    <title>DeliveryHJ - Sobre Nós | História e Valores</title>
+    <title>CraveNow - Sobre Nós | História e Valores</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../assets/img/icones/deliveryhj.png"
-      type="image/x-icon" />
+    <link rel="shortcut icon" href="../../assets/img/icones/cravenow.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
 
     <!-- CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../css/delivery.css" />
-    <link rel="preload" href="../../css/delivery.min.css" as="style"
+    <link rel="stylesheet" href="../../css/cravenow.css" />
+    <link rel="preload" href="../../css/cravenow.min.css" as="style"
       onload="this.onload=null;this.rel='stylesheet'" />
 
     <style>
@@ -68,11 +67,13 @@
         }
         
         .timeline-content {
-            background: white;
+            background: var(--bs-body-bg);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             position: relative;
+             transition: all 0.3s ease;
+                color: var(--bs-body-color);
         }
         
         .timeline-item:nth-child(odd) .timeline-content {
@@ -91,7 +92,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 80px;
-            background: white;
+            background: var(--bs-body-bg);
             border: 4px solid #dc3545;
             border-radius: 50%;
             display: flex;
@@ -165,12 +166,12 @@
         }
         
         .mission-vision {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: var(--bs-body-bg);
             border-radius: 20px;
         }
         
         .impact-stats {
-            background: url('../assets/img/about/pattern-bg.png') center/cover;
+            background: url('../../assets/img/theme/partnership.jpg') center/cover;
         }
     </style>
 
@@ -200,7 +201,7 @@
         <div
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
           <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Delivery<span class="text-dark">HJ</span>
+          Crave<span class="text-dark">Now</span>
         </div>
         <div class="spinner-border text-danger mt-3" role="status">
           <span class="visually-hidden">A carregar...</span>
@@ -215,10 +216,10 @@
         <!-- Logo -->
         <a
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
-          href="../index.html"
+          href="/"
           itemprop="url">
           <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Delivery<span class="text-dark">HJ</span>
+          Crave<span class="text-dark">Now</span>
         </a>
 
         <div class="d-flex align-items-center order-lg-last">
@@ -276,7 +277,7 @@
 
             <!-- Main Navigation -->
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="/">
                 <i class="bi bi-house" aria-hidden="true"></i> Início
               </a>
             </li>
@@ -376,7 +377,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item"
-                    href="../../pages/enterprise/enterprise.html">
+                    href="../../pages/enterprise/press.html">
                     <i class="bi bi-newspaper"></i> Imprensa
                   </a>
                 </li>
@@ -433,12 +434,12 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="../authentic/login.html">
+                  <a class="dropdown-item" href="../../authentic/login.html">
                     <i class="bi bi-box-arrow-in-right"></i> Entrar
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../authentic/register.html">
+                  <a class="dropdown-item" href="../../authentic/register.html">
                     <i class="bi bi-person-plus"></i> Registar
                   </a>
                 </li>
@@ -446,7 +447,7 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../authentic/profile.html">
+                  <a class="dropdown-item" href="../../authentic/profile.html">
                     <i class="bi bi-person-circle"></i> Meu Perfil
                   </a>
                 </li>
@@ -462,13 +463,13 @@
             <!-- Auth Buttons Desktop -->
             <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
               <a class="btn btn-outline-danger m-1"
-                href="../authentic/login.html" role="button">
+                href="../../authentic/login.html" role="button">
                 <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
                 Entrar
               </a>
             </li>
             <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
-              <a class="btn btn-danger m-1" href="../authentic/register.html"
+              <a class="btn btn-danger m-1" href="../../authentic/register.html"
                 role="button">
                 <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
                 Registar
@@ -543,7 +544,7 @@
           <div class="col-lg-8">
             <h1 class="display-4 fw-bold mb-4">
               <i class="bi bi-bag-heart-fill"></i>
-              DeliveryHJ - Nossa História
+              CraveNow - Nossa História
             </h1>
             <p class="lead mb-4">
               Conectando sabores, construindo comunidades. Conheça a jornada da
@@ -552,7 +553,7 @@
             </p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
               <span class="badge bg-light text-black fs-6">
-                <i class="bi bi-rocket-takeoff text-danger"></i> Desde 2024
+                <i class="bi bi-rocket-takeoff text-danger"></i> Desde 2025
               </span>
               <span class="badge bg-light text-black fs-6">
                 <i class="bi bi-geo-alt text-danger"></i> Presente em Angola
@@ -574,7 +575,7 @@
           <div class="mission-vision p-5">
             <div class="row align-items-center">
               <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="fw-bold text-black mb-4">
+                <h2 class="fw-bold text-dark mb-4">
                   <i class="bi bi-bullseye text-danger"></i>
                   Nossa Missão & Visão
                 </h2>
@@ -615,7 +616,7 @@
                 <div class="text-center">
                   <img
                     src="../../assets/img/theme/bifes-de-carne-cozida-em-chamas-na-grelha.jpg"
-                    alt="Missão e Visão DeliveryHJ"
+                    alt="Missão e Visão CraveNow"
                     class="img-fluid rounded-3 shadow">
                 </div>
               </div>
@@ -640,9 +641,9 @@
               </div>
               <div class="timeline-content">
                 <span class="badge bg-danger mb-2">2025</span>
-                <h4 class="fw-bold text-black">O Início de Tudo</h4>
+                <h4 class="fw-bold text-dark">O Início de Tudo</h4>
                 <p class="text-muted">
-                  A DeliveryHJ nasceu da paixão por comida e tecnologia.
+                  A CraveNow nasceu da paixão por comida e tecnologia.
                   Identificamos a
                   necessidade de uma plataforma moderna que conectasse
                   restaurantes angolanos
@@ -664,7 +665,7 @@
               </div>
               <div class="timeline-content">
                 <span class="badge bg-success mb-2">2025</span>
-                <h4 class="fw-bold text-black">Primeira Expansão</h4>
+                <h4 class="fw-bold text-dark">Primeira Expansão</h4>
                 <p class="text-muted">
                   Expandimos para Viana e começamos a construir parcerias
                   sólidas com
@@ -687,7 +688,7 @@
               </div>
               <div class="timeline-content">
                 <span class="badge bg-primary mb-2">2025</span>
-                <h4 class="fw-bold text-black">Revolução Tecnológica</h4>
+                <h4 class="fw-bold text-dark">Revolução Tecnológica</h4>
                 <p class="text-muted">
                   Lançamento do nosso sistema de rastreamento em tempo real e
                   aplicativo móvel.
@@ -709,7 +710,7 @@
               </div>
               <div class="timeline-content">
                 <span class="badge bg-warning mb-2">Futuro</span>
-                <h4 class="fw-bold text-black">Próximos Passos</h4>
+                <h4 class="fw-bold text-dark">Próximos Passos</h4>
                 <p class="text-muted">
                   Expansão para outras províncias de Angola, programa de
                   fidelidade exclusivo,
@@ -791,7 +792,7 @@
       <div class="row mb-5">
         <div class="col-12">
           <div class="impact-stats p-5 rounded-3">
-            <h2 class="fw-bold text-center mb-5 text-dark">
+            <h2 class="fw-bold text-center mb-5 text-white">
               <i class="bi bi-graph-up-arrow text-danger"></i>
               Nosso Impacto em Números
             </h2>
@@ -843,13 +844,13 @@
               <div class="team-card card border-0 shadow-sm text-center">
                 <div class="card-body">
                   <img src="../assets/img/team/helder-chicale.jpg"
-                    alt="Hélder Gabriel Adão Chicale - Fundador da DeliveryHJ"
+                    alt="Hélder Gabriel Adão Chicale - Fundador da CraveNow"
                     class="rounded-circle mb-4"
                     width="150" height="150">
                   <h5 class="fw-bold text-dark">Hélder Chicale</h5>
-                  <p class="text-danger mb-2">Fundador & Visionário</p>
+                  <p class="text-danger mb-2">CEO-Fundador & Visionário</p>
                   <p class="text-muted small">
-                    Visionário por trás da DeliveryHJ, com paixão por tecnologia
+                    Visionário por trás da CraveNow, com paixão por tecnologia
                     e gastronomia angolana.
                   </p>
                   <div class="d-flex justify-content-center gap-2">
@@ -874,7 +875,7 @@
               <div class="team-card card border-0 shadow-sm text-center">
                 <div class="card-body">
                   <img src="../assets/img/team/jose-costa.jpg"
-                    alt="José Mbenga Mabuengo da Costa - Co-fundador da DeliveryHJ"
+                    alt="José Mbenga Mabuengo da Costa - Co-fundador da CraveNow"
                     class="rounded-circle mb-4"
                     width="150" height="150">
                   <h5 class="fw-bold text-dark">José Costa</h5>
@@ -912,7 +913,7 @@
                   <h5 class="fw-bold text-dark">Ana Santos</h5>
                   <p class="text-danger mb-2">CMO</p>
                   <p class="text-muted small">
-                    Estrategista de marketing dedicada a conectar a DeliveryHJ
+                    Estrategista de marketing dedicada a conectar a CraveNow
                     com a comunidade angolana.
                   </p>
                   <div class="d-flex justify-content-center gap-2">
@@ -1087,14 +1088,14 @@
                 Juntos, vamos transformar o delivery em Angola.
               </p>
               <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="restaurant.html" class="btn btn-light btn-lg">
+                <a href="../restaurant.html" class="btn btn-light btn-lg">
                   <i class="bi bi-bag-check"></i> Fazer um Pedido
                 </a>
-                <a href="partner-register.html"
+                <a href="../partner/partner-register.html"
                   class="btn btn-outline-light btn-lg">
                   <i class="bi bi-shop"></i> Ser Parceiro
                 </a>
-                <a href="support/contact.html"
+                <a href="../enterprise/career.html"
                   class="btn btn-outline-light btn-lg">
                   <i class="bi bi-chat-dots"></i> Trabalhe Conosco
                 </a>
@@ -1116,7 +1117,7 @@
             <div class="footer-brand mb-3">
               <h5 class="fw-bold text-danger mb-3">
                 <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-                Delivery<span class="text-dark">HJ</span>
+                Crave<span class="text-dark">Now</span>
               </h5>
               <p class="text-muted small">
                 Conectando sabores, construindo comunidades. A plataforma de
@@ -1175,7 +1176,7 @@
             </h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="../../index.html"
+                <a href="/"
                   class="text-decoration-none link-secondary small">
                   <i class="bi bi-house"></i> Início
                 </a>
@@ -1311,7 +1312,7 @@
                 </a>
               </li>
               <li class="mb-2">
-                <a href="../../pages/enterprise/enterprise.html"
+                <a href="../../pages/enterprise/press.html"
                   class="text-decoration-none link-secondary small">
                   <i class="bi bi-newspaper"></i> Imprensa
                 </a>
@@ -1332,21 +1333,21 @@
             </h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="mailto:suporte@deliveryhj.com"
+                <a href="mailto:suporte@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-envelope"></i> suporte@deliveryhj.com
+                  <i class="bi bi-envelope"></i> suporte@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
-                <a href="mailto:parceiros@deliveryhj.com"
+                <a href="mailto:parceiros@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-building"></i> parceiros@deliveryhj.com
+                  <i class="bi bi-building"></i> parceiros@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
-                <a href="mailto:info@deliveryhj.com"
+                <a href="mailto:info@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-info-square"></i> info@deliveryhj.com
+                  <i class="bi bi-info-square"></i> info@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
@@ -1365,7 +1366,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 mb-3 mb-md-0">
             <small class="text-muted">
-              &copy;2025 DeliveryHJ. Todos os direitos reservados.
+              &copy;2026 CraveNow. Todos os direitos reservados.
             </small>
           </div>
 
@@ -1383,7 +1384,7 @@
                 class="text-muted text-decoration-none small">
                 Cookies
               </a>
-              <a href="../../pages/legal/seguranca.html"
+              <a href="../../pages/legal/security.html"
                 class="text-muted text-decoration-none small">
                 Segurança
               </a>
@@ -1440,7 +1441,7 @@
           <div class="modal-header border-0">
             <h5 class="modal-title fw-bold text-danger" id="feedbackModalLabel">
               <i class="bi bi-chat-heart-fill me-2"></i>
-              Avalie a DeliveryHJ
+              Avalie a CraveNow
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"
               aria-label="Close"></button>
@@ -1568,7 +1569,7 @@
 
     <!-- Scripts -->
     <script src="../../js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/delivery.js"></script>
+    <script src="../../js/cravenow.js"></script>
     <script src="../../js/about.js"></script>
   </body>
 

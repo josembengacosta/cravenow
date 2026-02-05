@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="pt-AO" data-bs-theme="light">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="CraveNow Team" />
+    <meta name="description"
+      content="Imprensa - CraveNow. Notícias, comunicados e recursos para jornalistas e media partners." />
+    <meta name="keywords"
+      content="imprensa CraveNow, notícias, comunicados, media kit, relações públicas" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#dc3545" />
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+      content="Imprensa - CraveNow | Notícias e Recursos para Media" />
+    <meta property="og:description"
+      content="Acompanhe as últimas notícias, baixe recursos e entre em contacto com nossa equipa de imprensa." />
+    <meta property="og:url"
+      content="https://cravenow.rf.gd/pages/enterprise/press.html" />
+    <meta property="og:site_name" content="CraveNow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_AO" />
+
+    <title>Imprensa - CraveNow | Notícias e Recursos para Media</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assets/img/icones/cravenow.png"
+      type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
+
+    <!-- CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../css/cravenow.css" />
+    <link rel="preload" href="../../css/cravenow.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'" />
+
+    <style>
+        .press-hero {
+            background: linear-gradient(135deg, rgba(108, 117, 125, 0.9) 0%, rgba(73, 80, 87, 0.8) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .press-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+        
+        .press-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            background: white;
+        }
+        
+        .press-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .news-image {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .press-card:hover .news-image {
+            transform: scale(1.05);
+        }
+        
+        .press-badge {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .news-category {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .press-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .press-stats {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .press-filter {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #495057;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .filter-option {
+            background: var(--bs-body-bg);
+transition: transform 0.3s ease;
+color: var(--bs-body-color);;
+            border: 2px solid #dee2e6;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .filter-option:hover, .filter-option.active {
+            background: #6c757d;
+            color: white;
+            border-color: #6c757d;
+        }
+        
+        .press-featured {
+            border: 3px solid #dc3545;
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #dc3545, #e35d6a);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .media-kit {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .media-icon {
+            font-size: 3rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .resource-card:hover {
+            border-color: #6c757d;
+            transform: translateY(-5px);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        
+        .press-contact {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .contact-person {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: var(--bs-body-bg);
+transition: transform 0.3s ease;
+color: var(--bs-body-color);;
+        }
+        
+        .person-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .coverage-badge {
+            background: #17a2b8;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .download-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #495057;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .press-hero {
+                padding: 4rem 0 2rem;
+            }
+            
+            .press-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-number {
+                font-size: 2rem;
+            }
+            
+            .media-kit {
+                padding: 2rem 1rem;
+            }
+        }
+        
+        /* Press specific styles */
+        .press-header {
+            border-bottom: 3px solid #6c757d;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .news-excerpt {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .source-badge {
+            background: #28a745;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Animation for press items */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Press color scheme */
+        .text-press {
+            color: #6c757d !important;
+        }
+        
+        .bg-press {
+            background-color: #6c757d !important;
+        }
+        
+        .btn-press {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            border: none;
+            color: white;
+        }
+        
+        .btn-press:hover {
+            background: linear-gradient(135deg, #495057, #6c757d);
+            color: white;
+        }
+    </style>
+  </head>
+
+  <body class="bg-body" style="overflow-y: auto;" itemscope
+    itemtype="https://schema.org/WebSite">
+
+    <!-- Loading Progress -->
+    <div class="progress fixed-top rounded-0"
+      style="height: 3px; z-index: 1050">
+      <div class="progress-bar bg-danger" role="progressbar"
+        style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" id="loadingBar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
+      itemprop="breadcrumb">
+      <div class="container">
+        <!-- Logo -->
+        <a
+          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
+          href="/"
+          itemprop="url">
+          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+          Crave<span class="text-dark">Now</span>
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+          <!-- Cart Mobile -->
+          <a
+            class="btn btn-md btn-outline-danger d-lg-none me-2 position-relative"
+            href="../cart.html"
+            aria-label="Carrinho de compras">
+            <i class="bi bi-cart4" aria-hidden="true"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cartCountMobile">0</span>
+              <span class="visually-hidden">itens no carrinho</span>
+            </span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="toggleDark" class="btn btn-outline-danger btn-md me-2"
+            title="Alternar tema"
+            aria-label="Alternar entre tema escuro e claro">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Alternar navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <!-- Location Badge -->
+        <div class="navbar-text mx-3 d-none d-lg-block">
+          <span class="badge bg-light text-danger cursor-pointer"
+            data-bs-toggle="modal" data-bs-target="#locationModal">
+            <i class="bi bi-geo-alt-fill text-danger"></i>
+            <span id="currentLocation" class="text-secondary">Luanda</span>
+          </span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <!-- Cart Desktop -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link position-relative fw-bold"
+                href="../cart.html">
+                <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
+                <span
+                  class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
+                  <span id="cartCountDesktop">5</span>
+                  <span class="visually-hidden">itens no carrinho</span>
+                </span>
+              </a>
+            </li>
+
+            <!-- Main Navigation -->
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="bi bi-house" aria-hidden="true"></i> Início
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/restaurant.html">
+                <i class="bi bi-shop" aria-hidden="true"></i> Restaurantes
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-heart" aria-hidden="true"></i> Descobrir
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/discover/category.html">
+                    <i class="bi bi-grid-3x3-gap"></i> Categorias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/culinaria-tradicional.html">
+                    <i class="bi bi-egg-fried"></i> Culinária Tradicional
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/most-restaurant.html">
+                    <i class="bi bi-star"></i> Mais Populares
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/discover/new-restaurant.html">
+                    <i class="bi bi-rocket-takeoff"></i> Novos na Plataforma
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-question-circle" aria-hidden="true"></i> Ajuda
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/support/help.html">
+                    <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/guide.html">
+                    <i class="bi bi-play-circle"></i> Como Pedir
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/faq.html">
+                    <i class="bi bi-patch-question"></i> FAQ
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/support/contact.html">
+                    <i class="bi bi-chat-dots"></i> Contactar Suporte
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-info-circle" aria-hidden="true"></i> Empresa
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/enterprise/about.html">
+                    <i class="bi bi-building"></i> Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/enterprise/career.html">
+                    <i class="bi bi-briefcase"></i> Carreiras
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/enterprise/enterprise.html">
+                    <i class="bi bi-newspaper"></i> Imprensa
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/enterprise/blog.html">
+                    <i class="bi bi-journal-text"></i> Blog
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Legal Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-shield-check" aria-hidden="true"></i> Legal
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/terms.html">
+                    <i class="bi bi-file-text"></i> Termos de Uso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/privacy.html">
+                    <i class="bi bi-lock"></i> Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/cookies.html">
+                    <i class="bi bi-bricks"></i> Política de Cookies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/pages/legal/security.html">
+                    <i class="bi bi-shield-check"></i> Segurança
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons -->
+            <li class="nav-item dropdown d-lg-none">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person" aria-hidden="true"></i> Minha Conta
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="../../authentic/login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../../authentic/register.html">
+                    <i class="bi bi-person-plus"></i> Registar
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../../authentic/profile.html">
+                    <i class="bi bi-person-circle"></i> Meu Perfil
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    href="/pages/restaurant/request.html">
+                    <i class="bi bi-bag-check"></i> Meus Pedidos
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Auth Buttons Desktop -->
+            <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
+              <a class="btn btn-outline-danger m-1"
+                href="../../authentic/login.html" role="button">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                Entrar
+              </a>
+            </li>
+            <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
+              <a class="btn btn-danger m-1" href="../../authentic/register.html"
+                role="button">
+                <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+                Registar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Location Modal -->
+    <div class="modal fade" id="locationModal" tabindex="-1"
+      aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">
+              <i class="bi bi-geo-alt-fill text-danger"></i>
+              Alterar Localização
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="provinceSelect" class="form-label">Província</label>
+              <select class="form-select" id="provinceSelect">
+                <option value="luanda">Luanda</option>
+                <option value="benguela">Benguela</option>
+                <option value="huila">Huíla</option>
+                <option value="cabinda">Cabinda</option>
+                <option value="huambo">Huambo</option>
+                <option value="malanje">Malanje</option>
+                <!-- Add all 18 provinces -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="municipalitySelect"
+                class="form-label">Município</label>
+              <select class="form-select" id="municipalitySelect">
+                <option value="luanda">Luanda</option>
+                <option value="viana">Viana</option>
+                <option value="cacuaco">Cacuaco</option>
+                <option value="cazenga">Cazenga</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                id="detectLocation" />
+              <label class="form-check-label" for="detectLocation">
+                Detetar minha localização automaticamente
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="saveLocation">
+              Guardar Localização
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="press-hero">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">
+              <i class="bi bi-newspaper"></i>
+              Imprensa
+            </h1>
+            <p class="lead mb-4">
+              Notícias, comunicados e recursos para jornalistas e media
+              partners.
+              Acompanhe a evolução da CraveNow no mercado angolano.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-megaphone text-press"></i> Comunicados Oficiais
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-download text-primary"></i> Media Kit
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-telephone text-success"></i> Contacto Direto
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container py-4">
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <div class="press-stats">
+            <div class="stats-number" id="pressMentions">156</div>
+            <div>Menções na Imprensa</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="press-stats">
+            <div class="stats-number" id="mediaPartners">24</div>
+            <div>Parceiros de Media</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="press-stats">
+            <div class="stats-number" id="pressReleases">18</div>
+            <div>Comunicados Oficiais</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="press-stats">
+            <div class="stats-number" id="coverageCountries">3</div>
+            <div>Países com Cobertura</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Media Kit Section -->
+    <section class="media-kit">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <i class="bi bi-download media-icon"></i>
+            <h2 class="fw-bold mb-3 text-press">Media Kit</h2>
+            <p class="lead mb-4">
+              Recursos essenciais para jornalistas, blogueres e criadores de
+              conteúdo.
+              Tudo o que precisa para cobrir a CraveNow.
+            </p>
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="resource-card"
+                  onclick="pressSystem.downloadResource('brand-guidelines')">
+                  <i class="bi bi-palette resource-icon"></i>
+                  <h5>Brand Guidelines</h5>
+                  <p class="text-muted small">Diretrizes de marca e identidade
+                    visual</p>
+                  <button class="download-btn">
+                    <i class="bi bi-download"></i> Baixar
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="resource-card"
+                  onclick="pressSystem.downloadResource('press-photos')">
+                  <i class="bi bi-images resource-icon"></i>
+                  <h5>Fotos de Imprensa</h5>
+                  <p class="text-muted small">Imagens em alta resolução</p>
+                  <button class="download-btn">
+                    <i class="bi bi-download"></i> Baixar
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="resource-card"
+                  onclick="pressSystem.downloadResource('company-facts')">
+                  <i class="bi bi-file-text resource-icon"></i>
+                  <h5>Fact Sheet</h5>
+                  <p class="text-muted small">Dados e estatísticas da
+                    empresa</p>
+                  <button class="download-btn">
+                    <i class="bi bi-download"></i> Baixar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+      <div class="row">
+        <!-- Filters Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="press-filter sticky-top" style="top: 100px;">
+            <h4 class="fw-bold mb-4 text-press">
+              <i class="bi bi-funnel"></i>
+              Filtrar Conteúdo
+            </h4>
+
+            <!-- Content Type Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Tipo de Conteúdo</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="type-all">Todos</div>
+                <div class="filter-option"
+                  data-filter="type-release">Comunicados</div>
+                <div class="filter-option"
+                  data-filter="type-news">Notícias</div>
+                <div class="filter-option"
+                  data-filter="type-coverage">Cobertura</div>
+              </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Categoria</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="category-all">Todas</div>
+                <div class="filter-option"
+                  data-filter="category-business">Negócios</div>
+                <div class="filter-option"
+                  data-filter="category-tech">Tecnologia</div>
+                <div class="filter-option"
+                  data-filter="category-expansion">Expansão</div>
+                <div class="filter-option"
+                  data-filter="category-partnership">Parcerias</div>
+              </div>
+            </div>
+
+            <!-- Year Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Ano</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="year-all">Todos</div>
+                <div class="filter-option" data-filter="year-2024">2024</div>
+                <div class="filter-option" data-filter="year-2023">2023</div>
+                <div class="filter-option" data-filter="year-2022">2022</div>
+              </div>
+            </div>
+
+            <!-- Source Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Fonte</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="source-all">Todas</div>
+                <div class="filter-option"
+                  data-filter="source-official">Oficial</div>
+                <div class="filter-option"
+                  data-filter="source-media">Media</div>
+                <div class="filter-option"
+                  data-filter="source-blog">Blogues</div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-press w-100 mt-3"
+              onclick="pressSystem.clearFilters()">
+              <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
+            </button>
+          </div>
+        </div>
+
+        <!-- Press Content -->
+        <div class="col-lg-9">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold text-press mb-0">
+              <i class="bi bi-newspaper"></i>
+              Últimas Notícias
+            </h3>
+            <div class="text-muted">
+              <span id="pressCount">18</span> itens encontrados
+            </div>
+          </div>
+
+          <!-- Loading State -->
+          <div id="pressLoading" class="text-center py-5">
+            <div class="spinner-border text-press" role="status">
+              <span class="visually-hidden">A carregar...</span>
+            </div>
+            <p class="mt-3 text-muted">A carregar conteúdo de imprensa...</p>
+          </div>
+
+          <!-- Press Grid -->
+          <div id="pressGrid" class="press-grid" style="display: none;">
+            <!-- Press items will be loaded here by JavaScript -->
+          </div>
+
+          <!-- No Results -->
+          <div id="noPress" class="text-center py-5" style="display: none;">
+            <i class="bi bi-search display-1 text-muted mb-3"></i>
+            <h4 class="fw-bold text-muted">Nenhum conteúdo encontrado</h4>
+            <p class="text-muted mb-4">Tente ajustar os filtros para encontrar
+              conteúdo de imprensa.</p>
+            <button class="btn btn-press" onclick="pressSystem.clearFilters()">
+              <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
+            </button>
+          </div>
+
+          <!-- Press Contact Section -->
+          <div class="press-contact mt-5">
+            <h4 class="fw-bold text-press mb-4">
+              <i class="bi bi-telephone"></i>
+              Contacto de Imprensa
+            </h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="contact-person">
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="Maria Silva" class="person-avatar">
+                  <div>
+                    <h6 class="fw-bold mb-1">Maria Silva</h6>
+                    <p class="text-muted small mb-1">Chefe de Comunicação</p>
+                    <a href="mailto:imprensa@CraveNow.com"
+                      class="text-press small">imprensa@CraveNow.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="contact-person">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                    alt="João Santos" class="person-avatar">
+                  <div>
+                    <h6 class="fw-bold mb-1">João Santos</h6>
+                    <p class="text-muted small mb-1">Relações Públicas</p>
+                    <a href="mailto:rp@CraveNow.com"
+                      class="text-press small">rp@CraveNow.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="alert alert-info">
+                  <i class="bi bi-info-circle me-2"></i>
+                  <strong>Para pedidos de entrevista ou informações
+                    específicas:</strong>
+                  Contacte nossa equipa com pelo menos 48 horas de antecedência.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Media Coverage -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm">
+                <div class="card-header bg-press text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-tv"></i>
+                    Cobertura em Destaque
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <div class="row g-4">
+                    <div class="col-md-4">
+                      <div class="d-flex align-items-center mb-3">
+                        <span class="coverage-badge me-2">Jornal</span>
+                        <small class="text-muted">15 Jan 2024</small>
+                      </div>
+                      <h6 class="fw-bold">CraveNow Revoluciona Mercado de
+                        Entrega em Angola</h6>
+                      <p class="news-excerpt">Plataforma angolana atinge marca
+                        histórica de 1 milhão de pedidos...</p>
+                      <a href="#" class="text-press small">Ler no Jornal de
+                        Angola →</a>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="d-flex align-items-center mb-3">
+                        <span class="coverage-badge me-2">TV</span>
+                        <small class="text-muted">10 Jan 2024</small>
+                      </div>
+                      <h6 class="fw-bold">Entrevista com Fundador na TPA</h6>
+                      <p class="news-excerpt">CEO da CraveNow fala sobre
+                        inovação e criação de empregos...</p>
+                      <a href="#" class="text-press small">Ver na TPA →</a>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="d-flex align-items-center mb-3">
+                        <span class="coverage-badge me-2">Online</span>
+                        <small class="text-muted">5 Jan 2024</small>
+                      </div>
+                      <h6 class="fw-bold">Tech in Angola: O Sucesso da
+                        CraveNow</h6>
+                      <p class="news-excerpt">Análise do modelo de negócio que
+                        está a transformar o cravenow...</p>
+                      <a href="#" class="text-press small">Ler no TechAO →</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-fade"></div>
+
+    <!-- Footer -->
+    <footer class="bg-body-tertiary py-5 border-top" role="contentinfo">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Company Info -->
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-brand mb-3">
+              <h5 class="fw-bold text-danger mb-3">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Crave<span class="text-dark">Now</span>
+              </h5>
+              <p class="text-muted small">
+                Conectando sabores, construindo comunidades. A plataforma de
+                delivery feita por angolanos para Angola.
+              </p>
+            </div>
+
+            <div class="footer-social mb-4">
+              <h6 class="fw-semibold mb-3">Siga-nos</h6>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Facebook"
+                  title="Facebook">
+                  <i class="bi bi-facebook fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Instagram"
+                  title="Instagram">
+                  <i class="bi bi-instagram fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Conecte-se no LinkedIn"
+                  title="LinkedIn">
+                  <i class="bi bi-linkedin fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Siga-nos no Twitter" title="Twitter">
+                  <i class="bi bi-twitter fs-5"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-secondary"
+                  aria-label="Fale connosco no WhatsApp"
+                  title="WhatsApp">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- App Download -->
+            <!-- <div class="app-download">
+                    <h6 class="fw-semibold mb-2">Baixe o App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-sm">
+                            <i class="bi bi-apple"></i> App Store
+                        </a>
+                    </div>
+                </div> -->
+          </div>
+
+          <!-- For Customers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-people" aria-hidden="true"></i> Para Clientes
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="/"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-house"></i> Início
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-shop"></i> Restaurantes
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../promotion.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-percent"></i> Promoções
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/category.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-grid-3x3-gap"></i> Categorias
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/culinaria-tradicional.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-egg-fried"></i> Tradicional
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../discover/most-restaurant.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-star"></i> Mais Populares
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- For Partners -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-person-gear" aria-hidden="true"></i> Para
+              Parceiros
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="partner-register.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building-add"></i> Junte-se a Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="partner-login.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-box-arrow-in-right"></i> Área do Parceiro
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="partnership.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-hand-index"></i> Nossos Parceiros
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="resource.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-file-earmark-text"></i> Recursos
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="success-stories.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-trophy"></i> Histórias de Sucesso
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-question-circle" aria-hidden="true"></i> Suporte
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="../support/help.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-life-preserver"></i> Centro de Ajuda
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/guide.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-play-circle"></i> Como Pedir
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/faq.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-patch-question"></i> FAQ
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/contact.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-chat-dots"></i> Contactar Suporte
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../support/complaints.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-exclamation-triangle"></i> Reclamações
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-building" aria-hidden="true"></i> Empresa
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2">
+                <a href="../enterprise/about.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-circle"></i> Sobre Nós
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/career.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-briefcase"></i> Carreiras
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/enterprise.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-newspaper"></i> Imprensa
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="../enterprise/blog.html"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-pencil"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold text-dark mb-3">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Contacto
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="mailto:suporte@cravenow.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-envelope"></i> suporte@cravenow.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:parceiros@cravenow.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-building"></i> parceiros@cravenow.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="mailto:info@cravenow.com"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-info-square"></i> info@cravenow.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="tel:+244945678901"
+                  class="text-decoration-none link-secondary small">
+                  <i class="bi bi-whatsapp"></i> +244 945 678 901
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Bottom Footer -->
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <small class="text-muted">
+              &copy;2026 CraveNow. Todos os direitos reservados.
+            </small>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-flex flex-wrap justify-content-md-end gap-3">
+              <a href="../legal/terms.html"
+                class="text-muted text-decoration-none small">
+                Termos de Uso
+              </a>
+              <a href="../legal/privacy.html"
+                class="text-muted text-decoration-none small">
+                Privacidade
+              </a>
+              <a href="../legal/cookies.html"
+                class="text-muted text-decoration-none small">
+                Cookies
+              </a>
+              <a href="../legal/security.html"
+                class="text-muted text-decoration-none small">
+                Segurança
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="text-center">
+              <div class="d-flex flex-wrap justify-content-center gap-4">
+                <small class="text-muted">
+                  <i class="bi bi-shield-check text-success"></i> Pagamentos
+                  Seguros
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-truck text-primary"></i> Entregas Rápidas
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-star-fill text-warning"></i> Avaliado 4.8/5
+                </small>
+                <small class="text-muted">
+                  <i class="bi bi-heart-fill text-danger"></i> Feito em Angola
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================== -->
+    <!-- BOTÃO DE AVALIAÇÃO FLUTUANTE -->
+    <!-- ================================== -->
+    <div class="feedback-widget">
+      <!-- Botão Flutuante -->
+      <button class="feedback-btn" data-bs-toggle="modal"
+        data-bs-target="#feedbackModal">
+        <i class="bi bi-star-fill"></i>
+        <span class="feedback-label">Avaliar</span>
+      </button>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE AVALIAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1"
+      data-bs-backdrop="static"
+      aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold text-danger" id="feedbackModalLabel">
+              <i class="bi bi-chat-heart-fill me-2"></i>
+              Avalie a CraveNow
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="platformFeedbackForm">
+              <!-- Avaliação com Estrelas -->
+              <div class="text-center mb-4">
+                <h6 class="mb-3">Como foi sua experiência?</h6>
+                <div class="star-rating-large mb-2">
+                  <input type="radio" id="star5" name="rating" value="5" />
+                  <label for="star5" class="star-label">★</label>
+                  <input type="radio" id="star4" name="rating" value="4" />
+                  <label for="star4" class="star-label">★</label>
+                  <input type="radio" id="star3" name="rating" value="3" />
+                  <label for="star3" class="star-label">★</label>
+                  <input type="radio" id="star2" name="rating" value="2" />
+                  <label for="star2" class="star-label">★</label>
+                  <input type="radio" id="star1" name="rating" value="1" />
+                  <label for="star1" class="star-label">★</label>
+                </div>
+                <small class="text-muted" id="ratingText">Clique para
+                  avaliar</small>
+              </div>
+
+              <!-- Campo de Comentário -->
+              <div class="mb-3">
+                <label for="feedbackComment"
+                  class="form-label fw-semibold">Deixe seu comentário
+                  (opcional)</label>
+                <textarea class="form-control" id="feedbackComment" rows="4"
+                  placeholder="Conte-nos o que achou da plataforma, sugestões de melhoria, ou algo que gostou..."
+                  maxlength="500"></textarea>
+                <div class="form-text text-end">
+                  <span id="charCount">0</span>/500 caracteres
+                </div>
+              </div>
+
+              <!-- Tipo de Feedback -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Tipo de feedback</label>
+                <div class="btn-group w-100" role="group">
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="suggestion" value="suggestion" checked />
+                  <label class="btn btn-outline-primary" for="suggestion">
+                    <i class="bi bi-lightbulb"></i> Sugestão
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="compliment" value="compliment" />
+                  <label class="btn btn-outline-success" for="compliment">
+                    <i class="bi bi-heart"></i> Elogio
+                  </label>
+
+                  <input type="radio" class="btn-check" name="feedbackType"
+                    id="issue" value="issue" />
+                  <label class="btn btn-outline-warning" for="issue">
+                    <i class="bi bi-exclamation-triangle"></i> Problema
+                  </label>
+                </div>
+              </div>
+
+              <!-- Email (opcional) -->
+              <div class="mb-4">
+                <label for="feedbackEmail" class="form-label fw-semibold">
+                  Email
+                  <small class="text-muted">(opcional - para
+                    respondermos)</small>
+                </label>
+                <input type="email" class="form-control" id="feedbackEmail"
+                  placeholder="seu@email.com" />
+              </div>
+
+              <!-- Termos -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox"
+                  id="feedbackTerms" required />
+                <label class="form-check-label small" for="feedbackTerms">
+                  Concordo com a
+                  <a href="../../pages/legal/privacy.html"
+                    target="_blank">Política
+                    de Privacidade</a>
+                  e permito o uso deste feedback para melhorias na plataforma
+                </label>
+              </div>
+
+              <!-- Botões -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-danger btn-md">
+                  <i class="bi bi-send-fill me-2"></i>
+                  Enviar Avaliação
+                </button>
+                <button type="button" class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================== -->
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <!-- ================================== -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content text-center">
+          <div class="modal-body py-5">
+            <div class="text-success mb-3">
+              <i class="bi bi-check-circle-fill" style="font-size: 3rem"></i>
+            </div>
+            <h5 class="fw-bold">Obrigado!</h5>
+            <p class="text-muted">Sua avaliação foi enviada com sucesso.</p>
+            <button type="button" class="btn btn-danger w-100"
+              data-bs-dismiss="modal">
+              Continuar Navegando
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Press Detail Modal -->
+    <div class="modal fade" id="pressModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <!-- Content will be loaded by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/cravenow.js"></script>
+    <script src="../../js/press.js"></script>
+  </body>
+</html>

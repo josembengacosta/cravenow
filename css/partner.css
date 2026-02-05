@@ -4,249 +4,256 @@
 
 /* Progress Steps */
 .progress-steps {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .steps-container {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
 .steps-container::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #e9ecef;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e9ecef;
+  z-index: 1;
 }
 
 .step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .step-number {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #e9ecef;
-    color: #6c757d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    margin-bottom: 8px;
-    border: 3px solid white;
-    transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e9ecef;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  border: 3px solid white;
+  transition: all 0.3s ease;
 }
 
 .step.active .step-number {
-    background: #dc3545;
-    color: white;
-    transform: scale(1.1);
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
 }
 
 .step-label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #6c757d;
-    text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6c757d;
+  text-align: center;
 }
 
 .step.active .step-label {
-    color: #dc3545;
-    font-weight: 600;
+  color: #dc3545;
+  font-weight: 600;
 }
 
 /* Upload de Imagens */
 .image-upload-container .upload-area {
-    border: 2px dashed #dee2e6;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  border: 2px dashed #dee2e6;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .image-upload-container .upload-area:hover {
-    border-color: #dc3545;
-    background: rgba(220, 53, 69, 0.02);
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.02);
 }
 
 .image-upload-container .upload-area.dragover {
-    border-color: #dc3545;
-    background: rgba(220, 53, 69, 0.05);
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.05);
 }
 
 .image-preview-item {
-    position: relative;
-    border-radius: 0.5rem;
-    overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .image-preview-item img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
 }
 
 .image-preview-item .remove-image {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 24px;
-    height: 24px;
-    background: rgba(220, 53, 69, 0.9);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background: rgba(220, 53, 69, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
 }
 
 /* Ícones de Benefícios */
 .benefit-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(13, 110, 253, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(13, 110, 253, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .benefit-icon i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* Estatísticas */
 .stat-item {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background: #f8f9fa;
-    transition: transform 0.2s ease;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--bs-body-bg);
+  transition: transform 0.3s ease;
+  color: var(--bs-body-color);
+  transition: transform 0.2s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* Formulário */
 .form-control:focus,
 .form-select:focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .form-check-input:checked {
-    background-color: #dc3545;
-    border-color: #dc3545;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
 /* Cards */
 .card {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .card-header {
-    border-radius: 1rem 1rem 0 0 !important;
+  border-radius: 1rem 1rem 0 0 !important;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .progress-steps {
-        padding: 0 1rem;
-    }
-    
-    .step-label {
-        font-size: 0.75rem;
-    }
-    
-    .step-number {
-        width: 35px;
-        height: 35px;
-        font-size: 0.875rem;
-    }
-    
-    .card-body {
-        padding: 1.5rem !important;
-    }
+  .progress-steps {
+    padding: 0 1rem;
+  }
+
+  .step-label {
+    font-size: 0.75rem;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
+  }
 }
 
 @media (max-width: 576px) {
-    .steps-container::before {
-        top: 17px;
-    }
-    
-    .step-number {
-        width: 30px;
-        height: 30px;
-        font-size: 0.75rem;
-    }
-    
-    .step-label {
-        font-size: 0.7rem;
-    }
+  .steps-container::before {
+    top: 17px;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
 }
 
 /* Dark Mode */
 [data-bs-theme="dark"] .progress-steps .steps-container::before {
-    background: #4a5568;
+  background: #4a5568;
 }
 
 [data-bs-theme="dark"] .step-number {
-    background: #4a5568;
-    color: #e2e8f0;
-    border-color: #2d3748;
+  background: #4a5568;
+  color: #e2e8f0;
+  border-color: #2d3748;
 }
 
 [data-bs-theme="dark"] .image-upload-container .upload-area {
-    background: #2d3748;
-    border-color: #4a5568;
+  background: #2d3748;
+  border-color: #4a5568;
 }
 
 [data-bs-theme="dark"] .stat-item {
-    background: #4a5568;
+  background: #4a5568;
 }
 
 [data-bs-theme="dark"] .benefit-icon {
-    background: rgba(13, 110, 253, 0.2);
+  background: rgba(13, 110, 253, 0.2);
 }
 
 /* Estilos para sistema multi-step */
 .form-step {
-    animation: fadeIn 0.3s ease-in;
+  animation: fadeIn 0.3s ease-in;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .step-buttons {
-    border-top: 1px solid #dee2e6;
-    padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5rem;
 }
 
 /* Progress steps melhorado */
 .step.current .step-number {
-    background: #dc3545;
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
 }
 
 .step.active .step-number {
-    background: #28a745;
-    color: white;
+  background: #28a745;
+  color: white;
 }
-

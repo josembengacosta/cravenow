@@ -1,335 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-AO" data-bs-theme="light">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="DeliveryHJ Team" />
-    <meta name="description" content="Culinária Tradicional - DeliveryHJ. Descubra os sabores autênticos da culinária angolana e africana." />
-    <meta name="keywords" content="culinária tradicional angolana, comida típica, muamba, funge, calulu, pratos tradicionais" />
+    <meta name="author" content="CraveNow Team" />
+    <meta name="description"
+      content="Culinária Tradicional - CraveNow. Descubra os sabores autênticos da culinária angolana e africana." />
+    <meta name="keywords"
+      content="culinária tradicional angolana, comida típica, muamba, funge, calulu, pratos tradicionais" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#dc3545" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Culinária Tradicional - DeliveryHJ | Sabores Autênticos de Angola" />
-    <meta property="og:description" content="Explore os sabores autênticos da culinária angolana. Muamba, funge, calulu e outros pratos tradicionais entregues na sua casa." />
-    <meta property="og:url" content="https://deliveryhj.rf.gd/pages/discover/culinaria-tradicional.html" />
-    <meta property="og:site_name" content="DeliveryHJ" />
+    <meta property="og:title"
+      content="Culinária Tradicional - CraveNow | Sabores Autênticos de Angola" />
+    <meta property="og:description"
+      content="Explore os sabores autênticos da culinária angolana. Muamba, funge, calulu e outros pratos tradicionais entregues na sua casa." />
+    <meta property="og:url"
+      content="https://cravenow.rf.gd/pages/discover/culinaria-tradicional.html" />
+    <meta property="og:site_name" content="CraveNow" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_AO" />
 
-    <title>Culinária Tradicional - DeliveryHJ | Sabores Autênticos de Angola</title>
+    <title>Culinária Tradicional - CraveNow | Sabores Autênticos de
+      Angola</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../assets/img/icones/cravenow.png"
+      type="image/x-icon" />
     <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png" />
 
     <!-- CSS -->
-        <link href="../../css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
-        <link rel="stylesheet" href="../../css/delivery.css" />
-        <link rel="preload" href="../../css/delivery.min.css" as="style"
-            onload="this.onload=null;this.rel='stylesheet'" />
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../css/tradicional.css">
+    <link rel="stylesheet" href="../../css/cravenow.css" />
+    <link rel="preload" href="../../css/cravenow.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'" />
 
-    <style>
-        .traditional-hero {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(101, 67, 33, 0.8) 100%);
-            color: white;
-            padding: 6rem 0 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .traditional-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path fill="rgba(255,255,255,0.05)" d="M500,500 L500,100 L900,500 Z"/></svg>');
-            background-size: cover;
-        }
-        
-        .traditional-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            background: white;
-        }
-        
-        .traditional-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .dish-image {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .traditional-card:hover .dish-image {
-            transform: scale(1.05);
-        }
-        
-        .traditional-badge {
-            background: linear-gradient(135deg, #8B4513, #A0522D);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        
-        .region-badge {
-            background: #e9ecef;
-            color: #495057;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .spice-level {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        
-        .spice-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #dee2e6;
-        }
-        
-        .spice-dot.active {
-            background: #dc3545;
-        }
-        
-        .ingredients-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .ingredient-tag {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 15px;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.8rem;
-            color: #6c757d;
-        }
-        
-        .cultural-section {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        
-        .cultural-icon {
-            font-size: 3rem;
-            color: #8B4513;
-            margin-bottom: 1rem;
-        }
-        
-        .traditional-filter {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-        }
-        
-        .filter-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .filter-title {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #495057;
-        }
-        
-        .filter-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .filter-option {
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
-            border-radius: 20px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        
-        .filter-option:hover, .filter-option.active {
-            background: #8B4513;
-            color: white;
-            border-color: #8B4513;
-        }
-        
-        .recipe-time {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        .traditional-featured {
-            border: 3px solid #8B4513;
-            position: relative;
-        }
-        
-        .featured-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #dc3545, #e35d6a);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .cultural-tip {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-        
-        .traditional-stats {
-            background: linear-gradient(135deg, #8B4513, #A0522D);
-            color: white;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .traditional-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .region-section {
-            margin: 3rem 0;
-        }
-        
-        .region-header {
-            background: linear-gradient(135deg, #8B4513, #A0522D);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 15px 15px 0 0;
-            margin-bottom: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .traditional-hero {
-                padding: 4rem 0 2rem;
-            }
-            
-            .traditional-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .stats-number {
-                font-size: 2rem;
-            }
-            
-            .cultural-section {
-                padding: 2rem 1rem;
-            }
-        }
-        
-        /* Traditional patterns */
-        .pattern-border {
-            position: relative;
-        }
-        
-        .pattern-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #8B4513, #A0522D, #8B4513);
-            border-radius: 3px;
-        }
-        
-        /* Animation for traditional items */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out;
-        }
-        
-        /* Traditional color scheme */
-        .text-traditional {
-            color: #8B4513 !important;
-        }
-        
-        .bg-traditional {
-            background-color: #8B4513 !important;
-        }
-        
-        .btn-traditional {
-            background: linear-gradient(135deg, #8B4513, #A0522D);
-            border: none;
-            color: white;
-        }
-        
-        .btn-traditional:hover {
-            background: linear-gradient(135deg, #A0522D, #8B4513);
-            color: white;
-        }
-    </style>
 </head>
 
-<body class="bg-body" style="overflow-y: auto;" itemscope itemtype="https://schema.org/WebSite">
+  <body class="bg-body" style="overflow-y: auto;" itemscope
+    itemtype="https://schema.org/WebSite">
 
-     <!-- Loading Progress -->
-        <div class="progress fixed-top rounded-0"
-            style="height: 3px; z-index: 1050">
-            <div class="progress-bar bg-danger" role="progressbar"
-                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-                aria-valuemax="100" id="loadingBar"></div>
-        </div> 
+    <!-- Loading Progress -->
+    <div class="progress fixed-top rounded-0"
+      style="height: 3px; z-index: 1050">
+      <div class="progress-bar bg-danger" role="progressbar"
+        style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100" id="loadingBar"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm fixed-top"
@@ -338,10 +60,10 @@
         <!-- Logo -->
         <a
           class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
-          href="../../index.html"
+          href="/"
           itemprop="url">
           <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Delivery<span class="text-dark">HJ</span>
+          Crave<span class="text-dark">Now</span>
         </a>
 
         <div class="d-flex align-items-center order-lg-last">
@@ -391,7 +113,7 @@
                 <i class="bi bi-cart4" aria-hidden="true"></i> Carrinho
                 <span
                   class="position-absolute top-0 start-sm-50 translate-middle badge rounded-pill bg-danger">
-                  <span id="cartCountDesktop">0</span>
+                  <span id="cartCountDesktop">5</span>
                   <span class="visually-hidden">itens no carrinho</span>
                 </span>
               </a>
@@ -399,7 +121,7 @@
 
             <!-- Main Navigation -->
             <li class="nav-item">
-              <a class="nav-link" href="../../index.html">
+              <a class="nav-link" href="/">
                 <i class="bi bi-house" aria-hidden="true"></i> Início
               </a>
             </li>
@@ -494,7 +216,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item"
-                    href="/pages/enterprise/enterprise.html">
+                    href="/pages/enterprise/press.html">
                     <i class="bi bi-newspaper"></i> Imprensa
                   </a>
                 </li>
@@ -548,12 +270,12 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="../authentic/login.html">
+                  <a class="dropdown-item" href="../../authentic/login.html">
                     <i class="bi bi-box-arrow-in-right"></i> Entrar
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../authentic/register.html">
+                  <a class="dropdown-item" href="../../authentic/register.html">
                     <i class="bi bi-person-plus"></i> Registar
                   </a>
                 </li>
@@ -561,12 +283,13 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../authentic/profile.html">
+                  <a class="dropdown-item" href="../../authentic/profile.html">
                     <i class="bi bi-person-circle"></i> Meu Perfil
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/pages/restaurant/request.html">
+                  <a class="dropdown-item"
+                    href="/pages/restaurant/request.html">
                     <i class="bi bi-bag-check"></i> Meus Pedidos
                   </a>
                 </li>
@@ -576,13 +299,13 @@
             <!-- Auth Buttons Desktop -->
             <li class="nav-item mt-2 mt-lg-0 ms-lg-2 d-none d-lg-block">
               <a class="btn btn-outline-danger m-1"
-                href="../authentic/login.html" role="button">
+                href="../../authentic/login.html" role="button">
                 <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
                 Entrar
               </a>
             </li>
             <li class="nav-item mb-2 mb-lg-0 d-none d-lg-block">
-              <a class="btn btn-danger m-1" href="../authentic/register.html"
+              <a class="btn btn-danger m-1" href="../../authentic/register.html"
                 role="button">
                 <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
                 Registar
@@ -652,274 +375,320 @@
 
     <!-- Hero Section -->
     <section class="traditional-hero">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-4">
-                        <i class="bi bi-egg-fried"></i>
-                        Culinária Tradicional
-                    </h1>
-                    <p class="lead mb-4">
-                        Explore os sabores autênticos da culinária angolana. 
-                        Descubra pratos tradicionais que contam a história do nosso povo através dos sabores.
-                    </p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <span class="badge bg-light text-dark fs-6">
-                            <i class="bi bi-heart text-traditional"></i> Sabores Autênticos
-                        </span>
-                        <span class="badge bg-light text-dark fs-6">
-                            <i class="bi bi-geo-alt text-primary"></i> Todas as Regiões
-                        </span>
-                        <span class="badge bg-light text-dark fs-6">
-                            <i class="bi bi-clock text-success"></i> Receitas Tradicionais
-                        </span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4">
+              <i class="bi bi-egg-fried"></i>
+              Culinária Tradicional
+            </h1>
+            <p class="lead mb-4">
+              Explore os sabores autênticos da culinária angolana.
+              Descubra pratos tradicionais que contam a história do nosso povo
+              através dos sabores.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-heart text-traditional"></i> Sabores Autênticos
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-geo-alt text-primary"></i> Todas as Regiões
+              </span>
+              <span class="badge bg-light text-black fs-6">
+                <i class="bi bi-clock text-success"></i> Receitas Tradicionais
+              </span>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Cultural Introduction -->
     <section class="cultural-section">
-        <div class="container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center">
+            <i class="bi bi-house-heart cultural-icon"></i>
+            <h2 class="fw-bold mb-3 text-traditional">Sabores que Contam
+              Histórias</h2>
+            <p class="lead mb-4">
+              A culinária angolana é um reflexo da nossa rica cultura e
+              diversidade.
+              Cada prato traz consigo tradições, memórias e o calor do lar
+              angolano.
+            </p>
             <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <i class="bi bi-house-heart cultural-icon"></i>
-                    <h2 class="fw-bold mb-3 text-traditional">Sabores que Contam Histórias</h2>
-                    <p class="lead mb-4">
-                        A culinária angolana é um reflexo da nossa rica cultura e diversidade. 
-                        Cada prato traz consigo tradições, memórias e o calor do lar angolano.
-                    </p>
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <div class="cultural-tip">
-                                <i class="bi bi-lightbulb text-warning me-2"></i>
-                                <strong>Sabia?</strong> Muitos dos nossos pratos tradicionais são preparados 
-                                com técnicas passadas de geração em geração, mantendo viva a nossa herança cultural.
-                            </div>
-                        </div>
-                    </div>
+              <div class="col-md-8">
+                <div class="cultural-tip">
+                  <i class="bi bi-lightbulb text-warning me-2"></i>
+                  <strong>Sabia?</strong> Muitos dos nossos pratos tradicionais
+                  são preparados
+                  com técnicas passadas de geração em geração, mantendo viva a
+                  nossa herança cultural.
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <div class="container py-4">
-        <div class="row g-4">
-            <div class="col-md-3 col-6">
-                <div class="traditional-stats">
-                    <div class="stats-number" id="traditionalDishes">28</div>
-                    <div>Pratos Tradicionais</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="traditional-stats">
-                    <div class="stats-number" id="traditionalRestaurants">45</div>
-                    <div>Restaurantes Especializados</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="traditional-stats">
-                    <div class="stats-number" id="regionsCovered">12</div>
-                    <div>Regiões Representadas</div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="traditional-stats">
-                    <div class="stats-number" id="avgRating">4.8</div>
-                    <div>Avaliação Média</div>
-                </div>
-            </div>
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <div class="traditional-stats">
+            <div class="stats-number" id="traditionalDishes">28</div>
+            <div>Pratos Tradicionais</div>
+          </div>
         </div>
+        <div class="col-md-3 col-6">
+          <div class="traditional-stats">
+            <div class="stats-number" id="traditionalRestaurants">45</div>
+            <div>Restaurantes Especializados</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="traditional-stats">
+            <div class="stats-number" id="regionsCovered">12</div>
+            <div>Regiões Representadas</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="traditional-stats">
+            <div class="stats-number" id="avgRating">4.8</div>
+            <div>Avaliação Média</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Main Content -->
     <div class="container py-5">
-        <div class="row">
-            <!-- Filters Sidebar -->
-            <div class="col-lg-3 mb-4">
-                <div class="traditional-filter sticky-top" style="top: 100px;">
-                    <h4 class="fw-bold mb-4 text-traditional">
-                        <i class="bi bi-funnel"></i>
-                        Filtrar Pratos
-                    </h4>
-                    
-                    <!-- Dish Type Filter -->
-                    <div class="filter-group">
-                        <div class="filter-title">Tipo de Prato</div>
-                        <div class="filter-options">
-                            <div class="filter-option active" data-filter="type-all">Todos</div>
-                            <div class="filter-option" data-filter="type-main">Principal</div>
-                            <div class="filter-option" data-filter="type-side">Acompanhamento</div>
-                            <div class="filter-option" data-filter="type-dessert">Sobremesa</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Region Filter -->
-                    <div class="filter-group">
-                        <div class="filter-title">Região</div>
-                        <div class="filter-options">
-                            <div class="filter-option active" data-filter="region-all">Todas</div>
-                            <div class="filter-option" data-filter="region-luanda">Luanda</div>
-                            <div class="filter-option" data-filter="region-huila">Huíla</div>
-                            <div class="filter-option" data-filter="region-benguela">Benguela</div>
-                            <div class="filter-option" data-filter="region-huambo">Huambo</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Spice Level Filter -->
-                    <div class="filter-group">
-                        <div class="filter-title">Nível de Picante</div>
-                        <div class="filter-options">
-                            <div class="filter-option active" data-filter="spice-all">Todos</div>
-                            <div class="filter-option" data-filter="spice-mild">Suave</div>
-                            <div class="filter-option" data-filter="spice-medium">Médio</div>
-                            <div class="filter-option" data-filter="spice-hot">Picante</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Preparation Time -->
-                    <div class="filter-group">
-                        <div class="filter-title">Tempo de Preparo</div>
-                        <div class="filter-options">
-                            <div class="filter-option active" data-filter="time-all">Qualquer</div>
-                            <div class="filter-option" data-filter="time-fast">Rápido (≤30min)</div>
-                            <div class="filter-option" data-filter="time-medium">Médio (31-60min)</div>
-                            <div class="filter-option" data-filter="time-slow">Tradicional (>60min)</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Special Filters -->
-                    <div class="filter-group">
-                        <div class="filter-title">Especial</div>
-                        <div class="filter-options">
-                            <div class="filter-option" data-filter="featured">Em Destaque</div>
-                            <div class="filter-option" data-filter="vegetarian">Vegetariano</div>
-                            <div class="filter-option" data-filter="popular">Mais Populares</div>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-outline-traditional w-100 mt-3" onclick="traditionalSystem.clearFilters()">
-                        <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
-                    </button>
-                </div>
+      <div class="row">
+        <!-- Filters Sidebar -->
+        <div class="col-lg-3 mb-4">
+          <div class="traditional-filter sticky-top" style="top: 100px;">
+            <h4 class="fw-bold mb-4 text-traditional">
+              <i class="bi bi-funnel"></i>
+              Filtrar Pratos
+            </h4>
+
+            <!-- Dish Type Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Tipo de Prato</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="type-all">Todos</div>
+                <div class="filter-option"
+                  data-filter="type-main">Principal</div>
+                <div class="filter-option"
+                  data-filter="type-side">Acompanhamento</div>
+                <div class="filter-option"
+                  data-filter="type-dessert">Sobremesa</div>
+              </div>
             </div>
 
-            <!-- Dishes Grid -->
-            <div class="col-lg-9">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-bold text-traditional mb-0">
-                        <i class="bi bi-egg-fried"></i>
-                        Nossos Pratos Tradicionais
-                    </h3>
-                    <div class="text-muted">
-                        <span id="dishesCount">28</span> pratos encontrados
-                    </div>
-                </div>
-
-                <!-- Loading State -->
-                <div id="dishesLoading" class="text-center py-5">
-                    <div class="spinner-border text-traditional" role="status">
-                        <span class="visually-hidden">A carregar...</span>
-                    </div>
-                    <p class="mt-3 text-muted">A carregar pratos tradicionais...</p>
-                </div>
-
-                <!-- Dishes Grid -->
-                <div id="traditionalDishesGrid" class="traditional-grid" style="display: none;">
-                    <!-- Dishes will be loaded here by JavaScript -->
-                </div>
-
-                <!-- No Results -->
-                <div id="noDishes" class="text-center py-5" style="display: none;">
-                    <i class="bi bi-search display-1 text-muted mb-3"></i>
-                    <h4 class="fw-bold text-muted">Nenhum prato encontrado</h4>
-                    <p class="text-muted mb-4">Tente ajustar os filtros para encontrar pratos tradicionais.</p>
-                    <button class="btn btn-traditional" onclick="traditionalSystem.clearFilters()">
-                        <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
-                    </button>
-                </div>
-
-                <!-- Regional Specialties -->
-                <div class="region-section">
-                    <div class="card border-0 shadow-sm">
-                        <div class="region-header">
-                            <h4 class="fw-bold mb-0">
-                                <i class="bi bi-geo-alt"></i>
-                                Especialidades Regionais
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold text-traditional">Luanda</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Muamba de Galinha</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Mufete</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Calulu de Peixe</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold text-traditional">Huíla</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Ovi desidratado</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Muxima de Galinha</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Pirão do Sul</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold text-traditional">Benguela</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Caldeirada de Cabrito</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Mufete de Benguela</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Peixe Grelhado</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold text-traditional">Huambo</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Funge de Bombó</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Ginguba Torrada</li>
-                                        <li><i class="bi bi-check-circle text-success me-2"></i> Muxima do Planalto</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cultural Information -->
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-body p-4">
-                                <h4 class="fw-bold text-traditional mb-4">
-                                    <i class="bi bi-book"></i>
-                                    Sobre a Culinária Tradicional Angolana
-                                </h4>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6 class="fw-bold text-traditional">Ingredientes Base</h6>
-                                        <p class="text-muted">
-                                            A culinária angolana utiliza ingredientes locais como mandioca, 
-                                            ginguba, feijão óleo de palma, e peixes frescos do Atlântico.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6 class="fw-bold text-traditional">Técnicas Tradicionais</h6>
-                                        <p class="text-muted">
-                                            Cozimento lento, grelhados em brasa e preparos que realçam 
-                                            os sabores naturais dos ingredientes são características marcantes.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Region Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Região</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="region-all">Todas</div>
+                <div class="filter-option"
+                  data-filter="region-luanda">Luanda</div>
+                <div class="filter-option"
+                  data-filter="region-huila">Huíla</div>
+                <div class="filter-option"
+                  data-filter="region-benguela">Benguela</div>
+                <div class="filter-option"
+                  data-filter="region-huambo">Huambo</div>
+              </div>
             </div>
+
+            <!-- Spice Level Filter -->
+            <div class="filter-group">
+              <div class="filter-title">Nível de Picante</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="spice-all">Todos</div>
+                <div class="filter-option" data-filter="spice-mild">Suave</div>
+                <div class="filter-option"
+                  data-filter="spice-medium">Médio</div>
+                <div class="filter-option" data-filter="spice-hot">Picante</div>
+              </div>
+            </div>
+
+            <!-- Preparation Time -->
+            <div class="filter-group">
+              <div class="filter-title">Tempo de Preparo</div>
+              <div class="filter-options">
+                <div class="filter-option active"
+                  data-filter="time-all">Qualquer</div>
+                <div class="filter-option" data-filter="time-fast">Rápido
+                  (≤30min)</div>
+                <div class="filter-option" data-filter="time-medium">Médio
+                  (31-60min)</div>
+                <div class="filter-option" data-filter="time-slow">Tradicional
+                  (>60min)</div>
+              </div>
+            </div>
+
+            <!-- Special Filters -->
+            <div class="filter-group">
+              <div class="filter-title">Especial</div>
+              <div class="filter-options">
+                <div class="filter-option" data-filter="featured">Em
+                  Destaque</div>
+                <div class="filter-option"
+                  data-filter="vegetarian">Vegetariano</div>
+                <div class="filter-option" data-filter="popular">Mais
+                  Populares</div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-traditional w-100 mt-3"
+              onclick="traditionalSystem.clearFilters()">
+              <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
+            </button>
+          </div>
         </div>
+
+        <!-- Dishes Grid -->
+        <div class="col-lg-9">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold text-traditional mb-0">
+              <i class="bi bi-egg-fried"></i>
+              Nossos Pratos Tradicionais
+            </h3>
+            <div class="text-muted">
+              <span id="dishesCount">28</span> pratos encontrados
+            </div>
+          </div>
+
+          <!-- Loading State -->
+          <div id="dishesLoading" class="text-center py-5">
+            <div class="spinner-border text-traditional" role="status">
+              <span class="visually-hidden">A carregar...</span>
+            </div>
+            <p class="mt-3 text-muted">A carregar pratos tradicionais...</p>
+          </div>
+
+          <!-- Dishes Grid -->
+          <div id="traditionalDishesGrid" class="traditional-grid"
+            style="display: none;">
+            <!-- Dishes will be loaded here by JavaScript -->
+          </div>
+
+          <!-- No Results -->
+          <div id="noDishes" class="text-center py-5" style="display: none;">
+            <i class="bi bi-search display-1 text-muted mb-3"></i>
+            <h4 class="fw-bold text-muted">Nenhum prato encontrado</h4>
+            <p class="text-muted mb-4">Tente ajustar os filtros para encontrar
+              pratos tradicionais.</p>
+            <button class="btn btn-traditional"
+              onclick="traditionalSystem.clearFilters()">
+              <i class="bi bi-arrow-clockwise"></i> Limpar Filtros
+            </button>
+          </div>
+
+          <!-- Regional Specialties -->
+          <div class="region-section">
+            <div class="card border-0 shadow-sm">
+              <div class="region-header">
+                <h4 class="fw-bold mb-0">
+                  <i class="bi bi-geo-alt"></i>
+                  Especialidades Regionais
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <h5 class="fw-bold text-traditional">Luanda</h5>
+                    <ul class="list-unstyled">
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Muamba de Galinha</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Mufete</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Calulu de Peixe</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="fw-bold text-traditional">Huíla</h5>
+                    <ul class="list-unstyled">
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Ovi desidratado</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Muxima de Galinha</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Pirão do Sul</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="fw-bold text-traditional">Benguela</h5>
+                    <ul class="list-unstyled">
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Caldeirada de Cabrito</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Mufete de Benguela</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Peixe Grelhado</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5 class="fw-bold text-traditional">Huambo</h5>
+                    <ul class="list-unstyled">
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Funge de Bombó</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Ginguba Torrada</li>
+                      <li><i class="bi bi-check-circle text-success me-2"></i>
+                        Muxima do Planalto</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cultural Information -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <h4 class="fw-bold text-traditional mb-4">
+                    <i class="bi bi-book"></i>
+                    Sobre a Culinária Tradicional Angolana
+                  </h4>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h6 class="fw-bold text-traditional">Ingredientes
+                        Base</h6>
+                      <p class="text-muted">
+                        A culinária angolana utiliza ingredientes locais como
+                        mandioca,
+                        ginguba, feijão óleo de palma, e peixes frescos do
+                        Atlântico.
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <h6 class="fw-bold text-traditional">Técnicas
+                        Tradicionais</h6>
+                      <p class="text-muted">
+                        Cozimento lento, grelhados em brasa e preparos que
+                        realçam
+                        os sabores naturais dos ingredientes são características
+                        marcantes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="divider-fade"></div>
@@ -933,7 +702,7 @@
             <div class="footer-brand mb-3">
               <h5 class="fw-bold text-danger mb-3">
                 <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-                Delivery<span class="text-dark">HJ</span>
+                Crave<span class="text-dark">Now</span>
               </h5>
               <p class="text-muted small">
                 Conectando sabores, construindo comunidades. A plataforma de
@@ -992,7 +761,7 @@
             </h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="../../index.html"
+                <a href="/"
                   class="text-decoration-none link-secondary small">
                   <i class="bi bi-house"></i> Início
                 </a>
@@ -1128,7 +897,7 @@
                 </a>
               </li>
               <li class="mb-2">
-                <a href="../enterprise/enterprise.html"
+                <a href="../enterprise/press.html"
                   class="text-decoration-none link-secondary small">
                   <i class="bi bi-newspaper"></i> Imprensa
                 </a>
@@ -1149,21 +918,21 @@
             </h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="mailto:suporte@deliveryhj.com"
+                <a href="mailto:suporte@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-envelope"></i> suporte@deliveryhj.com
+                  <i class="bi bi-envelope"></i> suporte@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
-                <a href="mailto:parceiros@deliveryhj.com"
+                <a href="mailto:parceiros@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-building"></i> parceiros@deliveryhj.com
+                  <i class="bi bi-building"></i> parceiros@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
-                <a href="mailto:info@deliveryhj.com"
+                <a href="mailto:info@cravenow.com"
                   class="text-decoration-none link-secondary small">
-                  <i class="bi bi-info-square"></i> info@deliveryhj.com
+                  <i class="bi bi-info-square"></i> info@cravenow.com
                 </a>
               </li>
               <li class="mb-2">
@@ -1182,7 +951,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 mb-3 mb-md-0">
             <small class="text-muted">
-              &copy;2025 DeliveryHJ. Todos os direitos reservados.
+              &copy;2026 CraveNow. Todos os direitos reservados.
             </small>
           </div>
 
@@ -1200,7 +969,7 @@
                 class="text-muted text-decoration-none small">
                 Cookies
               </a>
-              <a href="../legal/seguranca.html"
+              <a href="../legal/security.html"
                 class="text-muted text-decoration-none small">
                 Segurança
               </a>
@@ -1257,7 +1026,7 @@
           <div class="modal-header border-0">
             <h5 class="modal-title fw-bold text-danger" id="feedbackModalLabel">
               <i class="bi bi-chat-heart-fill me-2"></i>
-              Avalie a DeliveryHJ
+              Avalie a CraveNow
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"
               aria-label="Close"></button>
@@ -1385,17 +1154,17 @@
 
     <!-- Dish Detail Modal -->
     <div class="modal fade" id="dishModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <!-- Content will be loaded by JavaScript -->
-                </div>
-            </div>
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <!-- Content will be loaded by JavaScript -->
+          </div>
         </div>
+      </div>
     </div>
 
     <script src="../../js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/delivery.js"></script>
+    <script src="../../js/cravenow.js"></script>
     <script src="../../js/traditional.js"></script>
-</body>
+  </body>
 </html>
