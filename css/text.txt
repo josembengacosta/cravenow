@@ -1,4 +1,4 @@
-/* CORREÇÕES APENAS PARA DARK MODE NOS CARDS - NADA MAIS FOI ALTERADO */
+/*Escopo */
 
 /* Cards de Benefícios */
 .benefit-card {

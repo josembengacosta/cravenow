@@ -1,0 +1,135 @@
+ .hero-about {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9) 0%, rgba(227, 93, 106, 0.8) 100%),
+                        url('../../assets/img/theme/partnership.jpg') center/cover;
+            color: white;
+            padding: 6rem 0 4rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #dc3545, #e35d6a);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-content {
+            background: var(--bs-body-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+             transition: all 0.3s ease;
+                color: var(--bs-body-color);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            width: calc(50% - 4rem);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            width: calc(50% - 4rem);
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: var(--bs-body-bg);
+            border: 4px solid #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #dc3545;
+            z-index: 2;
+        }
+        
+        .value-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+            box-shadow: 0 10px 25px rgba(220, 53, 69, 0.15);
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: #dc3545;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        .vision-map {
+            position: relative;
+            background: linear-gradient(135deg, #393939 0%, #dc3545 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .province-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+            }
+            
+            .hero-about {
+                padding: 5rem 0 3rem;
+            }
+        }
+        
+        .mission-vision {
+            background: var(--bs-body-bg);
+            border-radius: 20px;
+        }
+        
+        .impact-stats {
+            background: url('../../assets/img/theme/partnership.jpg') center/cover;
+        }

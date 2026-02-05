@@ -76,7 +76,7 @@ class ErrorPagesSystem {
 
   // Utility methods for all error pages
   redirectToHome() {
-    window.location.href = "/";
+    window.location.href = "https://josembengacosta.github.io/cravenow/";
   }
 
   contactSupport() {
