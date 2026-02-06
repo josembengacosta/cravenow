@@ -78,6 +78,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
     />
+<!-- Loading Script -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.querySelector("body").classList.add("loaded");
+          document.getElementById("loadingBar").style.width = "100%";
+        }, 500);
+      });
+    </script>
 
     <!-- Schema adicional para LocalBusiness -->
     <script type="application/ld+json">
@@ -99,15 +108,7 @@
         }
       }
     </script>
-    <!-- Loading Script -->
-    <script>
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          document.querySelector("body").classList.add("loaded");
-          document.getElementById("loadingBar").style.width = "100%";
-        }, 500);
-      });
-    </script>
+    
   </head>
 
   <div
@@ -137,18 +138,16 @@
     </div>
 
     <!-- Preloader -->
-    <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
-      <div class="loading-logo">
-        <div
-          class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger"
-        >
-          <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
-          Crave<span class="text-dark">Now</span>
+   <div class="preloader text-center" style="z-index: 1050" aria-hidden="true">
+        <div class="loading-logo">
+            <div class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2 text-danger">
+                <i class="bi bi-bag-heart-fill" aria-hidden="true"></i>
+                Crave<span class="text-dark">Now</span>
+            </div>
+            <div class="spinner-border text-danger mt-3" role="status">
+                <span class="visually-hidden">A carregar...</span>
+            </div>
         </div>
-        <div class="spinner-border text-danger mt-3" role="status">
-          <span class="visually-hidden">A carregar...</span>
-        </div>
-      </div>
     </div>
 
     <!-- Navigation -->

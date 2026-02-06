@@ -577,7 +577,7 @@ function initNewsletterSystem() {
       this.classList.remove("was-validated");
 
       // Analytics (simulado)
-      console.log("📧 Nova inscrição na newsletter:", formData.email);
+      console.log("Nova inscrição na newsletter:", formData.email);
     });
 
     // Validação em tempo real
