@@ -574,7 +574,7 @@ class RestaurantRegistration {
 
         // Redirecionar após 5 segundos
         setTimeout(() => {
-          window.location.href = "/";
+          window.location.href = "https://josembengacosta.github.io/cravenow/";
         }, 5000);
       } else {
         throw new Error(result.message || "Erro ao processar cadastro");
